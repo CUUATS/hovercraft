@@ -42,10 +42,6 @@ Aperture is based on Underscores http://underscores.me/, Copyright (C) 2012-2015
 
 -- Images.
 *
-*  The default background image is based on a picture from Nelly Volkovich.
-*  URL: https://unsplash.com/nelly
-*  License: CC0 / http://creativecommons.org/publicdomain/zero/1.0/
-*
 *  The image on the theme screenshot is based on a picture from Daniela Cuevas.
 *  URL: https://unsplash.com/danielacuevas
 *  License: CC0 / http://creativecommons.org/publicdomain/zero/1.0/
