@@ -40,8 +40,13 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+			<?php if ( get_theme_mod( 'aperture_logo' ) ) : ?>
+				<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img class='site-logo' style="margin-right:0.5em;" src='<?php echo esc_url( get_theme_mod( 'aperture_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+			<?php endif; ?>
 		</div><!-- .site-branding -->
 
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
