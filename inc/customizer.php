@@ -61,8 +61,8 @@ function hovercraft_customize_register( $wp_customize ) {
 		'description'    => 'This theme supports a number of options which you can set using this panel.',
 	) );
 	/*Theme logo options*/
-	$wp_customize -> add_section('aperture_logo_section', array(
-	'title'       => __( 'Logo', 'aperture' ),
+	$wp_customize -> add_section('hovercraft_logo_section', array(
+	'title'       => __( 'Logo', 'hovercraft' ),
 	'panel'  => 'aperture_theme_options',
     	'priority'    => 30,
     	'description' => 'Upload a logo for the header. Max height: 56px',
@@ -71,9 +71,9 @@ function hovercraft_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'aperture_logo' );
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-    	'label'    => __( 'Logo', 'aperture' ),
-    	'section'  => 'aperture_logo_section',
-    	'settings' => 'aperture_logo',
+    	'label'    => __( 'Logo', 'hovercraft' ),
+    	'section'  => 'hovercraft_logo_section',
+    	'settings' => 'hovercraft_logo',
 	) ) );
 	
 
