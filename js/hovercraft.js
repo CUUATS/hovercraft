@@ -1,6 +1,6 @@
-/* global apertureSlider */
+/* global hovercraftSlider */
 /**
- * Aperture.js
+ * Hovercraft.js
  *
  * Some custom scripts for this theme.
  */
@@ -112,10 +112,10 @@
 
 	// Load flexslider. 
 	$(window).load(function() {
-		var optionOne = apertureSlider.aperture_animation;
-		var optionTwo = apertureSlider.aperture_direction;
-		var optionThree = ( apertureSlider.aperture_slideshow === "true" );
-		var optionFour = parseInt( apertureSlider.aperture_sliderspeed );
+		var optionOne = hovercraftSlider.hovercraft_animation;
+		var optionTwo = hovercraftSlider.hovercraft_direction;
+		var optionThree = ( hovercraftSlider.hovercraft_slideshow === "true" );
+		var optionFour = parseInt( hovercraftSlider.hovercraft_sliderspeed );
 
 		$('.flexslider').flexslider({
 			animation: optionOne,

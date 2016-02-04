@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package Aperture
+ * @package Hovercraft
  */
 
 /**
@@ -13,14 +13,14 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function aperture_body_classes( $classes ) {
+function hovercraft_body_classes( $classes ) {
 	// Adds a class when the slider page template is active.
 	if ( is_page_template( 'template-parts/page-slider.php' ) ) {
 		$classes[] = 'fullscreen-slider';
 	}
 
 	// Adds a class depending on whether sidebar is active and the selection in the customizer.
-	$sidebar = get_theme_mod( 'aperture_sidebar', 'right-sidebar' );
+	$sidebar = get_theme_mod( 'hovercraft_sidebar', 'right-sidebar' );
 
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		$classes[] = 'no-sidebar';
@@ -41,21 +41,21 @@ function aperture_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'aperture_body_classes' );
+add_filter( 'body_class', 'hovercraft_body_classes' );
 
 /**
  * Remove custom-background class from the array of body classes.
  */
-function aperture_remove_body_class($classes) {
+function hovercraft_remove_body_class($classes) {
 	// Remove the custom background when the page slider is displayed.
-	if ( is_page_template( 'template-parts/page-slider.php' ) && aperture_has_featured_posts( 2 ) ) :
+	if ( is_page_template( 'template-parts/page-slider.php' ) && hovercraft_has_featured_posts( 2 ) ) :
 		foreach( $classes as $key => $value ) {
 			if ($value == 'custom-background' ) unset( $classes[$key] );
 		}
 	endif;
 	return $classes;
 }
-add_filter('body_class', 'aperture_remove_body_class', 20, 2);
+add_filter('body_class', 'hovercraft_remove_body_class', 20, 2);
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
@@ -65,7 +65,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	 * @param string $sep Optional separator.
 	 * @return string The filtered title.
 	 */
-	function aperture_wp_title( $title, $sep ) {
+	function hovercraft_wp_title( $title, $sep ) {
 		if ( is_feed() ) {
 			return $title;
 		}
@@ -83,12 +83,12 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		// Add a page number if necessary.
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'aperture' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'hovercraft' ), max( $paged, $page ) );
 		}
 
 		return $title;
 	}
-	add_filter( 'wp_title', 'aperture_wp_title', 10, 2 );
+	add_filter( 'wp_title', 'hovercraft_wp_title', 10, 2 );
 
 	/**
 	 * Title shim for sites older than WordPress 4.1.
@@ -96,10 +96,10 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
 	 * @todo Remove this function when WordPress 4.3 is released.
 	 */
-	function aperture_render_title() {
+	function hovercraft_render_title() {
 		?>
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<?php
 	}
-	add_action( 'wp_head', 'aperture_render_title' );
+	add_action( 'wp_head', 'hovercraft_render_title' );
 endif;

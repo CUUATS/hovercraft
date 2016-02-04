@@ -3,10 +3,10 @@
  * Jetpack Compatibility File
  * See: https://jetpack.me/
  *
- * @package Aperture
+ * @package Hovercraft
  */
 
-function aperture_jetpack_setup() {
+function hovercraft_jetpack_setup() {
 	/**
 	 * Add theme support for Infinite Scroll.
 	 * See: https://jetpack.me/support/infinite-scroll/
@@ -14,7 +14,7 @@ function aperture_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'type'		=> 'scroll',
 		'container' => 'main',
-		'render'    => 'aperture_infinite_scroll_render',
+		'render'    => 'hovercraft_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -23,7 +23,7 @@ function aperture_jetpack_setup() {
 	 * See: http://jetpack.me/support/featured-content/
 	 */
 	add_theme_support( 'featured-content', array(
-		'filter'     => 'aperture_get_featured_posts',
+		'filter'     => 'hovercraft_get_featured_posts',
 		'max_posts'  => 5,
 		'post_types' => array( 'post', 'page', 'portfolio' ),
 	) );
@@ -42,35 +42,35 @@ function aperture_jetpack_setup() {
 	//add_theme_support( 'jetpack-portfolio' );
 
 
-} // end function aperture_jetpack_setup
-add_action( 'after_setup_theme', 'aperture_jetpack_setup' );
+} // end function hovercraft_jetpack_setup
+add_action( 'after_setup_theme', 'hovercraft_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function aperture_infinite_scroll_render() {
+function hovercraft_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		get_template_part( 'template-parts/content', get_post_format() );
 	}
-} // end function aperture_infinite_scroll_render
+} // end function hovercraft_infinite_scroll_render
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function aperture_get_featured_posts() {
-	return apply_filters( 'aperture_get_featured_posts', array() );
-} // end function aperture_get_featured__posts
+function hovercraft_get_featured_posts() {
+	return apply_filters( 'hovercraft_get_featured_posts', array() );
+} // end function hovercraft_get_featured__posts
 
 /**
  * Get the number of featured posts.
  */
-function aperture_has_featured_posts( $minimum = 1 ) {
+function hovercraft_has_featured_posts( $minimum = 1 ) {
 	if ( is_paged() )
 		return false;
 
 	$minimum = absint( $minimum );
-	$featured_posts = apply_filters( 'aperture_get_featured_posts', array() );
+	$featured_posts = apply_filters( 'hovercraft_get_featured_posts', array() );
 
 	if ( ! is_array( $featured_posts ) )
 		return false;
@@ -79,4 +79,4 @@ function aperture_has_featured_posts( $minimum = 1 ) {
 		return false;
 
 	return true;
-} // end function aperture_has_featured_posts
+} // end function hovercraft_has_featured_posts

@@ -2,7 +2,7 @@
 /**
  * Template Name: Full Width Page
  *
- * @package Aperture
+ * @package Hovercraft
  */
 
 get_header(); ?>

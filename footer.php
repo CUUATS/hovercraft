@@ -4,9 +4,9 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package Aperture
+ * @package Hovercraft
  */
-$customtext = get_theme_mod( 'aperture_footer_text', 'Some custom text here!' );
+$customtext = get_theme_mod( 'hovercraft_footer_text', 'Some custom text here!' );
 ?>
 
 	</div><!-- #content -->
@@ -26,9 +26,9 @@ $customtext = get_theme_mod( 'aperture_footer_text', 'Some custom text here!' );
 				<?php endif; ?>
 
 				<div class="credits">
-					<span class="credits-top"><?php echo __( 'Powered by ', 'aperture' ) ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'aperture' ) ); ?>" rel="generator">WordPress</a></span>
+					<span class="credits-top"><?php echo __( 'Powered by ', 'hovercraft' ) ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'hovercraft' ) ); ?>" rel="generator">WordPress</a></span>
 					<span class="sep"> | </span>
-					<span class="credits-bottom"><?php printf( __( 'The %1$s theme by %2$s', 'aperture' ), '<a href="http://michaelvandenberg.com/portfolio/themes/aperture/" rel="theme">Aperture</a>', '<a href="http://michaelvandenberg.com/" rel="designer">MvdB</a>' ); ?></span>
+					<span class="credits-bottom"><?php printf( __( 'The %1$s theme by %2$s', 'hovercraft' ), '<a href="http://cuuats.org/" rel="theme">Hovercraft</a>', '<a href="http://cuuats.org/" rel="designer">CUUATS</a>' ); ?></span>
 				</div><!-- .credits -->
 
 				<div class="custom-text">

@@ -2,15 +2,15 @@
 /**
  * Template Name: Fullscreen Slider
  *
- * @package Aperture
+ * @package Hovercraft
  */
 
-$featured = aperture_get_featured_posts();
-$animation = get_theme_mod( 'aperture_slider_animation', 'slide' );
+$featured = hovercraft_get_featured_posts();
+$animation = get_theme_mod( 'hovercraft_slider_animation', 'slide' );
 
 get_header(); ?>
 
-	<?php if ( aperture_has_featured_posts( 2 ) ) : ?>
+	<?php if ( hovercraft_has_featured_posts( 2 ) ) : ?>
 
 		<div id="featured-content" class="flexslider multiple-featured-posts">
 			<ul class="featured-posts slides">
@@ -29,7 +29,7 @@ get_header(); ?>
 									<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 										<?php the_title( '<div class="slider-header"><h2 class="slider-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2></div>' ); ?>
 										<div class="slider-excerpt"><?php the_excerpt(); ?></div>
-										<div class="slider-link"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'aperture' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read more...</a></div>
+										<div class="slider-link"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'hovercraft' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read more...</a></div>
 									</div><!-- #post-## -->
 								</div><!-- .featured-hentry-wrap -->
 							</li>
@@ -41,7 +41,7 @@ get_header(); ?>
 			</ul><!-- .featured-posts -->
 		</div><!-- #featured-content -->
 
-	<?php elseif ( aperture_has_featured_posts( 1 ) ) : ?>
+	<?php elseif ( hovercraft_has_featured_posts( 1 ) ) : ?>
 
 		<div id="featured-content" class="flexslider single-featured-post">
 			<ul class="featured-posts slides">
@@ -60,7 +60,7 @@ get_header(); ?>
 									<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 										<?php the_title( '<div class="slider-header"><h2 class="slider-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2></div>' ); ?>
 										<div class="slider-excerpt"><?php the_excerpt(); ?></div>
-										<div class="slider-link"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'aperture' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read more...</a></div>
+										<div class="slider-link"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'hovercraft' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read more...</a></div>
 									</div><!-- #post-## -->
 								</div><!-- .featured-hentry-wrap -->
 							</li>

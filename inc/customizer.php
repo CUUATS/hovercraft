@@ -1,8 +1,8 @@
 <?php
 /**
- * Aperture Theme Customizer
+ * Hovercraft Theme Customizer
  *
- * @package Aperture
+ * @package Hovercraft
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function aperture_customize_register( $wp_customize ) {
+function hovercraft_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -19,170 +19,170 @@ function aperture_customize_register( $wp_customize ) {
 	//$wp_customize->remove_section('colors');
 
 	/* Font color. */
-	$wp_customize->add_setting('aperture_text_color', array(
+	$wp_customize->add_setting('hovercraft_text_color', array(
 		'default'			=> '#ffffff',
 		'sanitize_callback'	=> 'sanitize_hex_color',
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'text_color', array(
-		'label'				=> __('Text Color', 'aperture'),
+		'label'				=> __('Text Color', 'hovercraft'),
 		'section'			=> 'colors',
 		'priority'			=> 20,
-		'settings'			=> 'aperture_text_color',
+		'settings'			=> 'hovercraft_text_color',
 	)));
 
 	/* Link color. */
-	$wp_customize->add_setting('aperture_link_color', array(
+	$wp_customize->add_setting('hovercraft_link_color', array(
 		'default'			=> '#ff8b27',
 		'sanitize_callback'	=> 'sanitize_hex_color',
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'link_color', array(
-		'label'				=> __('Link Color', 'aperture'),
+		'label'				=> __('Link Color', 'hovercraft'),
 		'section'			=> 'colors',
 		'priority'			=> 30,
-		'settings'			=> 'aperture_link_color',
+		'settings'			=> 'hovercraft_link_color',
 	)));
 
 	/* Content background color. */
-	$wp_customize->add_setting('aperture_content_background_color', array(
+	$wp_customize->add_setting('hovercraft_content_background_color', array(
 		'default'			=> '#000000',
-		'sanitize_callback'	=> 'aperture_hex2rgba',
+		'sanitize_callback'	=> 'hovercraft_hex2rgba',
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content_background_color', array(
-		'label'				=> __('Content Background Color', 'aperture'),
+		'label'				=> __('Content Background Color', 'hovercraft'),
 		'section'			=> 'colors',
 		'priority'			=> 40,
-		'settings'			=> 'aperture_content_background_color',
+		'settings'			=> 'hovercraft_content_background_color',
 	)));
 
 	/* Theme options panel */
-	$wp_customize->add_panel( 'aperture_theme_options', array(
+	$wp_customize->add_panel( 'hovercraft_theme_options', array(
 		'priority'       => 900,
-		'title'          => __( 'Theme Options', 'aperture' ),
+		'title'          => __( 'Theme Options', 'hovercraft' ),
 		'description'    => 'This theme supports a number of options which you can set using this panel.',
 	) );
 
 	/* Theme options slider section */
-	$wp_customize->add_section( 'aperture_slider_options', array(
-		'title'    => __( 'Slider Options', 'aperture' ),
+	$wp_customize->add_section( 'hovercraft_slider_options', array(
+		'title'    => __( 'Slider Options', 'hovercraft' ),
 		'priority' => 10,
-		'panel'  => 'aperture_theme_options',
+		'panel'  => 'hovercraft_theme_options',
 		'description'    => 'To customize the appearance of the fullscreen slider choose any of the options below.',
 	) );
 
 	/* Theme options sidebar section */
-	$wp_customize->add_section( 'aperture_sidebar_options', array(
-		'title'    => __( 'Sidebar Options', 'aperture' ),
+	$wp_customize->add_section( 'hovercraft_sidebar_options', array(
+		'title'    => __( 'Sidebar Options', 'hovercraft' ),
 		'priority' => 20,
-		'panel'  => 'aperture_theme_options',
+		'panel'  => 'hovercraft_theme_options',
 		'description'    => 'Select whether the sidebar should be displayed at the right or left side of the content.',
 	) );
 
 	/* Theme options footer section */
-	$wp_customize->add_section( 'aperture_footer_options', array(
-		'title'    => __( 'Footer Options', 'aperture' ),
+	$wp_customize->add_section( 'hovercraft_footer_options', array(
+		'title'    => __( 'Footer Options', 'hovercraft' ),
 		'priority' => 30,
-		'panel'  => 'aperture_theme_options',
+		'panel'  => 'hovercraft_theme_options',
 		'description'    => 'Add some custom text to the bottom right of the footer area.',
 	) );
 
 	/* Slider animation. */
-	$wp_customize->add_setting( 'aperture_slider_animation', array(
+	$wp_customize->add_setting( 'hovercraft_slider_animation', array(
 		'default'           => 'slide',
-		'sanitize_callback' => 'aperture_sanitize_slider_animation',
+		'sanitize_callback' => 'hovercraft_sanitize_slider_animation',
 	) );
-	$wp_customize->add_control( 'aperture_slider_animation', array(
-		'label'             => __( 'Animation: ', 'aperture' ),
-		'section'           => 'aperture_slider_options',
+	$wp_customize->add_control( 'hovercraft_slider_animation', array(
+		'label'             => __( 'Animation: ', 'hovercraft' ),
+		'section'           => 'hovercraft_slider_options',
 		'priority'          => 1,
 		'type'              => 'radio',
 		'choices'           => array(
-			'slide'			=> __( 'Slide', 'aperture' ),
-			'fade'			=> __( 'Fade', 'aperture' ),
+			'slide'			=> __( 'Slide', 'hovercraft' ),
+			'fade'			=> __( 'Fade', 'hovercraft' ),
 		),
 	) );
 
 	/* Slider direction. */
-	$wp_customize->add_setting( 'aperture_slider_direction', array(
+	$wp_customize->add_setting( 'hovercraft_slider_direction', array(
 		'default'           => 'horizontal',
-		'sanitize_callback' => 'aperture_sanitize_slider_direction',
+		'sanitize_callback' => 'hovercraft_sanitize_slider_direction',
 	) );
-	$wp_customize->add_control( 'aperture_slider_direction', array(
-		'label'             => __( '(Slide) Direction: ', 'aperture' ),
-		'section'           => 'aperture_slider_options',
+	$wp_customize->add_control( 'hovercraft_slider_direction', array(
+		'label'             => __( '(Slide) Direction: ', 'hovercraft' ),
+		'section'           => 'hovercraft_slider_options',
 		'priority'          => 2,
 		'type'              => 'radio',
 		'choices'           => array(
-			'horizontal'	=> __( 'Horizontal', 'aperture' ),
-			'vertical'		=> __( 'Vertical', 'aperture' ),
+			'horizontal'	=> __( 'Horizontal', 'hovercraft' ),
+			'vertical'		=> __( 'Vertical', 'hovercraft' ),
 		),
 	) );
 
 	/* Slider slideshow. */
-	$wp_customize->add_setting( 'aperture_slider_slideshow', array(
+	$wp_customize->add_setting( 'hovercraft_slider_slideshow', array(
 		'default'           => 'horizontal',
-		'sanitize_callback' => 'aperture_sanitize_slider_slideshow',
+		'sanitize_callback' => 'hovercraft_sanitize_slider_slideshow',
 	) );
-	$wp_customize->add_control( 'aperture_slider_slideshow', array(
-		'label'             => __( 'Slideshow: ', 'aperture' ),
-		'section'           => 'aperture_slider_options',
+	$wp_customize->add_control( 'hovercraft_slider_slideshow', array(
+		'label'             => __( 'Slideshow: ', 'hovercraft' ),
+		'section'           => 'hovercraft_slider_options',
 		'priority'          => 3,
 		'type'              => 'radio',
 		'choices'           => array(
-			'true'			=> __( 'True', 'aperture' ),
-			'false'			=> __( 'False', 'aperture' ),
+			'true'			=> __( 'True', 'hovercraft' ),
+			'false'			=> __( 'False', 'hovercraft' ),
 		),
 	) );
 
 	/* Slider slideshow speed. */
-	$wp_customize->add_setting( 'aperture_slider_speed', array(
+	$wp_customize->add_setting( 'hovercraft_slider_speed', array(
 		'default'           => 'horizontal',
-		'sanitize_callback' => 'aperture_sanitize_slider_speed',
+		'sanitize_callback' => 'hovercraft_sanitize_slider_speed',
 	) );
-	$wp_customize->add_control( 'aperture_slider_speed', array(
-		'label'             => __( 'Speed: ', 'aperture' ),
-		'section'           => 'aperture_slider_options',
+	$wp_customize->add_control( 'hovercraft_slider_speed', array(
+		'label'             => __( 'Speed: ', 'hovercraft' ),
+		'section'           => 'hovercraft_slider_options',
 		'priority'          => 4,
 		'type'              => 'radio',
 		'choices'           => array(
-			'20000'			=> __( 'Slowest', 'aperture' ),
-			'14000'			=> __( 'Slower', 'aperture' ),
-			'10000'			=> __( 'Slow', 'aperture' ),
-			'7000'			=> __( 'Default', 'aperture' ),
-			'5000'			=> __( 'Fast', 'aperture' ),
-			'3500'			=> __( 'Faster', 'aperture' ),
-			'2500'			=> __( 'Fastest', 'aperture' ),
+			'20000'			=> __( 'Slowest', 'hovercraft' ),
+			'14000'			=> __( 'Slower', 'hovercraft' ),
+			'10000'			=> __( 'Slow', 'hovercraft' ),
+			'7000'			=> __( 'Default', 'hovercraft' ),
+			'5000'			=> __( 'Fast', 'hovercraft' ),
+			'3500'			=> __( 'Faster', 'hovercraft' ),
+			'2500'			=> __( 'Fastest', 'hovercraft' ),
 		),
 	) );
 
 	/* Left sidebar or right sidebar */
-	$wp_customize->add_setting( 'aperture_sidebar', array(
+	$wp_customize->add_setting( 'hovercraft_sidebar', array(
 		'default'           => 'right-sidebar',
-		'sanitize_callback' => 'aperture_sanitize_sidebar',
+		'sanitize_callback' => 'hovercraft_sanitize_sidebar',
 	) );
-	$wp_customize->add_control( 'aperture_sidebar', array(
-		'label'             => __( 'Sidebar: ', 'aperture' ),
-		'section'           => 'aperture_sidebar_options',
+	$wp_customize->add_control( 'hovercraft_sidebar', array(
+		'label'             => __( 'Sidebar: ', 'hovercraft' ),
+		'section'           => 'hovercraft_sidebar_options',
 		'priority'          => 1,
 		'type'              => 'radio',
 		'choices'           => array(
-			'right-sidebar'	=> __( 'Right sidebar', 'aperture' ),
-			'left-sidebar'	=> __( 'Left sidebar', 'aperture' ),
+			'right-sidebar'	=> __( 'Right sidebar', 'hovercraft' ),
+			'left-sidebar'	=> __( 'Left sidebar', 'hovercraft' ),
 		),
 	) );
 
 	/* Footer custom text */
-	$wp_customize->add_setting( 'aperture_footer_text', array(
+	$wp_customize->add_setting( 'hovercraft_footer_text', array(
 		'default'			=> 'Some custom text here!',
-		'sanitize_callback' => 'aperture_sanitize_footer_text',
+		'sanitize_callback' => 'hovercraft_sanitize_footer_text',
 	) );
 
-	$wp_customize->add_control( 'aperture_footer_text', array(
+	$wp_customize->add_control( 'hovercraft_footer_text', array(
 		'label'   			=> 'Custom Footer Text: ',
-		'section' 			=> 'aperture_footer_options',
+		'section' 			=> 'hovercraft_footer_options',
 		'type'    			=> 'text',
 	) );
 }
-add_action( 'customize_register', 'aperture_customize_register' );
+add_action( 'customize_register', 'hovercraft_customize_register' );
 
 /**
  * Sanitize and convert hex to rgba..
@@ -190,7 +190,7 @@ add_action( 'customize_register', 'aperture_customize_register' );
  * @param string $color.
  * @return string.
  */
-function aperture_hex2rgba( $color ) {
+function hovercraft_hex2rgba( $color ) {
 	if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
 		
 		$hex = str_replace("#", "", $color);
@@ -221,7 +221,7 @@ function aperture_hex2rgba( $color ) {
  * @param string $input.
  * @return string (slide|fade).
  */
-function aperture_sanitize_slider_animation( $input ) {
+function hovercraft_sanitize_slider_animation( $input ) {
 	if ( ! in_array( $input, array( 'slide', 'fade' ) ) ) {
 		$input = 'slide';
 	}
@@ -234,7 +234,7 @@ function aperture_sanitize_slider_animation( $input ) {
  * @param string $input.
  * @return string (horizontal|vertical).
  */
-function aperture_sanitize_slider_direction( $input ) {
+function hovercraft_sanitize_slider_direction( $input ) {
 	if ( ! in_array( $input, array( 'horizontal', 'vertical' ) ) ) {
 		$input = 'horizontal';
 	}
@@ -247,7 +247,7 @@ function aperture_sanitize_slider_direction( $input ) {
  * @param string $input.
  * @return string (true|false).
  */
-function aperture_sanitize_slider_slideshow( $input ) {
+function hovercraft_sanitize_slider_slideshow( $input ) {
 	if ( ! in_array( $input, array( 'true', 'false' ) ) ) {
 		$input = 'true';
 	}
@@ -260,7 +260,7 @@ function aperture_sanitize_slider_slideshow( $input ) {
  * @param string $input.
  * @return string (2500|3500|5000|7000|10000|14000|20000).
  */
-function aperture_sanitize_slider_speed( $input ) {
+function hovercraft_sanitize_slider_speed( $input ) {
 	if ( ! in_array( $input, array( '2500', '3500', '5000', '7000', '10000', '14000', '20000' ) ) ) {
 		$input = '7000';
 	}
@@ -273,7 +273,7 @@ function aperture_sanitize_slider_speed( $input ) {
  * @param string $input.
  * @return string (left-sidebar|right-sidebar).
  */
-function aperture_sanitize_sidebar( $input ) {
+function hovercraft_sanitize_sidebar( $input ) {
 	if ( ! in_array( $input, array( 'left-sidebar', 'right-sidebar' ) ) ) {
 		$input = 'right-sidebar';
 	}
@@ -286,7 +286,7 @@ function aperture_sanitize_sidebar( $input ) {
  * @param string $text.
  * @return string.
  */
-function aperture_sanitize_footer_text( $text ) {
+function hovercraft_sanitize_footer_text( $text ) {
 	if ( empty( $text ) ) {
 		$text = 'Some custom text here!';
 	}
@@ -300,11 +300,11 @@ function aperture_sanitize_footer_text( $text ) {
  *
  * @see wp_add_inline_style()
  */
-function aperture_custom_colors() {
+function hovercraft_custom_colors() {
 	$css 				= '';
-	$text_color 		= get_theme_mod( 'aperture_text_color', '#ffffff' );
-	$link_color 		= get_theme_mod( 'aperture_link_color', '#ff8b27' );
-	$background_color 	= get_theme_mod( 'aperture_content_background_color', '#000000' );
+	$text_color 		= get_theme_mod( 'hovercraft_text_color', '#ffffff' );
+	$link_color 		= get_theme_mod( 'hovercraft_link_color', '#ff8b27' );
+	$background_color 	= get_theme_mod( 'hovercraft_content_background_color', '#000000' );
 
 	if ( ! empty( $text_color ) && '#ffffff' !== $text_color ) {
 
@@ -358,14 +358,14 @@ function aperture_custom_colors() {
 		';
 	}
 
-	wp_add_inline_style( 'aperture-style', $css );
+	wp_add_inline_style( 'hovercraft-style', $css );
 }
-add_action( 'wp_enqueue_scripts', 'aperture_custom_colors' );
+add_action( 'wp_enqueue_scripts', 'hovercraft_custom_colors' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function aperture_customize_preview_js() {
-	wp_enqueue_script( 'aperture_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+function hovercraft_customize_preview_js() {
+	wp_enqueue_script( 'hovercraft_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action( 'customize_preview_init', 'aperture_customize_preview_js' );
+add_action( 'customize_preview_init', 'hovercraft_customize_preview_js' );

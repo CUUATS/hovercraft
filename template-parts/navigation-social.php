@@ -4,7 +4,7 @@
  *
  * Displays the social menu items.
  *
- * @package Aperture
+ * @package Hovercraft
  */
 
 wp_nav_menu( 

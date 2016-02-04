@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package Aperture
+ * @package Hovercraft
  */
 
 get_header(); ?>

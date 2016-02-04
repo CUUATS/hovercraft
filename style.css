@@ -1,19 +1,22 @@
 /*!
-Theme Name: Aperture
-Theme URI: http://michaelvandenberg.com/portfolio/aperture/
-Author: Michael Van Den Berg
-Author URI: http://michaelvandenberg.com/
-Description: Aperture is a simple, responsive theme with a fullscreen slider.
-Version: 1.1.7
+Theme Name: Hovercraft
+Theme URI: http://cuuats.org/
+Author: Champaign Urbana Urbanized Area Transportation Study
+Author URI: http://cuuats.org/
+Description: Hovercraft is a simple, responsive theme with a fullscreen slider.
+Version: 0.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: aperture
+Text Domain: hovercraft
 Tags: black, orange, one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, photoblogging
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Aperture is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Hovercraft is based on Aperture https://michaelvandenberg.com/, Copyright (C) 2015 Michael Van Den Berg.
+Aperture is distributed under the terms of the GNU GPL v2 or later.
+
+Aperture is based on Underscores http://underscores.me/, Copyright (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -1414,7 +1417,7 @@ a:hover, a:active {
 }
 .social-menu-container ul.menu li.menu-item a[href*="wordpress.org"]::before,
 .social-menu-container ul.menu li.menu-item a[href*="wordpress.com"]::before,
-.social-menu-container ul.menu li.menu-item a[href*="michaelvandenberg.com"]::before {
+.social-menu-container ul.menu li.menu-item a[href*="cuuats.org"]::before {
   content: '\f205';
 }
 .social-menu-container ul.menu li.menu-item a[href*="facebook.com"]::before {

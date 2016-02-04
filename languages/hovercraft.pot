@@ -1,9 +1,9 @@
-# Aperture WordPress Theme, Copyright 2015 Michael Van Den Berg.
+# Hovercraft WordPress Theme, Copyright 2016 Champaign Urbana Urbanized Area Transportation Study.
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Aperture\n"
+"Project-Id-Version: Hovercraft\n"
 "POT-Creation-Date: 2015-10-27 20:32+0100\n"
 "PO-Revision-Date: 2015-10-27 20:30+0100\n"
 "Last-Translator: \n"
@@ -401,12 +401,12 @@ msgid "Search for:"
 msgstr ""
 
 #: searchform.php:14
-msgctxt "aperture"
+msgctxt "hovercraft"
 msgid "Search..."
 msgstr ""
 
 #: searchform.php:14
-msgctxt "aperture"
+msgctxt "hovercraft"
 msgid "Search for:"
 msgstr ""
 
@@ -472,21 +472,21 @@ msgid "Permalink to %s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Aperture"
+msgid "Hovercraft"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://michaelvandenberg.com/portfolio/themes/aperture/"
+msgid "http://cuuats.org/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Aperture is a simple, responsive theme with a fullscreen slider."
+msgid "Hovercraft is an accessible Wordpress theme for the Champaign Urbana Urbanized Area Transportation Study."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Michael Van Den Berg"
+msgid "Champaign Urbana Urbanized Area Transportation Study"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://michaelvandenberg.com/"
+msgid "http://cuuats.org/"
 msgstr ""

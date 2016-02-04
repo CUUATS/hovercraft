@@ -4,7 +4,7 @@
  *
  * Displays both the mobile and desktop navigation menu.
  *
- * @package Aperture
+ * @package Hovercraft
  */
 
 wp_nav_menu( 
