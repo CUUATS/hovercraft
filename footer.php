@@ -6,7 +6,6 @@
  *
  * @package Hovercraft
  */
-$customtext = get_theme_mod( 'hovercraft_footer_text', 'Some custom text here!' );
 ?>
 
 	</div><!-- #content -->
@@ -30,10 +29,6 @@ $customtext = get_theme_mod( 'hovercraft_footer_text', 'Some custom text here!' 
 					<span class="sep"> | </span>
 					<span class="credits-bottom"><?php printf( __( 'The %1$s theme by %2$s', 'hovercraft' ), '<a href="http://cuuats.org/" rel="theme">Hovercraft</a>', '<a href="http://cuuats.org/" rel="designer">CUUATS</a>' ); ?></span>
 				</div><!-- .credits -->
-
-				<div class="custom-text">
-					<span><?php echo sanitize_text_field( $customtext ) ?></span>
-				</div><!-- .custom-text -->
 			</div><!-- .site-info -->
 
 		</div><!-- .container -->

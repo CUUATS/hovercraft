@@ -98,14 +98,6 @@ function hovercraft_customize_register( $wp_customize ) {
 		'description'    => 'Select whether the sidebar should be displayed at the right or left side of the content.',
 	) );
 
-	/* Theme options footer section */
-	$wp_customize->add_section( 'hovercraft_footer_options', array(
-		'title'    => __( 'Footer Options', 'hovercraft' ),
-		'priority' => 30,
-		'panel'  => 'hovercraft_theme_options',
-		'description'    => 'Add some custom text to the bottom right of the footer area.',
-	) );
-
 	/* Slider animation. */
 	$wp_customize->add_setting( 'hovercraft_slider_animation', array(
 		'default'           => 'slide',
@@ -191,17 +183,6 @@ function hovercraft_customize_register( $wp_customize ) {
 		),
 	) );
 
-	/* Footer custom text */
-	$wp_customize->add_setting( 'hovercraft_footer_text', array(
-		'default'			=> 'Some custom text here!',
-		'sanitize_callback' => 'hovercraft_sanitize_footer_text',
-	) );
-
-	$wp_customize->add_control( 'hovercraft_footer_text', array(
-		'label'   			=> 'Custom Footer Text: ',
-		'section' 			=> 'hovercraft_footer_options',
-		'type'    			=> 'text',
-	) );
 }
 add_action( 'customize_register', 'hovercraft_customize_register' );
 
@@ -283,21 +264,6 @@ function hovercraft_sanitize_sidebar( $input ) {
 		$input = 'right-sidebar';
 	}
 	return $input;
-}
-
-/**
- * Sanitize footer text.
- *
- * @param string $text.
- * @return string.
- */
-function hovercraft_sanitize_footer_text( $text ) {
-	if ( empty( $text ) ) {
-		$text = 'Some custom text here!';
-	}
-	wp_filter_post_kses( $text );
-
-	return $text;
 }
 
 /**
