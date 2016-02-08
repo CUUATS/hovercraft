@@ -54,6 +54,18 @@ function hovercraft_customize_register( $wp_customize ) {
 		'settings'			=> 'hovercraft_content_background_color',
 	)));
 
+	/* Content background color. */
+	$wp_customize->add_setting('hovercraft_sidebar_background_color', array(
+		'default'			=> '#eeeeee',
+		'sanitize_callback'	=> 'hovercraft_hex2rgba',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'sidebar_background_color', array(
+		'label'				=> __('Sidebar Background Color', 'hovercraft'),
+		'section'			=> 'colors',
+		'priority'			=> 50,
+		'settings'			=> 'hovercraft_sidebar_background_color',
+	)));
+
 	/* Theme options panel */
 	$wp_customize->add_panel( 'hovercraft_theme_options', array(
 		'priority'       => 900,
@@ -201,24 +213,8 @@ add_action( 'customize_register', 'hovercraft_customize_register' );
  */
 function hovercraft_hex2rgba( $color ) {
 	if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
-
-		$hex = str_replace("#", "", $color);
-
-		if (strlen( $hex ) == 3) {
-			$r = hexdec(substr($hex,0,1).substr($hex,0,1));
-			$g = hexdec(substr($hex,1,1).substr($hex,1,1));
-			$b = hexdec(substr($hex,2,1).substr($hex,2,1));
-		} else {
-			$r = hexdec(substr($hex,0,2));
-			$g = hexdec(substr($hex,2,2));
-			$b = hexdec(substr($hex,4,2));
-		}
-
-		$color = "rgba({$r}, {$g}, {$b}, 0.75)";
-
 		return $color;
 	}
-
 	else {
 		return '';
 	}
@@ -314,8 +310,9 @@ function hovercraft_custom_colors() {
 	$text_color 		= get_theme_mod( 'hovercraft_text_color', '#000000' );
 	$link_color 		= get_theme_mod( 'hovercraft_link_color', '#00554e' );
 	$background_color 	= get_theme_mod( 'hovercraft_content_background_color', '#ffffff' );
+	$sidebar_color 	= get_theme_mod( 'hovercraft_sidebar_background_color', '#eeeeee' );
 
-	if ( ! empty( $text_color ) && '#ffffff' !== $text_color ) {
+	if ( ! empty( $text_color ) && '#000000' !== $text_color ) {
 
 		$css .= '
 			body, button, input, select, textarea { color: ' . $text_color . '; }
@@ -329,7 +326,7 @@ function hovercraft_custom_colors() {
 		';
 	}
 
-	if ( ! empty( $link_color ) && '#ff8b27' !== $link_color ) {
+	if ( ! empty( $link_color ) && '#00554e' !== $link_color ) {
 
 		$css .= '
 			#primary-navigation li.menu-item a:hover,
@@ -360,10 +357,17 @@ function hovercraft_custom_colors() {
 		';
 	}
 
-	if ( ! empty( $background_color ) && 'rgba(0, 0, 0, 0.75)' !== $background_color ) {
+	if ( ! empty( $background_color ) && '#ffffff' !== $background_color ) {
 
 		$css .= '
-			#masthead, #colophon, #main, #secondary .widget, .back-to-top { background: ' . $background_color . '; }
+			#masthead, #colophon, #primary, .back-to-top { background: ' . $background_color . '; }
+		';
+	}
+
+	if ( ! empty( $sidebar_color ) && '#eeeeee' !== $background_color ) {
+
+		$css .= '
+			#secondary: ' . $sidebar_color . '; }
 		';
 	}
 

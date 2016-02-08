@@ -13,7 +13,6 @@
 }
 #primary,
 #secondary {
-	max-width: 720px;
 	margin: 0 auto;
 }
 #secondary,
@@ -36,20 +35,15 @@
 	}
 	#secondary {
 		width: 33.333%;
-		max-width: 360px;
 		margin-top: 0;
 	}
 	/* Sidebar is active and/or right sidebar is selected. */
 	.right-sidebar {
 		#primary {
 			margin: 0;
-			margin-right: 28px;
-			margin-right: 1.75em;
 		}
 		#secondary {
 			margin: 0;
-			margin-left: 28px;
-			margin-left: 1.75em;
 		}
 	}
 
@@ -58,14 +52,10 @@
 		#primary {
 			order: 2;
 			margin: 0;
-			margin-left: 28px;
-			margin-left: 1.75em;
 		}
 		#secondary {
 			order: 1;
 			margin: 0;
-			margin-right: 28px;
-			margin-right: 1.75em;
 		}
 	}
 }

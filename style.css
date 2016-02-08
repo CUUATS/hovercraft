@@ -279,7 +279,7 @@ button,
 input,
 select,
 textarea {
-  color: white;
+  color: #000000;
   font-family: "Droid Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -578,7 +578,7 @@ input[type="submit"] {
   border: 2px solid;
   border-color: white;
   background: transparent;
-  color: white;
+  color: #000000;
   font-size: 16px;
   font-size: 1rem;
   font-weight: bold;
@@ -592,7 +592,7 @@ input[type="reset"]:hover,
 input[type="submit"]:hover {
   color: #ff8b27;
   border-color: #ff8b27;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: #ffffff;
 }
 button:active, button:focus,
 input[type="button"]:active,
@@ -603,7 +603,7 @@ input[type="submit"]:active,
 input[type="submit"]:focus {
   color: #ff8b27;
   border-color: #ff8b27;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: #ffffff;
 }
 
 input[type="text"],
@@ -662,8 +662,7 @@ textarea {
 /* Box shadow. */
 #masthead,
 #colophon,
-#main,
-#secondary,
+#content,
 #masthead .sub-menu,
 .slider-header h2 a,
 .slider-excerpt p,
@@ -706,7 +705,6 @@ textarea {
 
 #primary,
 #secondary {
-  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -732,34 +730,25 @@ textarea {
 
   #secondary {
     width: 33.333%;
-    max-width: 360px;
     margin-top: 0;
   }
 
   /* Sidebar is active and/or right sidebar is selected. */
   .right-sidebar #primary {
     margin: 0;
-    margin-right: 28px;
-    margin-right: 1.75em;
   }
   .right-sidebar #secondary {
     margin: 0;
-    margin-left: 28px;
-    margin-left: 1.75em;
   }
 
   /* Sidebar is active and/or left sidebar is selected. */
   .left-sidebar #primary {
     order: 2;
     margin: 0;
-    margin-left: 28px;
-    margin-left: 1.75em;
   }
   .left-sidebar #secondary {
     order: 1;
     margin: 0;
-    margin-right: 28px;
-    margin-right: 1.75em;
   }
 }
 /*--------------------------------------------------------------
@@ -773,7 +762,7 @@ textarea {
 
 /* Header. */
 #masthead {
-  background: rgba(0, 0, 0, 0.75);
+  background: #ffffff;
   display: flex;
   justify-content: space-between;
   min-height: 56px;
@@ -798,7 +787,7 @@ h1.site-title {
 }
 
 h1.site-title a {
-  color: white;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -820,19 +809,11 @@ p.site-description {
 }
 
 #primary {
-  background: transparent;
+  background: #ffffff;
 }
 
 #secondary {
-  background: transparent;
-}
-
-#main {
-  background: rgba(0, 0, 0, 0.75);
-}
-
-#secondary .widget {
-  background: rgba(0, 0, 0, 0.75);
+  background: #eeeeee;
 }
 
 /* Full width page template & portfolio template. */
@@ -852,7 +833,7 @@ p.site-description {
 ## Footer
 --------------------------------------------------------------*/
 #colophon {
-  background: rgba(0, 0, 0, 0.75);
+  background: #ffffff;
 }
 
 .container {
@@ -991,13 +972,13 @@ p.site-description {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: white;
+  color: #000000;
   font-weight: bold;
   text-decoration: none;
   transition: all 0.125s ease-in-out;
 }
 a:visited {
-  color: white;
+  color: #000000;
 }
 a:hover, a:focus, a:active {
   color: #ff8b27;
@@ -1024,7 +1005,7 @@ a:hover, a:active {
   text-transform: uppercase;
 }
 .main-navigation a {
-  color: white;
+  color: #000000;
   text-decoration: none;
   font-size: 0.8125em;
 }
@@ -1118,7 +1099,7 @@ a:hover, a:active {
   text-transform: uppercase;
   border-top: 2px solid white;
   border-bottom: 2px solid white;
-  color: white;
+  color: #000000;
 }
 #mobile-navigation ul.sub-menu {
   margin: 0 0 0 5%;
@@ -1134,7 +1115,7 @@ a:hover, a:active {
 }
 #mobile-navigation li.menu-item a:hover, #mobile-navigation li.menu-item a:focus {
   color: #202020;
-  background: white;
+  background: #000000;
 }
 
 /* Desktop menus. */
@@ -1161,7 +1142,7 @@ a:hover, a:active {
 #secondary-navigation li.menu-item a:focus {
   opacity: 1;
   border-bottom-width: 2px;
-  color: white;
+  color: #000000;
   border-color: #ff8b27;
 }
 #primary-navigation li.menu-item.menu-item-has-children a,
@@ -1179,7 +1160,7 @@ a:hover, a:active {
   z-index: 9999;
   overflow: hidden;
   margin-left: -0.4em;
-  background: rgba(0, 0, 0, 0.75);
+  background: #ffffff;
   transform: translate(0, -15%) scale(0.75);
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
@@ -1273,7 +1254,7 @@ a:hover, a:active {
   margin: 0 4px;
   margin: 0 0.25em;
   opacity: 0.25;
-  color: white;
+  color: #000000;
 }
 
 #bottom-social {
@@ -1300,7 +1281,7 @@ a:hover, a:active {
   height: 1.125rem;
   width: 18px;
   width: 1.125rem;
-  color: white;
+  color: #000000;
   line-height: 18px;
   line-height: 1.125rem;
   font-family: 'Genericons';
@@ -1640,7 +1621,7 @@ html[xmlns] .flexslider .slides {
   overflow: hidden;
   opacity: 0;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -1653,7 +1634,7 @@ html[xmlns] .flexslider .slides {
   font-size: 40px;
   display: inline-block;
   content: '\f430';
-  color: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
 }
 
 .flex-direction-nav a.flex-next:before {
@@ -1714,7 +1695,7 @@ ul.slides {
 .slider-header h2 a,
 .slider-excerpt p,
 .slider-link a {
-  background: rgba(0, 0, 0, 0.75);
+  background: #ffffff;
 }
 
 .slider-header h2 a {
@@ -1763,7 +1744,7 @@ ul.slides {
 }
 #no-featured-content .no-results {
   padding: 2em 6%;
-  background: rgba(0, 0, 0, 0.75);
+  background: #ffffff;
 }
 
 @media screen and (min-width: 50rem) {
@@ -1850,7 +1831,7 @@ ul.slides {
 .widget .widget-title {
   position: relative;
   margin: 0;
-  color: white;
+  color: #000000;
 }
 .widget ul {
   margin: 0;
@@ -2375,13 +2356,13 @@ body {
 
 /* Add some styling to the infinite footer. */
 #infinite-footer .container {
-  color: white;
-  background: rgba(0, 0, 0, 0.75);
+  color: #000000;
+  background: #ffffff;
 }
 #infinite-footer .blog-info a,
 #infinite-footer .blog-credits a {
   transition: all 0.25s ease-in-out;
-  color: white;
+  color: #000000;
 }
 #infinite-footer .blog-info a:hover,
 #infinite-footer .blog-credits a:hover {
@@ -2418,7 +2399,7 @@ body.admin-bar #page {
   visibility: hidden;
   text-decoration: none;
   transition: all 0.25s ease-in-out;
-  background: rgba(0, 0, 0, 0.75);
+  background: #ffffff;
 }
 .back-to-top span {
   color: white;
