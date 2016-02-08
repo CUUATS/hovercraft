@@ -20,7 +20,7 @@ function hovercraft_customize_register( $wp_customize ) {
 
 	/* Font color. */
 	$wp_customize->add_setting('hovercraft_text_color', array(
-		'default'			=> '#ffffff',
+		'default'			=> '#000000',
 		'sanitize_callback'	=> 'sanitize_hex_color',
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'text_color', array(
@@ -32,7 +32,7 @@ function hovercraft_customize_register( $wp_customize ) {
 
 	/* Link color. */
 	$wp_customize->add_setting('hovercraft_link_color', array(
-		'default'			=> '#ff8b27',
+		'default'			=> '#00554e',
 		'sanitize_callback'	=> 'sanitize_hex_color',
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'link_color', array(
@@ -44,7 +44,7 @@ function hovercraft_customize_register( $wp_customize ) {
 
 	/* Content background color. */
 	$wp_customize->add_setting('hovercraft_content_background_color', array(
-		'default'			=> '#000000',
+		'default'			=> '#ffffff',
 		'sanitize_callback'	=> 'hovercraft_hex2rgba',
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content_background_color', array(
@@ -311,9 +311,9 @@ function hovercraft_sanitize_footer_text( $text ) {
  */
 function hovercraft_custom_colors() {
 	$css 				= '';
-	$text_color 		= get_theme_mod( 'hovercraft_text_color', '#ffffff' );
-	$link_color 		= get_theme_mod( 'hovercraft_link_color', '#ff8b27' );
-	$background_color 	= get_theme_mod( 'hovercraft_content_background_color', '#000000' );
+	$text_color 		= get_theme_mod( 'hovercraft_text_color', '#000000' );
+	$link_color 		= get_theme_mod( 'hovercraft_link_color', '#00554e' );
+	$background_color 	= get_theme_mod( 'hovercraft_content_background_color', '#ffffff' );
 
 	if ( ! empty( $text_color ) && '#ffffff' !== $text_color ) {
 
