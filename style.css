@@ -420,7 +420,7 @@ blockquote {
   margin: 0 0 1.5em 0;
   padding: 0.75em 1.5em;
   background: rgba(255, 255, 255, 0.1);
-  border-left: 4px solid #ff8b27;
+  border-left: 4px solid #00554e;
   border-radius: 0 4px 4px 0;
 }
 blockquote:before, blockquote:after {
@@ -590,8 +590,8 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  color: #ff8b27;
-  border-color: #ff8b27;
+  color: #00554e;
+  border-color: #00554e;
   background-color: #ffffff;
 }
 button:active, button:focus,
@@ -601,8 +601,8 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  color: #ff8b27;
-  border-color: #ff8b27;
+  color: #00554e;
+  border-color: #00554e;
   background-color: #ffffff;
 }
 
@@ -981,7 +981,7 @@ a:visited {
   color: #000000;
 }
 a:hover, a:focus, a:active {
-  color: #ff8b27;
+  color: #00554e;
 }
 a:focus {
   outline: thin dotted;
@@ -1143,7 +1143,7 @@ a:hover, a:active {
   opacity: 1;
   border-bottom-width: 2px;
   color: #000000;
-  border-color: #ff8b27;
+  border-color: #00554e;
 }
 #primary-navigation li.menu-item.menu-item-has-children a,
 #secondary-navigation li.menu-item.menu-item-has-children a {
@@ -1184,7 +1184,7 @@ a:hover, a:active {
 #primary-navigation ul.sub-menu li.menu-item a:hover, #primary-navigation ul.sub-menu li.menu-item a:focus,
 #secondary-navigation ul.sub-menu li.menu-item a:hover,
 #secondary-navigation ul.sub-menu li.menu-item a:focus {
-  border-bottom: 2px solid #ff8b27;
+  border-bottom: 2px solid #00554e;
 }
 #primary-navigation li.menu-item:hover > ul.sub-menu,
 #primary-navigation li.focus > ul.sub-menu,
@@ -1295,7 +1295,7 @@ a:hover, a:active {
   -webkit-font-smoothing: antialiased;
 }
 .social-menu-container ul.menu li.menu-item a:hover::before {
-  color: #ff8b27;
+  color: #00554e;
   opacity: 1;
   transform: rotate(360deg);
 }
@@ -1442,7 +1442,7 @@ a:hover, a:active {
 }
 .search-form .search-submit:hover {
   cursor: pointer;
-  color: #ff8b27;
+  color: #00554e;
 }
 
 /* Desktop search. */
@@ -1475,7 +1475,7 @@ a:hover, a:active {
   transition: color 0.125s ease-in-out;
 }
 #desktop-search .search-form .search-submit:hover {
-  color: #ff8b27;
+  color: #00554e;
 }
 #desktop-search .search-form .search-submit .genericon-search {
   font-size: 32px;
@@ -1861,7 +1861,7 @@ ul.slides {
   vertical-align: middle;
   margin-right: 8px;
   margin-right: 0.5rem;
-  color: #ff8b27;
+  color: #00554e;
 }
 .widget.widget_recent_comments li::before {
   content: '\f300';
@@ -2366,7 +2366,7 @@ body {
 }
 #infinite-footer .blog-info a:hover,
 #infinite-footer .blog-credits a:hover {
-  color: #ff8b27;
+  color: #00554e;
 }
 
 /* Selection style. */
