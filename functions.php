@@ -104,7 +104,7 @@ add_action( 'template_redirect', 'hovercraft_full_width_page_content_width' );
  */
 function hovercraft_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Right Sidebar', 'hovercraft' ),
+		'name'          => esc_html__( 'Sidebar', 'hovercraft' ),
 		'id'            => 'sidebar-1',
 		'description'   => 'This is the sidebar next to the content area.',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -113,7 +113,7 @@ function hovercraft_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Bottom Sidebar', 'hovercraft' ),
+		'name'          => esc_html__( 'Footer', 'hovercraft' ),
 		'id'            => 'sidebar-2',
 		'description'   => 'This is the sidebar in the footer area.',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
