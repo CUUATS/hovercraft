@@ -40,7 +40,17 @@ get_header(); ?>
 				?>
 			</ul><!-- .featured-posts -->
 		</div><!-- #featured-content -->
-
+		<script type="text/javascript">
+			(function($) {
+				$('.flexslider').flexslider({
+					animation: <?php echo get_theme_mod( 'hovercraft_slider_animation' ); ?>,
+					direction: <?php echo get_theme_mod( 'hovercraft_slider_direction' ); ?>,
+					slideshow: (<?php echo get_theme_mod( 'hovercraft_slider_slideshow' ); ?> === "true"),
+					slideshowSpeed: parseInt(<?php echo get_theme_mod( 'hovercraft_slider_speed' ); ?>),
+					controlNav: false,
+				});
+			)(jQuery);
+		</script>
 	<?php elseif ( hovercraft_has_featured_posts( 1 ) ) : ?>
 
 		<div id="featured-content" class="flexslider single-featured-post">

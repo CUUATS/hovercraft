@@ -91,7 +91,7 @@ add_action( 'after_setup_theme', 'hovercraft_content_width', 0 );
  * @since Hovercraft 1.1.1
  */
 function hovercraft_full_width_page_content_width() {
-	if ( is_page_template( 'template-parts/page-full-width.php' ) ) {	
+	if ( is_page_template( 'template-parts/page-full-width.php' ) ) {
 		$GLOBALS['content_width'] = apply_filters( 'hovercraft_full_width_page_content_width', 1010 );
 	}
 }
@@ -191,16 +191,6 @@ function hovercraft_scripts() {
 	// Only load the Flexslider script file on slider pages and when there are more than two featured posts.
 	if ( is_page_template( 'template-parts/page-slider.php' ) && hovercraft_has_featured_posts( 2 ) ) {
 		wp_enqueue_script( 'hovercraft-slider-script', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array( 'jquery' ) );
-	}
-
-	// Pass data from the customizer to the theme script file on slider pages.
-	if ( is_page_template( 'template-parts/page-slider.php' ) && hovercraft_has_featured_posts( 2 ) ) {
-		wp_localize_script( 'hovercraft-script', 'hovercraftSlider', array(
-			'hovercraft_animation' => get_theme_mod( 'hovercraft_slider_animation', 'slide' ),
-			'hovercraft_direction' => get_theme_mod( 'hovercraft_slider_direction', 'horizontal' ),
-			'hovercraft_slideshow' => get_theme_mod( 'hovercraft_slider_slideshow', 'true' ),
-			'hovercraft_sliderspeed' => get_theme_mod( 'hovercraft_slider_speed', '7000' ),
-		) );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'hovercraft_scripts' );

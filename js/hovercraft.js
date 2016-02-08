@@ -51,7 +51,7 @@
 		}
 
 	}).trigger( 'resize' );
-	
+
 
 	/*--------------------------------------------------------------
 	Accessibility fixes.
@@ -69,7 +69,7 @@
 		$( this ).toggleClass( "toggled" );
 
 		// Only move focus when opened.
-		if ( $( this ).hasClass( "toggled" ) ) { 
+		if ( $( this ).hasClass( "toggled" ) ) {
 			$( "#desktop-search input" ).focus();
 		}
 
@@ -100,30 +100,10 @@
 
 	});
 
-	/*--------------------------------------------------------------
-	Flexslider.
-	--------------------------------------------------------------*/
-
 	// We need a wrapper to absolutely position #masthead and #colophon.
 	if ( $( "body" ).hasClass( "fullscreen-slider" ) ) {
 		$( "#masthead" ).wrap( "<div class='wrapper'></div>" );
 		$( "#colophon" ).wrap( "<div class='wrapper'></div>" );
 	}
-
-	// Load flexslider. 
-	$(window).load(function() {
-		var optionOne = hovercraftSlider.hovercraft_animation;
-		var optionTwo = hovercraftSlider.hovercraft_direction;
-		var optionThree = ( hovercraftSlider.hovercraft_slideshow === "true" );
-		var optionFour = parseInt( hovercraftSlider.hovercraft_sliderspeed );
-
-		$('.flexslider').flexslider({
-			animation: optionOne,
-			direction: optionTwo,
-			slideshow: optionThree,
-			slideshowSpeed: optionFour,
-			controlNav: false,
-		});
-	});
 
 })( jQuery );
