@@ -40,12 +40,14 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<?php if ( get_theme_mod( 'hovercarft_logo' ) ) : ?>
-				<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img class='site-logo' style="margin-right:0.5em;" src='<?php echo esc_url( get_theme_mod( 'hovercraft_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		 <?php if ( get_theme_mod( 'hovercraft_logo' ) ) : ?>
+			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img class='site-logo'  src='<?php echo esc_url( get_theme_mod( 'hovercraft_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<p class="site-description offscreen"><?php bloginfo( 'description' ); ?></p>
+
 			<?php else : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<p class="site-description offscreen"><?php bloginfo( 'description' ); ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 

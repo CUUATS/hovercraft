@@ -18,6 +18,22 @@ function hovercraft_customize_register( $wp_customize ) {
 	/* Remove existing not used sections. */
 	//$wp_customize->remove_section('colors');
 
+	/*Theme logo options*/
+$wp_customize -> add_section('hovercraft_logo_section', array(
+'title'       => __( 'Logo', 'hovercraft' ),
+'panel'  => 'hovercraft_site_identity',
+'priority'    => 30,
+'description' => 'Upload a logo for the header. Max height: 56px',
+) );
+
+$wp_customize->add_setting( 'hovercraft_logo' );
+
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hovercraft_logo', array(
+'label'    => __( 'Logo', 'hovercraft' ),
+'section'  => 'hovercraft_logo_section',
+'settings' => 'hovercraft_logo',
+) ) );
+
 	/* Font color. */
 	$wp_customize->add_setting('hovercraft_text_color', array(
 		'default'			=> '#000000',
