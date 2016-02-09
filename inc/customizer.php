@@ -15,8 +15,8 @@ function hovercraft_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	/* Remove existing not used sections. */
-	//$wp_customize->remove_section('colors');
+	/* Move background color control to the background image section. */
+	$wp_customize->get_control('background_color')->section = 'background_image';
 
 	/* Font color. */
 	$wp_customize->add_setting('hovercraft_text_color', array(
