@@ -780,7 +780,7 @@ textarea {
 }
 
 h1.site-title {
-  margin: 0;
+  margin: 0.25em 0;
   line-height: 1;
   font-size: 1.5em;
 }
@@ -790,10 +790,19 @@ h1.site-title a {
   text-decoration: none;
 }
 
+h1.site-title a img {
+  max-height: 50px;
+}
+
 p.site-description {
   display: none;
 }
 
+@media screen and (min-width: 64rem) {
+  h1.site-title a img {
+    max-height: 75px;
+  }
+}
 /* Right container. */
 .right-container {
   display: flex;

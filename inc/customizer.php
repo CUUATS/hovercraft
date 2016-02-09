@@ -79,7 +79,7 @@ function hovercraft_customize_register( $wp_customize ) {
     	'label'    => __( 'Logo', 'hovercraft' ),
     	'section'  => 'title_tagline',
     	'settings' => 'hovercraft_logo',
-			'description' => 'Upload a logo for the header with a maximum height of 56px.',
+			'description' => 'Upload a logo for the header with a maximum height of 75px.',
 	) ) );
 
 	/* Theme options slider section */
