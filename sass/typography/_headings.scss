@@ -3,42 +3,47 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $font__headings;
 }
 
-
 h1.entry-title,
 h1.widget-title {
 	margin: 0;
 }
 
 h1 {
-	font-size: 32px;
-	font-size: 2em;
+	font-size: 2.5em;
+	font-weight: 300;
 	margin: 0.75em 0;
 }
 h2 {
-	font-size: 28px;
 	font-size: 1.75em;
+	font-weight: 600;
 	margin: 0.80em 0;
 }
 h3 {
-	font-size: 24px;
 	font-size: 1.5em;
+	font-weight: 600;
 	margin: 0.90em 0;
 }
 h4 {
-	font-size: 20px;
 	font-size: 1.25em;
 	margin: 1.25em 0;
 }
 h5 {
-	font-size: 16px;
 	font-size: 1em;
 	margin: 1.5em 0;
 }
 h6 {
-	font-size: 16px;
 	font-size: 1em;
 	font-style: italic;
 	margin: 1.5em 0;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	font-weight: inherit;
 }
 
 h1.entry-title {

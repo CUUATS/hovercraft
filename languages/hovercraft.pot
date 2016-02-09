@@ -97,16 +97,6 @@ msgstr ""
 msgid "Bottom Sidebar"
 msgstr ""
 
-#: functions.php:144
-msgctxt "Droid Sans font: on or off"
-msgid "on"
-msgstr ""
-
-#: functions.php:152
-msgctxt "Oswald font: on or off"
-msgid "on"
-msgstr ""
-
 #: header.php:23
 msgid "Skip to content"
 msgstr ""

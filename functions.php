@@ -136,22 +136,7 @@ function hovercraft_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Noto Sans, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Droid Sans font: on or off', 'hovercraft' ) ) {
-		$fonts[] = 'Droid Sans:400,700';
-	}
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Noto Serif, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Oswald font: on or off', 'hovercraft' ) ) {
-		$fonts[] = 'Oswald:400,700';
-	}
+	$fonts[] = 'Open Sans:300,400,600';
 
 	if ( $fonts ) {
 		$fonts_url = add_query_arg( array(

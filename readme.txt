@@ -27,12 +27,8 @@ Aperture is based on Underscores http://underscores.me/, Copyright (C) 2012-2015
 
 -- Fonts.
 *
-*  Oswald / by Vernon Adams.
-*  URL: https://www.google.com/fonts/specimen/Oswald
-*  License: SIL Open Font License 1.1 / http://scripts.sil.org/ofl_web
-*
-*  Droid Sans / by Steve Matteson
-*  URL: http://www.google.com/fonts/specimen/Droid+Sans
+*  Open Sans / by Steve Matteson
+*  URL: http://www.google.com/fonts/specimen/Open+Sans
 *  License: Apache License 2.0 / https://www.apache.org/licenses/LICENSE-2.0
 *
 *  Genericons / by Automattic
