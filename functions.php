@@ -60,15 +60,6 @@ function hovercraft_setup() {
 		'gallery',
 		'caption',
 	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'hovercraft_custom_background_args', array(
-		'default-color' 		=> '000000',
-		'default-image' 		=> get_stylesheet_directory_uri() . '/img/default-background.jpg',
-		'default-repeat'		=> 'no-repeat',
-		'default-position-x' 	=> 'center',
-		'default-attachment'	=> 'fixed',
-	) ) );
 }
 endif; // hovercraft_setup
 add_action( 'after_setup_theme', 'hovercraft_setup' );

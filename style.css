@@ -409,11 +409,6 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  background: #101010;
-  /* Fallback for when there is no custom background color defined. */
-}
-
 body.custom-background.fullscreen-background {
   background-size: cover;
   background-repeat: no-repeat;
@@ -665,17 +660,6 @@ textarea {
 /*--------------------------------------------------------------
 # Structure
 --------------------------------------------------------------*/
-/* Box shadow. */
-#masthead,
-#colophon,
-#content,
-#masthead .sub-menu,
-.slider-header h2 a,
-.slider-excerpt p,
-.slider-link a {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-}
-
 /* Common borders. */
 .page-header,
 .comment-list,
