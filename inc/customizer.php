@@ -15,60 +15,65 @@ function hovercraft_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	/* Font color. */
-	$wp_customize->add_setting('hovercraft_text_color', array(
-		'default'			=> '#000000',
-		'sanitize_callback'	=> 'sanitize_hex_color',
+	/* Colors */
+	$wp_customize->add_panel('hovercraft_colors', array(
+		'title' => __('Colors', 'hovercraft'),
+		'description' => 'Customize text, link, and background colors.',
+		'priority' => 100,
 	));
-	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'text_color', array(
-		'label'				=> __('Text Color', 'hovercraft'),
-		'section'			=> 'colors',
-		'priority'			=> 20,
-		'settings'			=> 'hovercraft_text_color',
-	)));
 
-	/* Link color. */
-	$wp_customize->add_setting('hovercraft_link_color', array(
-		'default'			=> '#00554e',
-		'sanitize_callback'	=> 'sanitize_hex_color',
-	));
-	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'link_color', array(
-		'label'				=> __('Link Color', 'hovercraft'),
-		'section'			=> 'colors',
-		'priority'			=> 30,
-		'settings'			=> 'hovercraft_link_color',
-	)));
+	$color_sections = array(
+		array('header_colors', 'Header Colors', array(
+			array('header_background_color', 'Header Background', '#eeeeee'),
+			array('header_text_color', 'Header Text', '#000000'),
+			array('header_link_color', 'Header Link', '#00554e')
+		)),
+		array('content_colors', 'Content Colors', array(
+			array('content_background_color', 'Content Background', '#ffffff'),
+			array('content_text_color', 'Content Text', '#000000'),
+			array('content_link_color', 'Content Link', '#00554e')
+		)),
+		array('sidebar_colors', 'Sidebar Colors', array(
+			array('sidebar_background_color', 'Sidebar Background', '#ffffff'),
+			array('sidebar_text_color', 'Sidebar Text', '#000000'),
+			array('sidebar_link_color', 'Sidebar Link', '#00554e')
+		)),
+		array('footer_colors', 'Footer Colors', array(
+			array('footer_background_color', 'Footer Background', '#444444'),
+			array('footer_text_color', 'Footer Text', '#ffffff'),
+			array('footer_link_color', 'Footer Link', '#a1fff6')
+		))
+	);
 
-	/* Content background color. */
-	$wp_customize->add_setting('hovercraft_content_background_color', array(
-		'default'			=> '#ffffff',
-		'sanitize_callback'	=> 'hovercraft_hex2rgba',
-	));
-	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content_background_color', array(
-		'label'				=> __('Content Background Color', 'hovercraft'),
-		'section'			=> 'colors',
-		'priority'			=> 40,
-		'settings'			=> 'hovercraft_content_background_color',
-	)));
+	foreach($color_sections as $color_section) {
+		$section_id = 'hovercraft_' . $color_section[0];
+		$section_name = $color_section[1];
+		$section_settings = $color_section[2];
 
-	/* Content background color. */
-	$wp_customize->add_setting('hovercraft_sidebar_background_color', array(
-		'default'			=> '#eeeeee',
-		'sanitize_callback'	=> 'hovercraft_hex2rgba',
-	));
-	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'sidebar_background_color', array(
-		'label'				=> __('Sidebar Background Color', 'hovercraft'),
-		'section'			=> 'colors',
-		'priority'			=> 50,
-		'settings'			=> 'hovercraft_sidebar_background_color',
-	)));
+		$wp_customize->add_section($section_id, array(
+			'title' => __($section_name, 'hovercraft' ),
+			'panel'  => 'hovercraft_colors',
+		));
 
-	/* Theme options panel */
-	$wp_customize->add_panel( 'hovercraft_theme_options', array(
-		'priority'       => 900,
-		'title'          => __( 'Theme Options', 'hovercraft' ),
-		'description'    => 'This theme supports a number of options which you can set using this panel.',
-	) );
+		foreach($section_settings as $color_setting) {
+			$widget_id = $color_setting[0];
+			$setting_id = 'hovercraft_' . $color_setting[0];
+			$setting_name = $color_setting[1];
+			$setting_default = $color_setting[2];
+
+			$wp_customize->add_setting($setting_id, array(
+				'default' => $setting_default,
+				'sanitize_callback'	=> 'sanitize_hex_color',
+			));
+
+			$wp_customize->add_control(new WP_Customize_Color_Control(
+				$wp_customize, $widget_id, array(
+					'label' => __($setting_name, 'hovercraft'),
+					'section' => $section_id,
+					'settings' => $setting_id,
+			)));
+		}
+	}
 
 	/* Theme logo */
 	$wp_customize->add_setting( 'hovercraft_logo' );
@@ -81,18 +86,16 @@ function hovercraft_customize_register( $wp_customize ) {
 
 	/* Theme options slider section */
 	$wp_customize->add_section( 'hovercraft_slider_options', array(
-		'title'    => __( 'Slider Options', 'hovercraft' ),
-		'priority' => 10,
-		'panel'  => 'hovercraft_theme_options',
-		'description'    => 'To customize the appearance of the fullscreen slider choose any of the options below.',
+		'title' => __( 'Slider', 'hovercraft' ),
+		'priority' => 900,
+		'description' => 'To customize the appearance of the fullscreen slider choose any of the options below.',
 	) );
 
 	/* Theme options sidebar section */
-	$wp_customize->add_section( 'hovercraft_sidebar_options', array(
-		'title'    => __( 'Sidebar Options', 'hovercraft' ),
-		'priority' => 20,
-		'panel'  => 'hovercraft_theme_options',
-		'description'    => 'Select whether the sidebar should be displayed at the right or left side of the content.',
+	$wp_customize->add_section('hovercraft_sidebar_options', array(
+		'title'    => __( 'Sidebar', 'hovercraft' ),
+		'priority' => 150,
+		'description' => 'Select whether the sidebar should be displayed at the right or left side of the content.',
 	) );
 
 	/* Slider animation. */
@@ -269,74 +272,17 @@ function hovercraft_sanitize_sidebar( $input ) {
  * @see wp_add_inline_style()
  */
 function hovercraft_custom_colors() {
-	$css 				= '';
-	$text_color 		= get_theme_mod( 'hovercraft_text_color', '#000000' );
-	$link_color 		= get_theme_mod( 'hovercraft_link_color', '#00554e' );
-	$background_color 	= get_theme_mod( 'hovercraft_content_background_color', '#ffffff' );
-	$sidebar_color 	= get_theme_mod( 'hovercraft_sidebar_background_color', '#eeeeee' );
+	$content_background_color = get_theme_mod('hovercraft_content_background_color', '#ffffff');
+	$content_text_color = get_theme_mod('hovercraft_content_text_color', '#000000');
+	$content_link_color = get_theme_mod('hovercraft_content_link_color', '#00554e');
 
-	if ( ! empty( $text_color ) && '#000000' !== $text_color ) {
+	ob_start();
+	require get_template_directory() . '/inc/theme-colors.php.css';
+	$css = ob_get_clean();
 
-		$css .= '
-			body, button, input, select, textarea { color: ' . $text_color . '; }
-			a, a:visited, .main-navigation a { color: ' . $text_color . '; }
-			h1.site-title a, h1.site-title a:hover { color: ' . $text_color . '; }
-			.widget, .widget .widget-title { color: ' . $text_color . '; }
-			.social-menu-container ul.menu li.menu-item a::before { color: ' . $text_color . '; }
-			.search-toggle, .back-to-top span { color: ' . $text_color . '; }
-			button, input[type="button"], input[type="reset"], input[type="submit"] { color: ' . $text_color . '; border-color: ' . $text_color . '; }
-			#primary-navigation li.menu-item a:hover, #primary-navigation li.menu-item a:focus, #secondary-navigation li.menu-item a:hover, #secondary-navigation li.menu-item a:focus { color: ' . $text_color . '; }
-		';
-	}
-
-	if ( ! empty( $link_color ) && '#00554e' !== $link_color ) {
-
-		$css .= '
-			#primary-navigation li.menu-item a:hover,
-			#primary-navigation li.menu-item a:focus,
-			#secondary-navigation li.menu-item a:hover,
-			#secondary-navigation li.menu-item a:focus,
-			#primary-navigation ul.sub-menu li.menu-item a:hover,
-			#primary-navigation ul.sub-menu li.menu-item a:focus,
-			#secondary-navigation ul.sub-menu li.menu-item a:hover,
-			#secondary-navigation ul.sub-menu li.menu-item a:focus { border-bottom-color: ' . $link_color . '; }
-			.widget li::before,
-			a:hover, a:focus, a:active,
-			.search-form .search-submit:hover,
-			#desktop-search .search-form .search-submit:hover,
-			.social-menu-container ul.menu li.menu-item a:hover::before { color: ' . $link_color . '; }
-			button:hover,
-			input[type="button"]:hover,
-			input[type="reset"]:hover,
-			input[type="submit"]:hover,
-			button:active, button:focus,
-			input[type="button"]:active,
-			input[type="button"]:focus,
-			input[type="reset"]:active,
-			input[type="reset"]:focus,
-			input[type="submit"]:active,
-			input[type="submit"]:focus { color: ' . $link_color . '; border-color: ' . $link_color . '; }
-			blockquote { border-left-color: ' . $link_color . '; }
-		';
-	}
-
-	if ( ! empty( $background_color ) && '#ffffff' !== $background_color ) {
-
-		$css .= '
-			#masthead, #colophon, #primary, .back-to-top { background: ' . $background_color . '; }
-		';
-	}
-
-	if ( ! empty( $sidebar_color ) && '#eeeeee' !== $background_color ) {
-
-		$css .= '
-			#secondary: ' . $sidebar_color . '; }
-		';
-	}
-
-	wp_add_inline_style( 'hovercraft-style', $css );
+	wp_add_inline_style('hovercraft-style', preg_replace('/\s+/', ' ', $css));
 }
-add_action( 'wp_enqueue_scripts', 'hovercraft_custom_colors' );
+add_action('wp_enqueue_scripts', 'hovercraft_custom_colors');
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
