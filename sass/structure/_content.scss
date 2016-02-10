@@ -1,6 +1,6 @@
 #main,
 #secondary .widget {
-	padding: 2em 6%;
+	padding: 1em 0;
 }
 #primary {
 	background: $color__background-primary;
@@ -15,10 +15,4 @@
 	margin: 0;
 	width: 100%;
 	max-width: 1140px;
-}
-
-@media screen and (min-width: $breakpoint-large) {
-	#secondary .widget {
-		padding: 2em 8%;
-	}
 }

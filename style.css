@@ -675,69 +675,68 @@ textarea {
 /*--------------------------------------------------------------
 ## Layout
 --------------------------------------------------------------*/
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.admin-bar {
+  margin-top: -46px;
+}
+
+div#wpadminbar {
+  order: -1;
+  position: static !important;
+}
+
+@media screen and (min-width: 783px) {
+  body.admin-bar {
+    margin-top: -32px;
+  }
+}
 #masthead,
 #primary,
 #secondary,
 #colophon {
-  width: 100%;
-}
-
-#content {
-  display: flex;
-  flex-direction: column;
-  width: 1140px;
-  width: 71.25rem;
-  max-width: 90%;
-  margin: 0 auto;
-  margin-top: 56px;
-  margin-top: 3.5em;
-}
-
-#primary,
-#secondary {
-  margin: 0 auto;
-}
-
-#colophon {
-  margin-top: 56px;
-  margin-top: 3.5em;
-}
-
-/* Sidebar is not active. */
-.no-sidebar #primary {
-  margin: 0 auto;
+  padding: 1em 5%;
 }
 
 @media screen and (min-width: 64rem) {
+  #page {
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+  }
+
+  #masthead,
+  #colophon {
+    padding: 1em 6%;
+  }
+
   #content {
-    flex-direction: row;
+    display: flex;
+    flex: 1 0 0;
   }
 
   #primary {
-    width: 66.666%;
+    flex: 1 0 0;
+    padding: 1em 2em 1em 6%;
   }
 
   #secondary {
-    width: 33.333%;
-    margin-top: 0;
-  }
-
-  /* Sidebar is active and/or right sidebar is selected. */
-  .right-sidebar #primary {
-    margin: 0;
-  }
-  .right-sidebar #secondary {
-    margin: 0;
+    flex: 0 0 calc(20em + 6%);
+    padding: 1em 6% 1em 2em;
   }
 
   /* Sidebar is active and/or left sidebar is selected. */
   .left-sidebar #primary {
     order: 2;
-    margin: 0;
+    padding: 1em 6% 1em 2em;
   }
   .left-sidebar #secondary {
     order: 1;
-    margin: 0;
+    padding: 1em 2em 1em 6%;
   }
 }
 /*--------------------------------------------------------------
@@ -758,7 +757,10 @@ textarea {
   min-height: 3.5rem;
 }
 
-.site-branding,
+.site-branding {
+  margin-right: 1em;
+}
+
 .right-container {
   margin: 0 1em;
 }
@@ -803,7 +805,7 @@ p.site-description {
 --------------------------------------------------------------*/
 #main,
 #secondary .widget {
-  padding: 2em 6%;
+  padding: 1em 0;
 }
 
 #primary {
@@ -822,23 +824,11 @@ p.site-description {
   max-width: 1140px;
 }
 
-@media screen and (min-width: 64rem) {
-  #secondary .widget {
-    padding: 2em 8%;
-  }
-}
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
 #colophon {
   background: #ffffff;
-}
-
-.container {
-  width: 1140px;
-  width: 71.25rem;
-  max-width: 90%;
-  margin: 0 auto;
 }
 
 /* Tertiary widget area. */
@@ -906,15 +896,10 @@ p.site-description {
   }
   #tertiary .widget {
     width: 30%;
-  }
-  #tertiary .widget:first-child {
-    margin-right: 1em;
-  }
-  #tertiary .widget:nth-child(2) {
     margin: 0 0.5em;
   }
-  #tertiary .widget:last-child {
-    margin-left: 1em;
+  #tertiary .widget:first-child, #tertiary .widget:last-child {
+    margin-right: 0;
   }
 }
 /*--------------------------------------------------------------
@@ -1940,6 +1925,10 @@ ul.slides {
 .entry-summary,
 .more-link {
   margin: 1.5em 0 0;
+}
+
+.entry-header:first-child {
+  margin-top: 0;
 }
 
 .page-links {

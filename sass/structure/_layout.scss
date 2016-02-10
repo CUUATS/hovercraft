@@ -1,60 +1,63 @@
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+body.admin-bar {
+	margin-top: -46px;
+}
+
+div#wpadminbar {
+	order: -1;
+	position: static !important;
+}
+
+@media screen and (min-width: 783px) {
+	body.admin-bar {
+		margin-top: -32px;
+	}
+}
+
 #masthead,
 #primary,
 #secondary,
 #colophon {
-	width: 100%;
-}
-#content {
-	display: flex;
-	flex-direction: column;
-	@include site-width();
-	margin-top: 56px;
-	margin-top: 3.5em;
-}
-#primary,
-#secondary {
-	margin: 0 auto;
-}
-#colophon {
-	margin-top: 56px;
-	margin-top: 3.5em;
-}
-
-/* Sidebar is not active. */
-.no-sidebar #primary {
-	margin: 0 auto;
+	padding: 1em 5%;
 }
 
 @media screen and (min-width: $breakpoint-large) {
+	#page {
+		display: flex;
+		flex: 1 0 0;
+		flex-direction: column;
+	}
+	#masthead,
+	#colophon {
+		padding: 1em 6%;
+	}
 	#content {
-		flex-direction: row;
+		display: flex;
+  	flex: 1 0 0;
 	}
 	#primary {
-		width: 66.666%;
+		flex: 1 0 0;
+		padding: 1em 2em 1em 6%;
 	}
 	#secondary {
-		width: 33.333%;
-		margin-top: 0;
-	}
-	/* Sidebar is active and/or right sidebar is selected. */
-	.right-sidebar {
-		#primary {
-			margin: 0;
-		}
-		#secondary {
-			margin: 0;
-		}
+		flex: 0 0 calc(20em + 6%);
+		padding: 1em 6% 1em 2em;
 	}
 
 	/* Sidebar is active and/or left sidebar is selected. */
 	.left-sidebar {
 		#primary {
 			order: 2;
-			margin: 0;
+			padding: 1em 6% 1em 2em;
 		}
 		#secondary {
 			order: 1;
-			margin: 0;
+			padding: 1em 2em 1em 6%;
 		}
 	}
 }

@@ -21,11 +21,3 @@
 @mixin clearfix-after() {
 	clear: both;
 }
-
-// Site width and center with px fallback.
-@mixin site-width($siteWidth: $size__site-width) {
-	width: ($siteWidth * 16) * 1px;
-	width: $siteWidth * 1rem;
-	max-width: 90%;
-	margin: 0 auto;
-}
