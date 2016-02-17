@@ -190,3 +190,9 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+// Create Slider Post Type
+require( get_template_directory() . '/slider/slider_post_type.php' );
+// Create Slider
+require( get_template_directory() . '/slider/slider.php' );
