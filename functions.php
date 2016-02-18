@@ -46,6 +46,7 @@ function hovercraft_setup() {
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'hovercraft' ),
 		'social' => esc_html__( 'Social Menu', 'hovercraft' ),
+		'slider' => esc_html__( 'Slider', 'hovercraft' ),
 	) );
 
 	/*
