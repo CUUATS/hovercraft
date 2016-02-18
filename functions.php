@@ -193,6 +193,6 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 // Create Slider Post Type
-require( get_template_directory() . '/slider/slider_post_type.php' );
+require( get_template_directory() . '/inc/slider_post_type.php' );
 // Create Slider
-require( get_template_directory() . '/slider/slider.php' );
+require( get_template_directory() . '/inc/slider.php' );
