@@ -272,9 +272,18 @@ function hovercraft_sanitize_sidebar( $input ) {
  * @see wp_add_inline_style()
  */
 function hovercraft_custom_colors() {
+	$header_background_color = get_theme_mod('hovercraft_header_background_color', '#eeeeee');
+	$header_text_color = get_theme_mod('hovercraft_header_text_color', '#000000');
+	$header_link_color = get_theme_mod('hovercraft_header_link_color', '#00554e');
 	$content_background_color = get_theme_mod('hovercraft_content_background_color', '#ffffff');
 	$content_text_color = get_theme_mod('hovercraft_content_text_color', '#000000');
 	$content_link_color = get_theme_mod('hovercraft_content_link_color', '#00554e');
+	$sidebar_background_color = get_theme_mod('hovercraft_sidebar_background_color', '#ffffff');
+	$sidebar_text_color = get_theme_mod('hovercraft_sidebar_text_color', '#000000');
+	$sidebar_link_color = get_theme_mod('hovercraft_sidebar_link_color', '#00554e');
+	$footer_background_color = get_theme_mod('hovercraft_footer_background_color', '#444444');
+	$footer_text_color = get_theme_mod('hovercraft_footer_text_color', '#ffffff');
+	$footer_link_color = get_theme_mod('hovercraft_footer_link_color', '#a1fff6');
 
 	ob_start();
 	require get_template_directory() . '/inc/theme-colors.php.css';

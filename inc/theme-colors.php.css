@@ -4,13 +4,42 @@
  *
  * @package Hovercraft
  */?>
-
-#masthead,
-#colophon,
-#primary,
-.back-to-top {
-  background: <?php echo $content_background_color; ?>;
+/* Background colors */
+#masthead {
+  background: <?php echo $header_background_color; ?>;
+  color: <?php echo $header_text_color; ?>;
 }
+
+#primary {
+  background: <?php echo $content_background_color; ?>;
+  color: <?php echo $content_text_color; ?>;
+}
+
+#secondary {
+  background: <?php echo $sidebar_background_color; ?>;
+  color: <?php echo $sidebar_text_color; ?>;
+}
+
+#colophon {
+  background: <?php echo $footer_background_color; ?>;
+}
+
+#colophon a,
+#colophon a:visited {
+  color: <?php echo $footer_link_color; ?>;
+}
+
+#colophon,
+#colophon h1,
+#colophon h2,
+#colophon h3,
+#colophon h4,
+#colophon h5,
+#colophon h6,
+#colophon a:hover {
+  color: <?php echo $footer_text_color; ?>;
+}
+
 
 body,
 button,
