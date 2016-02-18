@@ -8,7 +8,6 @@
 		margin: 0 4px;
 		margin: 0 0.25em;
 		opacity: 0.25;
-		color: $color__menu-items;
 	}
 }
 
@@ -36,7 +35,6 @@
 				height: 1.125rem;
 				width: 18px;
 				width: 1.125rem;
-				color: $color__menu-items;
 				line-height: 18px;
 				line-height: 1.125rem;
 				font-family: 'Genericons';
@@ -51,7 +49,6 @@
 			}
 
 			a:hover::before {
-				color: $color__link-hover;
 				opacity: 1;
 				transform:rotate(360deg);
 			}

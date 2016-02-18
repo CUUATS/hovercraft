@@ -8,12 +8,13 @@
 		list-style: none;
 		font-weight: bold;
 		text-decoration: none;
-		text-transform: uppercase;
 	}
 	a {
-		color: $color__menu-items;
 		text-decoration: none;
-		font-size: 0.8125em;
+		font-size: 0.9em;
+	}
+	.menu-container > ul > li > a {
+		text-transform: uppercase;
 	}
 }
 
@@ -103,9 +104,8 @@
 			font-size: 1.25em;
 			text-align: center;
 			text-transform: uppercase;
-			border-top: 2px solid white;
-			border-bottom: 2px solid white;
-			color: $color__mobile-menu-title;
+			border-top: 1px solid white;
+			border-bottom: 1px solid white;
 		}
 	}
 	ul.sub-menu {
@@ -122,15 +122,13 @@
 			&:hover,
 			&:focus {
 				color: $color__mobile-menu-hover;
-				background: $color__background-mobile-menu-hover;
 			}
 		}
 	}
 }
 
 /* Desktop menus. */
-#primary-navigation,
-#secondary-navigation {
+#primary-navigation {
 	justify-content: center;
 	align-items: center;
 	ul.menu li {
@@ -138,23 +136,18 @@
 		position: relative;
 		padding: 0.4em;
 		letter-spacing: -1px;
-
 	}
 	li.menu-item a {
-		padding: 1px 0;
-		border-bottom: 0px solid transparent;
+		line-height: 1.8;
+		border-bottom: 2px solid transparent;
 		&:hover,
 		&:focus {
 			opacity: 1;
-			border-bottom-width: 2px;
-			color: $color__menu-hover;
-			border-color: $color__menu-hover-underline;
 		}
 	}
-	li.menu-item.menu-item-has-children a {
-		border: none;
-	}
 	ul.sub-menu {
+		border: 1px solid rgba(0, 0, 0, 0.07);
+		box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
 		position: absolute;
 		top: auto;
 		left: -9999px;
@@ -164,7 +157,6 @@
 		z-index: 9999;
 		overflow: hidden;
 		margin-left: -0.4em;
-		background: $color__background-sub-menu;
 	}
 	ul.sub-menu li.menu-item {
 		display: block;
@@ -178,10 +170,6 @@
 	}
 	ul.sub-menu li.menu-item a, {
 		white-space: nowrap;
-		&:hover,
-		&:focus {
-			border-bottom: 2px solid $color__menu-hover-underline;
-		}
 	}
 	li.menu-item:hover > ul.sub-menu,
 	li.focus > ul.sub-menu {
@@ -199,24 +187,6 @@
 	}
 	ul.sub-menu li.menu-item:not(:first-child):hover > ul.sub-menu {
 		margin-top: -0.2em;
-	}
-}
-
-/* Secondary desktop menu. */
-#secondary-navigation {
-	ul.sub-menu {
-		margin-left: 0;
-		margin-right: -0.8em;
-	}
-	li.menu-item:hover > ul.sub-menu,
-	li.focus > ul.sub-menu {
-		left: auto;
-		right: 0;
-	}
-	ul.sub-menu li.menu-item:hover > ul.sub-menu,
-	ul.sub-menu li.focus > ul.sub-menu {
-		margin-left: 0;
-		margin-right: 100%;
 	}
 }
 

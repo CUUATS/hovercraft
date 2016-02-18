@@ -5,7 +5,8 @@
  * @package Hovercraft
  */?>
 /* Header */
-#masthead {
+#masthead,
+#hidden-header {
   background: <?php echo $header_background_color; ?>;
   color: <?php echo $header_text_color; ?>;
 }
@@ -15,20 +16,42 @@ h1.site-title a:hover {
   color: <?php echo $content_text_color; ?>;
 }
 
-#primary-navigation li.menu-item a:hover,
-#primary-navigation li.menu-item a:focus {
-  color: <?php echo $content_text_color; ?>;
+#masthead a,
+#masthead a:visited,
+#hidden-header a,
+#hidden-header a:visited {
+  color: <?php echo $header_link_color; ?>;
+}
+
+#masthead a:hover,
+#hidden-header a:hover {
+  color: <?php echo $header_text_color; ?>;
+}
+
+.menu-toggle .lines,
+.menu-toggle .lines::before,
+.menu-toggle .lines::after {
+  background-color: <?php echo $header_text_color; ?>;
+}
+
+.menu-toggled .lines {
+  background-color: transparent;
 }
 
 #primary-navigation li.menu-item a:hover,
-#primary-navigation li.menu-item a:focus,
-#primary-navigation ul.sub-menu li.menu-item a:hover,
-#primary-navigation ul.sub-menu li.menu-item a:focus {
-  border-bottom-color: <?php echo $content_link_color; ?>;
+#primary-navigation li.menu-item a:focus {
+  border-color: <?php echo $header_link_color; ?>;
+}
+
+#primary-navigation li.menu-item .sub-menu a:hover,
+#primary-navigation li.menu-item .sub-menu a:focus {
+  border-color: <?php echo $content_link_color; ?>;
 }
 
 /* Content area */
-#primary {
+#primary,
+#mobile-search .search-form label,
+#primary-navigation ul.sub-menu {
   background-color: <?php echo $content_background_color; ?>;
 }
 
@@ -51,7 +74,8 @@ h1.site-title a:hover {
 #primary h6,
 #primary .widget,
 #primary .widget .widget-title,
-#primary a:hover {
+#primary a:hover,
+#mobile-search .search-form .search-field {
   color: <?php echo $content_text_color; ?>;
 }
 

@@ -279,7 +279,6 @@ button,
 input,
 select,
 textarea {
-  color: #000000;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -420,8 +419,6 @@ blockquote {
   quotes: "" "";
   margin: 0 0 1.5em 0;
   padding: 0.75em 1.5em;
-  background: rgba(255, 255, 255, 0.1);
-  border-left: 4px solid #00554e;
   border-radius: 0 4px 4px 0;
 }
 blockquote:before, blockquote:after {
@@ -577,33 +574,11 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 2px solid;
-  border-color: white;
-  background: transparent;
-  color: #000000;
   font-size: 16px;
   font-size: 1rem;
   font-weight: bold;
   line-height: 1;
   padding: .6em 1em .4em;
-}
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  color: #00554e;
-  border-color: #00554e;
-  background-color: #ffffff;
-}
-button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-  color: #00554e;
-  border-color: #00554e;
-  background-color: #ffffff;
 }
 
 input[type="text"],
@@ -636,24 +611,6 @@ input[type="search"] {
 textarea {
   padding-left: 3px;
   width: 100%;
-}
-
-#hidden-header input[type="text"],
-#hidden-header input[type="email"],
-#hidden-header input[type="url"],
-#hidden-header input[type="password"],
-#hidden-header input[type="search"],
-#hidden-header textarea {
-  color: #f3f3f3;
-  border-radius: 3px;
-}
-#hidden-header input[type="text"]:focus,
-#hidden-header input[type="email"]:focus,
-#hidden-header input[type="url"]:focus,
-#hidden-header input[type="password"]:focus,
-#hidden-header input[type="search"]:focus,
-#hidden-header textarea:focus {
-  color: #f1f1f1;
 }
 
 /*--------------------------------------------------------------
@@ -749,7 +706,6 @@ div#wpadminbar {
 
 /* Header. */
 #masthead {
-  background: #ffffff;
   display: flex;
   justify-content: space-between;
   min-height: 56px;
@@ -777,7 +733,6 @@ h1.site-title {
 }
 
 h1.site-title a {
-  color: #000000;
   text-decoration: none;
 }
 
@@ -807,14 +762,6 @@ p.site-description {
   padding: 1em 0;
 }
 
-#primary {
-  background: #ffffff;
-}
-
-#secondary {
-  background: #eeeeee;
-}
-
 /* Full width page template & portfolio template. */
 #primary.full-width-page,
 #primary.portfolio-page {
@@ -826,10 +773,6 @@ p.site-description {
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
-#colophon {
-  background: #ffffff;
-}
-
 /* Tertiary widget area. */
 #tertiary {
   display: flex;
@@ -954,15 +897,8 @@ p.site-description {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #000000;
   font-weight: bold;
   text-decoration: none;
-}
-a:visited {
-  color: #000000;
-}
-a:hover, a:focus, a:active {
-  color: #00554e;
 }
 a:focus {
   outline: thin dotted;
@@ -983,12 +919,13 @@ a:hover, a:active {
   list-style: none;
   font-weight: bold;
   text-decoration: none;
-  text-transform: uppercase;
 }
 .main-navigation a {
-  color: #000000;
   text-decoration: none;
-  font-size: 0.8125em;
+  font-size: 0.9em;
+}
+.main-navigation .menu-container > ul > li > a {
+  text-transform: uppercase;
 }
 
 /* Hide stuff on mobile screens. */
@@ -1071,9 +1008,8 @@ a:hover, a:active {
   font-size: 1.25em;
   text-align: center;
   text-transform: uppercase;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  color: #000000;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
 }
 #mobile-navigation ul.sub-menu {
   margin: 0 0 0 5%;
@@ -1088,41 +1024,29 @@ a:hover, a:active {
 }
 #mobile-navigation li.menu-item a:hover, #mobile-navigation li.menu-item a:focus {
   color: #202020;
-  background: #000000;
 }
 
 /* Desktop menus. */
-#primary-navigation,
-#secondary-navigation {
+#primary-navigation {
   justify-content: center;
   align-items: center;
 }
-#primary-navigation ul.menu li,
-#secondary-navigation ul.menu li {
+#primary-navigation ul.menu li {
   display: inline;
   position: relative;
   padding: 0.4em;
   letter-spacing: -1px;
 }
-#primary-navigation li.menu-item a,
-#secondary-navigation li.menu-item a {
-  padding: 1px 0;
-  border-bottom: 0px solid transparent;
+#primary-navigation li.menu-item a {
+  line-height: 1.8;
+  border-bottom: 2px solid transparent;
 }
-#primary-navigation li.menu-item a:hover, #primary-navigation li.menu-item a:focus,
-#secondary-navigation li.menu-item a:hover,
-#secondary-navigation li.menu-item a:focus {
+#primary-navigation li.menu-item a:hover, #primary-navigation li.menu-item a:focus {
   opacity: 1;
-  border-bottom-width: 2px;
-  color: #000000;
-  border-color: #00554e;
 }
-#primary-navigation li.menu-item.menu-item-has-children a,
-#secondary-navigation li.menu-item.menu-item-has-children a {
-  border: none;
-}
-#primary-navigation ul.sub-menu,
-#secondary-navigation ul.sub-menu {
+#primary-navigation ul.sub-menu {
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
   position: absolute;
   top: auto;
   left: -9999px;
@@ -1132,34 +1056,22 @@ a:hover, a:active {
   z-index: 9999;
   overflow: hidden;
   margin-left: -0.4em;
-  background: #ffffff;
 }
-#primary-navigation ul.sub-menu li.menu-item,
-#secondary-navigation ul.sub-menu li.menu-item {
+#primary-navigation ul.sub-menu li.menu-item {
   display: block;
   padding: 0.2em 0.8em;
 }
-#primary-navigation ul.sub-menu li.menu-item:first-child,
-#secondary-navigation ul.sub-menu li.menu-item:first-child {
+#primary-navigation ul.sub-menu li.menu-item:first-child {
   padding-top: 0.4em;
 }
-#primary-navigation ul.sub-menu li.menu-item:last-of-type,
-#secondary-navigation ul.sub-menu li.menu-item:last-of-type {
+#primary-navigation ul.sub-menu li.menu-item:last-of-type {
   padding-bottom: 0.4em;
 }
-#primary-navigation ul.sub-menu li.menu-item a,
-#secondary-navigation ul.sub-menu li.menu-item a {
+#primary-navigation ul.sub-menu li.menu-item a {
   white-space: nowrap;
 }
-#primary-navigation ul.sub-menu li.menu-item a:hover, #primary-navigation ul.sub-menu li.menu-item a:focus,
-#secondary-navigation ul.sub-menu li.menu-item a:hover,
-#secondary-navigation ul.sub-menu li.menu-item a:focus {
-  border-bottom: 2px solid #00554e;
-}
 #primary-navigation li.menu-item:hover > ul.sub-menu,
-#primary-navigation li.focus > ul.sub-menu,
-#secondary-navigation li.menu-item:hover > ul.sub-menu,
-#secondary-navigation li.focus > ul.sub-menu {
+#primary-navigation li.focus > ul.sub-menu {
   left: 0;
   height: auto;
   width: auto;
@@ -1168,31 +1080,12 @@ a:hover, a:active {
   transform: translate(0, 0) scale(1);
 }
 #primary-navigation ul.sub-menu li.menu-item:hover > ul.sub-menu,
-#primary-navigation ul.sub-menu li.focus > ul.sub-menu,
-#secondary-navigation ul.sub-menu li.menu-item:hover > ul.sub-menu,
-#secondary-navigation ul.sub-menu li.focus > ul.sub-menu {
+#primary-navigation ul.sub-menu li.focus > ul.sub-menu {
   top: 0;
   margin-left: 100%;
 }
-#primary-navigation ul.sub-menu li.menu-item:not(:first-child):hover > ul.sub-menu,
-#secondary-navigation ul.sub-menu li.menu-item:not(:first-child):hover > ul.sub-menu {
+#primary-navigation ul.sub-menu li.menu-item:not(:first-child):hover > ul.sub-menu {
   margin-top: -0.2em;
-}
-
-/* Secondary desktop menu. */
-#secondary-navigation ul.sub-menu {
-  margin-left: 0;
-  margin-right: -0.8em;
-}
-#secondary-navigation li.menu-item:hover > ul.sub-menu,
-#secondary-navigation li.focus > ul.sub-menu {
-  left: auto;
-  right: 0;
-}
-#secondary-navigation ul.sub-menu li.menu-item:hover > ul.sub-menu,
-#secondary-navigation ul.sub-menu li.focus > ul.sub-menu {
-  margin-left: 0;
-  margin-right: 100%;
 }
 
 @media screen and (min-width: 50rem) {
@@ -1224,7 +1117,6 @@ a:hover, a:active {
   margin: 0 4px;
   margin: 0 0.25em;
   opacity: 0.25;
-  color: #000000;
 }
 
 #bottom-social {
@@ -1251,7 +1143,6 @@ a:hover, a:active {
   height: 1.125rem;
   width: 18px;
   width: 1.125rem;
-  color: #000000;
   line-height: 18px;
   line-height: 1.125rem;
   font-family: 'Genericons';
@@ -1265,7 +1156,6 @@ a:hover, a:active {
   -webkit-font-smoothing: antialiased;
 }
 .social-menu-container ul.menu li.menu-item a:hover::before {
-  color: #00554e;
   opacity: 1;
   transform: rotate(360deg);
 }
@@ -1412,7 +1302,6 @@ a:hover, a:active {
 }
 .search-form .search-submit:hover {
   cursor: pointer;
-  color: #00554e;
 }
 
 /* Desktop search. */
@@ -1444,9 +1333,6 @@ a:hover, a:active {
   border-left: none;
   transition: color 0.125s ease-in-out;
 }
-#desktop-search .search-form .search-submit:hover {
-  color: #00554e;
-}
 #desktop-search .search-form .search-submit .genericon-search {
   font-size: 32px;
   font-size: 2rem;
@@ -1456,9 +1342,6 @@ a:hover, a:active {
 #mobile-search {
   padding-top: 16px;
   padding-top: 1rem;
-}
-#mobile-search .search-form {
-  border-top: 2px solid white;
 }
 #mobile-search .search-form label {
   border: 0;
@@ -1591,7 +1474,6 @@ html[xmlns] .flexslider .slides {
   overflow: hidden;
   opacity: 0;
   cursor: pointer;
-  color: #ffffff;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -1604,7 +1486,6 @@ html[xmlns] .flexslider .slides {
   font-size: 40px;
   display: inline-block;
   content: '\f430';
-  color: #ffffff;
 }
 
 .flex-direction-nav a.flex-next:before {
@@ -1662,12 +1543,6 @@ ul.slides {
   margin: 1rem 0;
 }
 
-.slider-header h2 a,
-.slider-excerpt p,
-.slider-link a {
-  background: #ffffff;
-}
-
 .slider-header h2 a {
   padding: 0.125em 0.25em;
 }
@@ -1714,7 +1589,6 @@ ul.slides {
 }
 #no-featured-content .no-results {
   padding: 2em 6%;
-  background: #ffffff;
 }
 
 @media screen and (min-width: 50rem) {
@@ -1801,7 +1675,6 @@ ul.slides {
 .widget .widget-title {
   position: relative;
   margin: 0;
-  color: #000000;
 }
 .widget ul {
   margin: 0;
@@ -1831,7 +1704,6 @@ ul.slides {
   vertical-align: middle;
   margin-right: 8px;
   margin-right: 0.5rem;
-  color: #00554e;
 }
 .widget.widget_recent_comments li::before {
   content: '\f300';
@@ -2345,7 +2217,6 @@ body.admin-bar #page {
   visibility: hidden;
   text-decoration: none;
   transition: all 0.25s ease-in-out;
-  background: #ffffff;
 }
 .back-to-top span {
   color: white;

@@ -5,7 +5,6 @@
 	.widget-title {
 		position: relative;
 		margin: 0;
-		color: $color__widget-title;
 	}
 	ul {
 		margin: 0;
@@ -34,7 +33,6 @@
 			vertical-align: middle;
 			margin-right: 8px;
 			margin-right: 0.5rem;
-			color: $color__bullets-sidebar;
 		}
 	}
 	li:not(:first-child) {
@@ -88,7 +86,6 @@
 		tbody tr td a,
 		tfoot tr td a {
 			font-weight: bold;
-			//color: $color__link-hover!important;
 		}
 		tfoot tr td#next {
 			text-align: right;

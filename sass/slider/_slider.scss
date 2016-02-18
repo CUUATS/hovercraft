@@ -10,7 +10,7 @@
 	}
 	#content {
 		max-height: 100%;
-		min-height: 100%;		
+		min-height: 100%;
 		max-width: 100%;
 		min-width: 100%;
 		display: block;
@@ -99,7 +99,6 @@ html[xmlns] .flexslider .slides {
 	overflow: hidden;
 	opacity: 0;
 	cursor: pointer;
-	color: $color__slider-navigation-arrows;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
@@ -111,7 +110,6 @@ html[xmlns] .flexslider .slides {
 	font-size: 40px;
 	display: inline-block;
 	content: '\f430';
-	color: $color__slider-navigation-arrows;
 }
 .flex-direction-nav a.flex-next:before {
 	content: '\f429';
@@ -158,11 +156,6 @@ ul.slides {
 	max-width: 35.625rem;
 	margin: 1rem 0;
 }
-.slider-header h2 a,
-.slider-excerpt p,
-.slider-link a {
-	background: $color__background-slider-content;
-}
 .slider-header h2 a {
 	padding: 0.125em 0.25em;
 }
@@ -203,7 +196,6 @@ ul.slides {
 	width: 100%;
 	.no-results {
 		padding: 2em 6%;
-		background: $color__background-slider-content;
 	}
 }
 

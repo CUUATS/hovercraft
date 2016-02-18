@@ -19,8 +19,6 @@ blockquote {
 	quotes: "" "";
 	margin: 0 0 1.5em 0;
 	padding: 0.75em 1.5em;
-	background: $color__background-blockquote;
-	border-left: 4px solid $color__border-quote;
 	border-radius: 0 4px 4px 0;
 
 	&:before,
