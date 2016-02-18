@@ -5,35 +5,6 @@ body {
 	-o-font-smoothing: antialiased;
 }
 
-/* Add some margin to Jetpack video. */
-.jetpack-video-wrapper {
-	margin-bottom: 1.5em;
-}
-
-/* Center Infinite Scroll loader. */
-.infinite-loader {
-	margin: 1.5em auto;
-	.spinner {
-		left: 50%!important;
-	}
-}
-
-/* Add some styling to the infinite footer. */
-#infinite-footer {
-	.container {
-		color: $color__text-main;
-		background: $color__background-infinite-footer;
-	}
-	.blog-info a,
-	.blog-credits a {
-		transition: all 0.25s ease-in-out;
-		color: $color__text-main;
-		&:hover {
-			color: $color__link-hover;
-		}
-	}
-}
-
 /* Selection style. */
 ::selection {
 	color: black;

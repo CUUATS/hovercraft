@@ -44,7 +44,6 @@
 		position: relative;
 		width: 20px;
 		height: 2px;
-		transition: 0.5s;
 		background-color: white;
 	}
 	.lines:before,
@@ -54,7 +53,6 @@
 		position: absolute;
 		width: 20px;
 		height: 2px;
-		transition: 0.25s;
 		background-color: white;
 	}
 	.lines:before {
@@ -71,7 +69,6 @@
 		.lines,
 		.lines:before,
 		.lines:after {
-			transition: 0.5s;
 		}
 	}
 	&:focus {
@@ -120,7 +117,6 @@
 			width: 100%;
 			padding: 12px;
 			padding: 0.75em;
-			transition: 0.125s;
 			line-height: 1;
 			text-decoration: none;
 			&:hover,
@@ -142,11 +138,10 @@
 		position: relative;
 		padding: 0.4em;
 		letter-spacing: -1px;
-		
+
 	}
 	li.menu-item a {
 		padding: 1px 0;
-		transition : all 0.25s ease-out;
 		border-bottom: 0px solid transparent;
 		&:hover,
 		&:focus {
@@ -170,8 +165,6 @@
 		overflow: hidden;
 		margin-left: -0.4em;
 		background: $color__background-sub-menu;
-		transform: translate(0,-15%) scale(0.75);
-		transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 	}
 	ul.sub-menu li.menu-item {
 		display: block;

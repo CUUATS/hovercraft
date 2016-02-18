@@ -585,7 +585,6 @@ input[type="submit"] {
   font-weight: bold;
   line-height: 1;
   padding: .6em 1em .4em;
-  transition: all 0.125s ease;
 }
 button:hover,
 input[type="button"]:hover,
@@ -958,7 +957,6 @@ a {
   color: #000000;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.125s ease-in-out;
 }
 a:visited {
   color: #000000;
@@ -1021,7 +1019,6 @@ a:hover, a:active {
   position: relative;
   width: 20px;
   height: 2px;
-  transition: 0.5s;
   background-color: white;
 }
 .menu-toggle .lines:before,
@@ -1031,7 +1028,6 @@ a:hover, a:active {
   position: absolute;
   width: 20px;
   height: 2px;
-  transition: 0.25s;
   background-color: white;
 }
 .menu-toggle .lines:before {
@@ -1042,11 +1038,6 @@ a:hover, a:active {
 }
 .menu-toggle:hover, .menu-toggle:focus {
   background: transparent !important;
-}
-.menu-toggle:hover .lines,
-.menu-toggle:hover .lines:before,
-.menu-toggle:hover .lines:after {
-  transition: 0.5s;
 }
 .menu-toggle:focus {
   border-color: transparent;
@@ -1092,7 +1083,6 @@ a:hover, a:active {
   width: 100%;
   padding: 12px;
   padding: 0.75em;
-  transition: 0.125s;
   line-height: 1;
   text-decoration: none;
 }
@@ -1117,7 +1107,6 @@ a:hover, a:active {
 #primary-navigation li.menu-item a,
 #secondary-navigation li.menu-item a {
   padding: 1px 0;
-  transition: all 0.25s ease-out;
   border-bottom: 0px solid transparent;
 }
 #primary-navigation li.menu-item a:hover, #primary-navigation li.menu-item a:focus,
@@ -1144,8 +1133,6 @@ a:hover, a:active {
   overflow: hidden;
   margin-left: -0.4em;
   background: #ffffff;
-  transform: translate(0, -15%) scale(0.75);
-  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
 #primary-navigation ul.sub-menu li.menu-item,
 #secondary-navigation ul.sub-menu li.menu-item {
@@ -2326,34 +2313,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-}
-
-/* Add some margin to Jetpack video. */
-.jetpack-video-wrapper {
-  margin-bottom: 1.5em;
-}
-
-/* Center Infinite Scroll loader. */
-.infinite-loader {
-  margin: 1.5em auto;
-}
-.infinite-loader .spinner {
-  left: 50% !important;
-}
-
-/* Add some styling to the infinite footer. */
-#infinite-footer .container {
-  color: #000000;
-  background: #ffffff;
-}
-#infinite-footer .blog-info a,
-#infinite-footer .blog-credits a {
-  transition: all 0.25s ease-in-out;
-  color: #000000;
-}
-#infinite-footer .blog-info a:hover,
-#infinite-footer .blog-credits a:hover {
-  color: #00554e;
 }
 
 /* Selection style. */
