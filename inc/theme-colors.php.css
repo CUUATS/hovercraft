@@ -4,55 +4,10 @@
  *
  * @package Hovercraft
  */?>
-/* Background colors */
+/* Header */
 #masthead {
   background: <?php echo $header_background_color; ?>;
   color: <?php echo $header_text_color; ?>;
-}
-
-#primary {
-  background: <?php echo $content_background_color; ?>;
-  color: <?php echo $content_text_color; ?>;
-}
-
-#secondary {
-  background: <?php echo $sidebar_background_color; ?>;
-  color: <?php echo $sidebar_text_color; ?>;
-}
-
-#colophon {
-  background: <?php echo $footer_background_color; ?>;
-}
-
-#colophon a,
-#colophon a:visited {
-  color: <?php echo $footer_link_color; ?>;
-}
-
-#colophon,
-#colophon h1,
-#colophon h2,
-#colophon h3,
-#colophon h4,
-#colophon h5,
-#colophon h6,
-#colophon a:hover {
-  color: <?php echo $footer_text_color; ?>;
-}
-
-
-body,
-button,
-input,
-select,
-textarea {
-  color: <?php echo $content_text_color; ?>;
-}
-
-a,
-a:visited,
-.main-navigation a {
-  color: <?php echo $content_text_color; ?>;
 }
 
 h1.site-title a,
@@ -60,69 +15,175 @@ h1.site-title a:hover {
   color: <?php echo $content_text_color; ?>;
 }
 
-.widget,
-.widget .widget-title {
+#primary-navigation li.menu-item a:hover,
+#primary-navigation li.menu-item a:focus {
   color: <?php echo $content_text_color; ?>;
 }
 
-.social-menu-container ul.menu li.menu-item a::before {
+#primary-navigation li.menu-item a:hover,
+#primary-navigation li.menu-item a:focus,
+#primary-navigation ul.sub-menu li.menu-item a:hover,
+#primary-navigation ul.sub-menu li.menu-item a:focus {
+  border-bottom-color: <?php echo $content_link_color; ?>;
+}
+
+/* Content area */
+#primary {
+  background-color: <?php echo $content_background_color; ?>;
+}
+
+#primary a,
+#primary a:visited,
+#primary .widget li::before {
+  color: <?php echo $content_link_color; ?>;
+}
+
+#primary,
+#primary button,
+#primary input,
+#primary select,
+#primary textarea,
+#primary h1,
+#primary h2,
+#primary h3,
+#primary h4,
+#primary h5,
+#primary h6,
+#primary .widget,
+#primary .widget .widget-title,
+#primary a:hover {
   color: <?php echo $content_text_color; ?>;
 }
 
-.search-toggle, .back-to-top span {
-  color: <?php echo $content_text_color; ?>;
-}
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+#primary button,
+#primary input[type="button"],
+#primary input[type="reset"],
+#primary input[type="submit"] {
   color: <?php echo $content_text_color; ?>;
   border-color: <?php echo $content_text_color; ?>;
 }
 
-#primary-navigation li.menu-item a:hover,
-#primary-navigation li.menu-item a:focus,
-#secondary-navigation li.menu-item a:hover,
-#secondary-navigation li.menu-item a:focus {
-  color: <?php echo $content_text_color; ?>;
-}
-
-#primary-navigation li.menu-item a:hover,
-#primary-navigation li.menu-item a:focus,
-#secondary-navigation li.menu-item a:hover,
-#secondary-navigation li.menu-item a:focus,
-#primary-navigation ul.sub-menu li.menu-item a:hover,
-#primary-navigation ul.sub-menu li.menu-item a:focus,
-#secondary-navigation ul.sub-menu li.menu-item a:hover,
-#secondary-navigation ul.sub-menu li.menu-item a:focus {
-  border-bottom-color: <?php echo $content_link_color; ?>;
-}
-
-.widget li::before,
-a:hover, a:focus, a:active,
-.search-form .search-submit:hover,
-#desktop-search .search-form .search-submit:hover,
-.social-menu-container ul.menu li.menu-item a:hover::before {
-  color: <?php echo $content_link_color; ?>;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover,
-button:active,
-button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
+#primary button:hover,
+#primary input[type="button"]:hover,
+#primary input[type="reset"]:hover,
+#primary input[type="submit"]:hover,
+#primary button:active,
+#primary button:focus,
+#primary input[type="button"]:active,
+#primary input[type="button"]:focus,
+#primary input[type="reset"]:active,
+#primary input[type="reset"]:focus,
+#primary input[type="submit"]:active,
+#primary input[type="submit"]:focus {
   color: <?php echo $content_link_color; ?>;
   border-color: <?php echo $content_link_color; ?>;
 }
 
-blockquote {
+#primary blockquote {
   border-left-color: <?php echo $content_link_color; ?>;
+}
+
+/* Sidebar */
+#secondary {
+  background-color: <?php echo $sidebar_background_color; ?>;
+}
+
+#secondary a,
+#secondary a:visited,
+#secondary .widget li::before {
+  color: <?php echo $sidebar_link_color; ?>;
+}
+
+#secondary,
+#secondary button,
+#secondary input,
+#secondary select,
+#secondary textarea,
+#secondary h1,
+#secondary h2,
+#secondary h3,
+#secondary h4,
+#secondary h5,
+#secondary h6,
+#secondary .widget,
+#secondary .widget .widget-title,
+#secondary a:hover {
+  color: <?php echo $sidebar_text_color; ?>;
+}
+
+#secondary button,
+#secondary input[type="button"],
+#secondary input[type="reset"],
+#secondary input[type="submit"] {
+  color: <?php echo $sidebar_text_color; ?>;
+  border-color: <?php echo $sidebar_text_color; ?>;
+}
+
+#secondary button:hover,
+#secondary input[type="button"]:hover,
+#secondary input[type="reset"]:hover,
+#secondary input[type="submit"]:hover,
+#secondary button:active,
+#secondary button:focus,
+#secondary input[type="button"]:active,
+#secondary input[type="button"]:focus,
+#secondary input[type="reset"]:active,
+#secondary input[type="reset"]:focus,
+#secondary input[type="submit"]:active,
+#secondary input[type="submit"]:focus {
+  color: <?php echo $sidebar_link_color; ?>;
+  border-color: <?php echo $sidebar_link_color; ?>;
+}
+
+/* Footer */
+body,
+#colophon {
+  background-color: <?php echo $footer_background_color; ?>;
+}
+
+#colophon a,
+#colophon a:visited,
+#colophon .widget li::before {
+  color: <?php echo $footer_link_color; ?>;
+}
+
+#colophon,
+#colophon button,
+#colophon input,
+#colophon select,
+#colophon textarea,
+#colophon h1,
+#colophon h2,
+#colophon h3,
+#colophon h4,
+#colophon h5,
+#colophon h6,
+#colophon .widget,
+#colophon .widget .widget-title,
+#colophon a:hover {
+  color: <?php echo $footer_text_color; ?>;
+}
+
+#colophon button,
+#colophon input[type="button"],
+#colophon input[type="reset"],
+#colophon input[type="submit"] {
+  color: <?php echo $footer_text_color; ?>;
+  border-color: <?php echo $footer_text_color; ?>;
+}
+
+#colophon button:hover,
+#colophon input[type="button"]:hover,
+#colophon input[type="reset"]:hover,
+#colophon input[type="submit"]:hover,
+#colophon button:active,
+#colophon button:focus,
+#colophon input[type="button"]:active,
+#colophon input[type="button"]:focus,
+#colophon input[type="reset"]:active,
+#colophon input[type="reset"]:focus,
+#colophon input[type="submit"]:active,
+#colophon input[type="submit"]:focus {
+  color: <?php echo $footer_link_color; ?>;
+  border-color: <?php echo $footer_link_color; ?>;
 }
