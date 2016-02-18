@@ -26,8 +26,6 @@
 		<nav id="mobile-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Mobile Navigation', 'hovercraft' ); ?>">
 			<div class="menu-title"><h1><?php _e( 'Menu', 'hovercraft' ); ?></h1></div>
 			<?php if ( has_nav_menu( 'primary' ) ) { get_template_part( 'template-parts/navigation-primary' ); } ?>
-			<?php if ( has_nav_menu( 'secondary' ) ) { get_template_part( 'template-parts/navigation-secondary' ); } ?>
-
 			<div id="mobile-search" class="search-container">
 				<?php get_search_form(); ?>
 			</div><!-- #mobile-search -->
@@ -48,37 +46,10 @@
 			<nav id="primary-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Menu', 'hovercraft' ); ?>">
 				<?php if ( has_nav_menu( 'primary' ) ) { get_template_part( 'template-parts/navigation-primary' ); } ?>
 			</nav><!-- #primary-navigation -->
-		<?php endif; ?>
-
-		<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'secondary' ) ) : ?>
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'hovercraft' ); ?></span>
 				<span class="lines" aria-hidden="true"></span>
 			</button>
-		<?php endif; ?>
-
-		<?php if ( has_nav_menu( 'social' ) || has_nav_menu( 'secondary' ) ) : ?>
-			<div class="right-container">
-				<?php if ( has_nav_menu( 'social' ) ) : ?>
-					<nav id="top-social" class="social-links" aria-label="<?php _e( 'Social Links', 'hovercraft' ); ?>">
-						<?php get_template_part( 'template-parts/navigation-social' ); ?>
-						<span class="sep"> | </span>
-						<button class="search-toggle">
-							<span class="screen-reader-text"><?php _e('Search Toggle', 'hovercraft'); ?></span>
-							<span class="genericon genericon-search" aria-hidden="true"></span>
-						</button>
-						<?php if ( has_nav_menu( 'social' ) && has_nav_menu( 'secondary' ) ) : ?>
-							<span class="sep"> | </span>
-						<?php endif; ?>
-					</nav><!-- #social-links -->
-				<?php endif; ?>
-
-				<?php if ( has_nav_menu( 'secondary' ) ) : ?>
-					<nav id="secondary-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Secondary Menu', 'hovercraft' ); ?>">
-						<?php if ( has_nav_menu( 'secondary' ) ) { get_template_part( 'template-parts/navigation-secondary' ); } ?>
-					</nav><!-- #secondary-navigation -->
-				<?php endif; ?>
-			</div><!--.right-container -->
 		<?php endif; ?>
 	</header><!-- #masthead -->
 

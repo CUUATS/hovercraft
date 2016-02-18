@@ -45,7 +45,6 @@ function hovercraft_setup() {
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'hovercraft' ),
-		'secondary' => esc_html__( 'Secondary Menu', 'hovercraft' ),
 		'social' => esc_html__( 'Social Menu', 'hovercraft' ),
 	) );
 
