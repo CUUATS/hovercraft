@@ -141,36 +141,3 @@
 		}
 	}
 }
-
-/* Search toggle. */
-.search-toggle {
-	padding: 0;
-	height: 18px;
-	height: 1.125rem;
-	width: 18px;
-	width: 1.125rem;
-	line-height: 18px;
-	line-height: 1.125rem;
-	color: white;
-	border: none;
-	border-radius: 0;
-	background: transparent;
-
-	&:hover,
-	&:focus {
-		background: transparent;
-	}
-
-	.genericon-search {
-		position: relative;
-		bottom: -1px;
-		font-weight: bold;
-		vertical-align: middle;
-		transition: transform 0.125s, color 0.125s ease-in-out;
-	}
-
-	.genericon-search:hover {
-		opacity: 1;
-		transform:rotate(360deg);
-	}
-}

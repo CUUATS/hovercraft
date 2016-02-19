@@ -51,7 +51,8 @@ h1.site-title a:hover {
 /* Content area */
 #primary,
 #mobile-search .search-form label,
-#primary-navigation ul.sub-menu {
+#primary-navigation ul.sub-menu,
+#desktop-search .search-form label {
   background-color: <?php echo $content_background_color; ?>;
 }
 
@@ -75,6 +76,7 @@ h1.site-title a:hover {
 #primary .widget,
 #primary .widget .widget-title,
 #primary a:hover,
+#desktop-search .search-form .search-field,
 #mobile-search .search-form .search-field {
   color: <?php echo $content_text_color; ?>;
 }

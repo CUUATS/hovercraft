@@ -29,15 +29,10 @@
 	/*--------------------------------------------------------------
 	Menu and search toggles.
 	--------------------------------------------------------------*/
-	
-	// Open hidden header to reveal mobile menu.
-	$( ".menu-toggle" ).click(function() {
-		$( "#hidden-header" ).slideToggle( "slow" );
-	});
 
-	// Open hidden header to reveal desktop search.
-	$( ".search-toggle" ).click(function() {
-		$( "#hidden-header" ).slideToggle( "slow" );
+	// Open hidden header to reveal mobile menu.
+	$( ".menu-toggle, .search-toggle" ).click(function() {
+		$( "#hidden-header" ).slideToggle("fast");
 	});
 
 	// Close hidden header on window resize.
@@ -62,42 +57,24 @@
 		$( this ).toggleClass( "focus" );
 	});
 
-	// Make focus search-toggle more intuitif.
+	// Make focus search-toggle more intuitive.
 	$('.search-toggle').click(function(){
-
 		// Add class .toggled on toggle.
 		$( this ).toggleClass( "toggled" );
-
 		// Only move focus when opened.
 		if ( $( this ).hasClass( "toggled" ) ) {
 			$( "#desktop-search input" ).focus();
 		}
-
-		// Move focus to search-input.
-		$( ".search-toggle" ).on( 'blur', function() {
-			$( "#desktop-search input" ).focus();
-		});
-
-		// Move focus back to search-toggle.
-		$( "#desktop-search .search-submit" ).on( 'blur', function() {
-			$( ".search-toggle" ).focus();
-		});
-
 	});
 
-	// Make focus menu-toggle more intuitif.
-	$('.menu-toggle').click(function(){
+	// Move focus to search input after expanding the desktop search form.
+	$( ".search-toggle" ).on( 'blur', function() {
+		$( "#desktop-search input" ).focus();
+	});
 
-		// Move focus to first menu item.
-		$( ".menu-toggle" ).on( 'blur', function() {
-			$( '#mobile-navigation' ).find( 'a:eq(0)' ).focus();
-		});
-
-		// Move focus to menu-toggle.
-		$( "#mobile-navigation .search-submit" ).on( 'blur', function() {
-			$( ".menu-toggle" ).focus();
-		});
-
+	// Move focus to first menu item after expanding the menu.
+	$( ".menu-toggle" ).on( 'blur', function() {
+		$( '#mobile-navigation' ).find( 'a:eq(0)' ).focus();
 	});
 
 	// We need a wrapper to absolutely position #masthead and #colophon.

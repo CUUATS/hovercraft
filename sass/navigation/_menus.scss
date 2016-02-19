@@ -20,7 +20,6 @@
 
 /* Hide stuff on mobile screens. */
 #primary-navigation,
-.right-container,
 #desktop-search {
 	display: none;
 }
@@ -129,7 +128,6 @@
 
 /* Desktop menus. */
 #primary-navigation {
-	justify-content: center;
 	align-items: center;
 	ul.menu li {
 		display: inline;
@@ -193,8 +191,6 @@
 @media screen and (min-width: $breakpoint-medium) {
 	/* Reveal stuff on larger screens. */
 	#primary-navigation,
-	#secondary-navigation,
-	.right-container,
 	#desktop-search {
 		display: block;
 		display: flex;

@@ -1,3 +1,21 @@
+/* Search toggle. */
+.search-toggle {
+	background-color: transparent;
+	border: 0 none transparent;
+	display: none;
+
+	.genericon-search {
+		font-weight: bold;
+		margin-top: -2px;
+	}
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+	.search-toggle {
+		display: block;
+	}
+}
+
 /* Default search. */
 .search-form {
 	position: relative;
@@ -49,20 +67,17 @@
 #desktop-search {
 	.search-form {
 		width: 100%;
-		padding: 32px 16px;
-		padding: 2rem 1em;
+		padding: 0;
 		label {
 			border: 0;
-			padding: 0 100px 0 0;
-			background: transparent;
+			padding: 1em 5em 1em 1em;
 		}
 		.search-field {
-			font-size: 32px;
-			font-size: 2rem;
-			color: $color__form-placeholder;
+			font-size: 24px;
+			font-size: 1.5rem;
 		}
 		.search-submit {
-			color: $color__form-placeholder;
+			color: $color__form-icon;
 			min-height: 56px;
 			margin-left: 8rem;
 			margin-right: 1rem;

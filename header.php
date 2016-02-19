@@ -51,6 +51,10 @@
 				<span class="lines" aria-hidden="true"></span>
 			</button>
 		<?php endif; ?>
+		<button class="search-toggle">
+			<span class="screen-reader-text"><?php _e( 'Search', 'hovercraft' ); ?></span>
+			<span class="genericon genericon-search" aria-hidden="true"></span>
+		</button>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
