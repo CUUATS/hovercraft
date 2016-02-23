@@ -55,7 +55,7 @@ function wptuts_slider_template(){
       $slide_object = array(
         "title" =>$post->post_title,
         "excerpt" =>$post ->post_excerpt,
-        "conent" =>$post ->post_content,
+        "content" =>$post ->post_content,
         "id"=> $id,
         "post_url" =>get_permalink($id),
         "feat_image_url" =>wp_get_attachment_url(get_post_thumbnail_id($id))
