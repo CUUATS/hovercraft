@@ -12,7 +12,19 @@
  */
 
 get_header(); ?>
-<?php echo wptuts_slider_template(); ?>
+<?php 
+
+ ?>
+
+
+<?php/*
+$menu_name = 'slider';
+$locations = get_nav_menu_locations();
+var_dump($locations);
+*/
+?>
+
+
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

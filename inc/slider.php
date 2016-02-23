@@ -1,77 +1,70 @@
 <?php
 
 // Enqueue Flexslider Files
-
     function wptuts_slider_scripts() {
         wp_enqueue_script( 'jquery' );
-
-      //  wp_enqueue_style( 'flex-style', get_template_directory_uri() . '/inc/slider/css/flexslider.css' );
-
         wp_enqueue_script( 'flex-script', get_template_directory_uri() .  '/js/jquery.flexslider-min.js', array( 'jquery' ), false, true );
     }
     add_action( 'wp_enqueue_scripts', 'wptuts_slider_scripts' );
 
     // Initialize Slider
 
-    function wptuts_slider_initialize() { ?>
+?>
+  <?php  function wptuts_slider_initialize() { ?>
         <script type="text/javascript" charset="utf-8">
             jQuery(window).load(function() {
                 jQuery('.flexslider').flexslider({
                     animation: "fade",
                     direction: "horizontal",
-                    slideshowSpeed: 7000,
+                    slideshowSpeed: 1000,
                     animationSpeed: 600
                 });
             });
         </script>
     <?php }
     add_action( 'wp_head', 'wptuts_slider_initialize' );
-    // Create Slider
+?>
+<?php
+function wptuts_slider_template(){
+  //get all of the meta data from the list items
 
-        function wptuts_slider_template() {
+  $menu_name = 'slider';
+  //get all of the menus
+  $locations = get_nav_menu_locations();
 
-            // Query Arguments
-            $args = array(
-                'post_type' => 'slides',
-                'posts_per_page' => 5
-            );
+  //Check to see if the menu in the location is empty
+  if ( isset( $locations[ $menu_name ] ) ) {
+    //get the actual menu object by the same name
+  	$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+    //get the menu items
+    $menu_items = wp_get_nav_menu_items($menu);
 
-            // The Query
-            $the_query = new WP_Query( $args );
+    //create an empty array object that will eventuall hold all the information for each indiviual slide
+    $slides = array();
 
-            // Check if the Query returns any posts
-            if ( $the_query->have_posts() ) {
+    //loop through each item in the menu slider
+    foreach($menu_items as $slide){
 
-                // Start the Slider ?>
-                <div class="flexslider">
-                    <ul class="slides">
+      //grab the information for that slide
+      $post = get_post($slide->object_id);
 
-                        <?php
-                        // The Loop
-                        while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                            <li>
+      //get the slide id
+      $id= $post->ID;
 
-                            <?php // Check if there's a Slide URL given and if so let's a link to it
-                            if ( get_post_meta( get_the_id(), 'wptuts_slideurl', true) != '' ) { ?>
-                                <a href="<?php echo esc_url( get_post_meta( get_the_id(), 'wptuts_slideurl', true) ); ?>">
-                            <?php }
+      //create an associative array that holds some metadata for this particular slide
+      $slide_object = array(
+        "title" =>$post->post_title,
+        "excerpt" =>$post ->post_excerpt,
+        "conent" =>$post ->post_content,
+        "id"=> $id,
+        "post_url" =>get_permalink($id),
+        "feat_image_url" =>wp_get_attachment_url(get_post_thumbnail_id($id))
 
-                            // The Slide's Image
-                            echo the_post_thumbnail();
-
-                            // Close off the Slide's Link if there is one
-                            if ( get_post_meta( get_the_id(), 'wptuts_slideurl', true) != '' ) { ?>
-                                </a>
-                            <?php } ?>
-
-                            </li>
-                        <?php endwhile; ?>
-
-                    </ul><!-- .slides -->
-                </div><!-- .flexslider -->
-
-            <?php }
-
-            // Reset Post Data
-            wp_reset_postdata();
-        }
+      );
+      //append slides array
+      array_push($slides,$slide_object);
+    }
+}
+return $slides;
+}
+?>
