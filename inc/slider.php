@@ -48,13 +48,16 @@ function wptuts_slider_template(){
       //grab the information for that slide
       $post = get_post($slide->object_id);
 
-      //get the slide id
+      //get the slide post id
       $id= $post->ID;
+
+      //get the first 10 words of the content
+      $excerpt = wp_trim_words($post ->post_content,$num_words=10);
 
       //create an associative array that holds some metadata for this particular slide
       $slide_object = array(
         "title" =>$post->post_title,
-        "excerpt" =>$post ->post_excerpt,
+        "excerpt" =>$excerpt,
         "content" =>$post ->post_content,
         "id"=> $id,
         "post_url" =>get_permalink($id),
