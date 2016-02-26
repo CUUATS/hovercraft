@@ -1,0 +1,22 @@
+<?php
+/**
+ * Custom CSS for banner image.
+ *
+ * @package Hovercraft
+ */?>
+
+#banner-image {
+   background-image: url('<?php echo $small_url; ?>');
+}
+
+@media screen and (min-width: 800px) {
+  #banner-image {
+     background-image: url('<?php echo $medium_url; ?>');
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #banner-image {
+     background-image: url('<?php echo $large_url; ?>');
+  }
+}

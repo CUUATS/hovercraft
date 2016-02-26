@@ -40,7 +40,29 @@ function hovercraft_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 640, 9999, false );
-	add_image_size( 'hovercraft-full-width', '1010', '9999', false );
+	add_image_size( 'hovercraft-banner-large', 1600, 9999, false );
+	add_image_size( 'hovercraft-banner-medium', 1024, 9999, false );
+	add_image_size( 'hovercraft-banner-small', 800, 9999, false );
+
+	/**
+	 * Add inline styles for banner images.
+	 *
+	 * @see wp_add_inline_style()
+	 */
+	function hovercraft_banner_image() {
+		$css = '';
+		if ( hovercraft_post_has_featured_image() && is_singular() ) {
+			$attachment_id = get_post_thumbnail_id( get_the_ID() );
+			$large_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-large' );
+			$medium_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-medium' );
+			$small_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-small' );
+			ob_start();
+			require get_template_directory() . '/inc/theme-banner.php.css';
+			$css = ob_get_clean();
+		}
+		wp_add_inline_style('hovercraft-style', preg_replace('/\s+/', ' ', $css));
+	}
+	add_action('wp_enqueue_scripts', 'hovercraft_banner_image');
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(

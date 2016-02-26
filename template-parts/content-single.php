@@ -16,8 +16,6 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<?php hovercraft_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
@@ -32,4 +30,3 @@
 		<?php hovercraft_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
-

@@ -265,6 +265,12 @@ function hovercraft_category_transient_flusher() {
 add_action( 'edit_category', 'hovercraft_category_transient_flusher' );
 add_action( 'save_post',     'hovercraft_category_transient_flusher' );
 
+if ( ! function_exists( 'hovercraft_post_has_thumbnail' ) ) :
+function hovercraft_post_has_featured_image() {
+	return !( post_password_required() || is_attachment() ) && has_post_thumbnail();
+}
+endif;
+
 if ( ! function_exists( 'hovercraft_post_thumbnail' ) ) :
 /**
  * Display an optional post thumbnail.
@@ -275,32 +281,14 @@ if ( ! function_exists( 'hovercraft_post_thumbnail' ) ) :
  * @since Hovercraft 1.0
  */
 function hovercraft_post_thumbnail() {
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-		return;
-	}
-
-	if ( is_page_template( 'template-parts/page-full-width.php' ) || is_page_template( 'template-parts/page-portfolio.php' ) ) : ?>
-
-		<div class="post-thumbnail">
-			<?php the_post_thumbnail( 'hovercraft-full-width' ); ?>
-		</div><!-- .post-thumbnail -->
-
-	<?php elseif ( is_singular() ) : ?>
-
-		<div class="post-thumbnail">
-			<?php the_post_thumbnail(); ?>
-		</div><!-- .post-thumbnail -->
-
-	<?php else : ?>
-
-		<div class="post-thumbnail">
-			<a class="post-thumbnail-link" href="<?php the_permalink(); ?>" aria-hidden="true">
-				<?php
-					the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
-				?>
-			</a>
-		</div><!-- .post-thumbnail -->
-
+	if ( hovercraft_post_has_featured_image() ) : ?>
+	<div class="post-thumbnail">
+		<a class="post-thumbnail-link" href="<?php the_permalink(); ?>" aria-hidden="true">
+			<?php
+				the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
+			?>
+		</a>
+	</div><!-- .post-thumbnail -->
 	<?php endif;
 }
 endif;

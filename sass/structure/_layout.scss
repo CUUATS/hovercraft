@@ -4,6 +4,10 @@ body {
 	min-height: 100vh;
 }
 
+#wpadminbar {
+	height: 46px;
+}
+
 body.admin-bar {
 	margin-top: -46px;
 }
@@ -14,6 +18,10 @@ div#wpadminbar {
 }
 
 @media screen and (min-width: 783px) {
+	#wpadminbar {
+		height: 32px;
+	}
+
 	body.admin-bar {
 		margin-top: -32px;
 	}
@@ -27,11 +35,47 @@ div#wpadminbar {
 	padding: 1em 5%;
 }
 
+#banner-image {
+	background-position: center center;
+	background-size: cover;
+	height: 200px;
+	width: 100%;
+}
+
 @media screen and (min-width: $breakpoint-medium) {
 	#primary-navigation {
 		display: flex;
 		flex: 1 1 auto;
 		justify-content: flex-end;
+	}
+	/* Banner magic scrolling */
+	#banner-image {
+		height: 350px;
+		position: fixed;
+		top: 0;
+		z-index: -1;
+	}
+
+	#masthead {
+		height: 82px;
+	}
+
+	.scroll-above-banner-break {
+		#wpadminbar {
+			position: fixed !important;
+		}
+
+		#masthead {
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
+	}
+
+	.admin-bar {
+		#masthead {
+			top: 32px;
+		}
 	}
 }
 
@@ -41,9 +85,15 @@ div#wpadminbar {
 		flex: 1 0 0;
 		flex-direction: column;
 	}
+	#banner-image {
+		height: 400px;
+	}
 	#masthead,
 	#colophon {
 		padding: 1em 6%;
+	}
+	#masthead {
+		height: 107px;
 	}
 	#content {
 		display: flex;

@@ -12,8 +12,6 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php hovercraft_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
@@ -28,4 +26,3 @@
 		<?php edit_post_link( esc_html__( 'Edit', 'hovercraft' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
-

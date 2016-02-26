@@ -21,7 +21,6 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'hovercraft' ); ?></a>
-
 	<div id="hidden-header" class="hidden">
 		<nav id="mobile-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Mobile Navigation', 'hovercraft' ); ?>">
 			<div class="menu-title"><h1><?php _e( 'Menu', 'hovercraft' ); ?></h1></div>
@@ -56,5 +55,5 @@
 			<span class="genericon genericon-search" aria-hidden="true"></span>
 		</button>
 	</header><!-- #masthead -->
-
+	<?php if ( hovercraft_post_has_featured_image() && is_singular() ) : ?><div id="banner-image"></div><?php endif; ?>
 	<div id="content" class="site-content">

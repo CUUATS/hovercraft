@@ -83,4 +83,26 @@
 		$( "#colophon" ).wrap( "<div class='wrapper'></div>" );
 	}
 
+	// Fancy scrolling for banner images.
+	$(function () {
+		$(window).resize(function () {
+			if ($('#banner-image').length && !$('.menu-toggle').is(':visible')) {
+				var aboveBanner = $('#wpadminbar').outerHeight() +
+						$('#masthead').outerHeight(),
+					bannerHeight = $('#banner-image').outerHeight(),
+					bannerBreak = bannerHeight - aboveBanner;
+				$(window).scroll(function() {
+					var aboveBreak = $(window).scrollTop() < bannerBreak,
+						bodyPadding = aboveBreak ? bannerHeight : bannerHeight - aboveBanner;
+					$('body').toggleClass('scroll-above-banner-break', aboveBreak)
+						.css('padding-top', bodyPadding);
+				}).trigger('scroll');
+			} else {
+				$('body').removeClass('scroll-above-banner-break')
+					.css('padding-top', 0);
+				$(window).unbind('scroll');
+			}
+		}).resize();
+	});
+
 })( jQuery );

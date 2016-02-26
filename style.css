@@ -637,6 +637,10 @@ body {
   min-height: 100vh;
 }
 
+#wpadminbar {
+  height: 46px;
+}
+
 body.admin-bar {
   margin-top: -46px;
 }
@@ -647,6 +651,10 @@ div#wpadminbar {
 }
 
 @media screen and (min-width: 783px) {
+  #wpadminbar {
+    height: 32px;
+  }
+
   body.admin-bar {
     margin-top: -32px;
   }
@@ -659,11 +667,43 @@ div#wpadminbar {
   padding: 1em 5%;
 }
 
+#banner-image {
+  background-position: center center;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+}
+
 @media screen and (min-width: 50rem) {
   #primary-navigation {
     display: flex;
     flex: 1 1 auto;
     justify-content: flex-end;
+  }
+
+  /* Banner magic scrolling */
+  #banner-image {
+    height: 350px;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+  }
+
+  #masthead {
+    height: 82px;
+  }
+
+  .scroll-above-banner-break #wpadminbar {
+    position: fixed !important;
+  }
+  .scroll-above-banner-break #masthead {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .admin-bar #masthead {
+    top: 32px;
   }
 }
 @media screen and (min-width: 64rem) {
@@ -673,9 +713,17 @@ div#wpadminbar {
     flex-direction: column;
   }
 
+  #banner-image {
+    height: 400px;
+  }
+
   #masthead,
   #colophon {
     padding: 1em 6%;
+  }
+
+  #masthead {
+    height: 107px;
   }
 
   #content {
@@ -716,8 +764,6 @@ div#wpadminbar {
 #masthead {
   display: flex;
   justify-content: space-between;
-  min-height: 56px;
-  min-height: 3.5rem;
 }
 
 .site-branding {
@@ -731,7 +777,7 @@ div#wpadminbar {
 }
 
 h1.site-title {
-  margin: 0.25em 0;
+  margin: 0;
   line-height: 1;
   font-size: 1.5em;
 }
@@ -741,7 +787,7 @@ h1.site-title a {
 }
 
 h1.site-title a img {
-  max-height: 50px;
+  height: 50px;
 }
 
 p.site-description {
@@ -750,7 +796,7 @@ p.site-description {
 
 @media screen and (min-width: 64rem) {
   h1.site-title a img {
-    max-height: 75px;
+    height: 75px;
   }
 }
 /*--------------------------------------------------------------
