@@ -70,4 +70,3 @@ function wptuts_slider_template(){
 }
 return $slides;
 }
-?>

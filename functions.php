@@ -56,6 +56,7 @@ function hovercraft_setup() {
 			$large_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-large' );
 			$medium_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-medium' );
 			$small_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-small' );
+			$header_rgba = hovercraft_hex2rgba( get_theme_mod( 'hovercraft_header_background_color', '#eeeeee' ), 0.9 );
 			ob_start();
 			require get_template_directory() . '/inc/theme-banner.php.css';
 			$css = ob_get_clean();
@@ -63,6 +64,36 @@ function hovercraft_setup() {
 		wp_add_inline_style('hovercraft-style', preg_replace('/\s+/', ' ', $css));
 	}
 	add_action('wp_enqueue_scripts', 'hovercraft_banner_image');
+
+	/**
+	 * Convert hex color to RGBA.
+	 *
+	 * @param string $color.
+	 * @param float $alpha.
+	 * @return string.
+	 */
+	function hovercraft_hex2rgba( $color, $alpha ) {
+		if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
+			$hex = str_replace("#", "", $color);
+			if (strlen( $hex ) == 3) {
+				$r = hexdec(substr($hex,0,1).substr($hex,0,1));
+				$g = hexdec(substr($hex,1,1).substr($hex,1,1));
+				$b = hexdec(substr($hex,2,1).substr($hex,2,1));
+			} else {
+				$r = hexdec(substr($hex,0,2));
+				$g = hexdec(substr($hex,2,2));
+				$b = hexdec(substr($hex,4,2));
+			}
+
+			$color = "rgba({$r}, {$g}, {$b}, {$alpha})";
+
+			return $color;
+		}
+
+		else {
+			return '';
+		}
+	}
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(

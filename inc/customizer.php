@@ -187,21 +187,6 @@ function hovercraft_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'hovercraft_customize_register' );
 
 /**
- * Sanitize and convert hex to rgba..
- *
- * @param string $color.
- * @return string.
- */
-function hovercraft_hex2rgba( $color ) {
-	if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
-		return $color;
-	}
-	else {
-		return '';
-	}
-}
-
-/**
  * Sanitize slider animation.
  *
  * @param string $input.
