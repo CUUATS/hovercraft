@@ -1,5 +1,4 @@
 <?php
-
 // Enqueue Flexslider Files
     function wptuts_slider_scripts() {
         wp_enqueue_script( 'jquery' );
@@ -8,9 +7,7 @@
     add_action( 'wp_enqueue_scripts', 'wptuts_slider_scripts' );
 
     // Initialize Slider
-
-?>
-  <?php  function wptuts_slider_initialize() { ?>
+  function wptuts_slider_initialize() { ?>
         <script type="text/javascript" charset="utf-8">
             jQuery(window).load(function() {
                 jQuery('.flexslider').flexslider({
@@ -23,8 +20,7 @@
         </script>
     <?php }
     add_action( 'wp_head', 'wptuts_slider_initialize' );
-?>
-<?php
+
 function wptuts_slider_template(){
   //get all of the meta data from the list items
 
