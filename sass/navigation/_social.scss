@@ -43,14 +43,8 @@
 				font-size: 1.0rem;
 				margin-left: 4px;
 				margin-left: 0.25rem;
-				transition: transform 0.125s, color 0.125s ease-in-out;
 				vertical-align: middle;
 				-webkit-font-smoothing: antialiased;
-			}
-
-			a:hover::before {
-				opacity: 1;
-				transform:rotate(360deg);
 			}
 
 			a[href*="wordpress.org"]::before,

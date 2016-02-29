@@ -11,45 +11,38 @@
 
 /* Site info. */
 .site-info {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	min-height: 56px;
-	min-height: 3.5rem;
 	padding: 1em 0;
 	@include font-size(0.875);
 	.sep {
 		display: none;
 		margin: 0 0.15em;
 	}
-	.credits,
-	.credits-top,
-	.credits-bottom {
+	.site-info-section {
 		display: block;
-		width: 100%;
 		text-align: center;
+	}
+	.credits {
+		margin-top: 1em;
 	}
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-	/* Hide bottom social links for large screens. */
-	#bottom-social {
-		display: none;
-	}
-
 	/* Site info. */
 	.site-info {
-		flex-direction: row;
-		justify-content: space-between;
 		.sep {
 			display: inline;
 		}
-		.credits,
-		.credits-top,
-		.credits-bottom {
+		.site-info-section {
 			display: inline;
 			width: auto;
+		}
+		.credits {
+			margin-top: 0;
 			text-align: left;
+		}
+		#bottom-social {
+			float: right;
+			margin-left: 2em;
 		}
 	}
 }

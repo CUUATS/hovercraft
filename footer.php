@@ -24,10 +24,17 @@
 					</nav><!-- #social-links -->
 				<?php endif; ?>
 
-				<div class="credits">
-					<span class="credits-top"><?php echo __( 'Powered by ', 'hovercraft' ) ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'hovercraft' ) ); ?>" rel="generator">WordPress</a></span>
+				<div class="accessibility-info">
+					<span class="site-info-section"><strong>Accessibility:</strong></span>
+          <span class="site-info-section"><a href="http://www1.co.champaign.il.us/ada/Home.php">ADA contacts</a></span>
 					<span class="sep"> | </span>
-					<span class="credits-bottom"><?php printf( __( 'The %1$s theme by %2$s', 'hovercraft' ), '<a href="http://cuuats.org/" rel="theme">Hovercraft</a>', '<a href="http://cuuats.org/" rel="designer">CUUATS</a>' ); ?></span>
+          <span class="site-info-section"><a href="http://www1.co.champaign.il.us/ada/Feedback.php">Request information and provide feedback</a></span>
+				</div>
+
+				<div class="credits">
+					<span class="site-info-section"><?php echo __( 'Site by ', 'hovercraft' ) ?><a href="http://cuuats.org/">CUUATS</a></span>
+					<span class="sep"> | </span>
+					<span class="site-info-section"><?php echo __( 'Powered by ', 'hovercraft' ) ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'hovercraft' ) ); ?>" rel="generator">WordPress</a></span>
 				</div><!-- .credits -->
 			</div><!-- .site-info -->
 
