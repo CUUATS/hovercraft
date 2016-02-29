@@ -342,8 +342,10 @@ h1.entry-title {
   margin-bottom: 0.25rem;
 }
 
-h1.widget-title {
+h2.widget-title {
+  font-size: 1.4em;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
 
 p {
