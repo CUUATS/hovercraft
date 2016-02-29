@@ -13,7 +13,7 @@
                 jQuery('.flexslider').flexslider({
                     animation: "fade",
                     direction: "horizontal",
-                    slideshowSpeed: 1000,
+                    slideshowSpeed: 4000,
                     animationSpeed: 600
                 });
             });
@@ -41,26 +41,25 @@ function wptuts_slider_template(){
     //loop through each item in the menu slider
     foreach($menu_items as $slide){
 
-      //grab the information for that slide
-      $post = get_post($slide->object_id);
+    //grab the information for that slide
+    $post = get_post($slide->object_id);
 
-      //get the slide post id
-      $id= $post->ID;
+    //get the slide post id
+     $id= $post->ID;
 
-      //get the first 10 words of the content
-      $excerpt = wp_trim_words($post ->post_content,$num_words=10);
+    //sets up global pst dat. Helps to format custom query results for using Template tags
+     setup_postdata($post);
 
       //create an associative array that holds some metadata for this particular slide
       $slide_object = array(
-        "title" =>$post->post_title,
-        "excerpt" =>$excerpt,
-        "content" =>$post ->post_content,
-        "id"=> $id,
-        "post_url" =>get_permalink($id),
-        "feat_image_url" =>wp_get_attachment_url(get_post_thumbnail_id($id))
+      "title" =>$post->post_title,
+       "excerpt" =>get_the_excerpt(),
+       "content" =>$post ->post_content,
+       "id"=> $id,
+       "post_url" =>get_permalink($id),
+       "feat_image_url" =>wp_get_attachment_url(get_post_thumbnail_id($id))
 
-      );
-      //append slides array
+    );
       array_push($slides,$slide_object);
     }
 }

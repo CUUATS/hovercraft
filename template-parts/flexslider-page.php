@@ -5,16 +5,14 @@
  * @package Hovercraft
  */
 
-
-
 get_header(); ?>
 
-<?php   $slide_posts = wptuts_slider_template();
- //intialize slider
-// var_dump($slide_posts);
+<?php
+//create slider
+$slide_posts = wptuts_slider_template();
 
+//Start the slider
  ?>
-
  <div class="flexslider">
   <ul class="slides">
     <?php foreach ( $slide_posts as $post ) :?>
@@ -24,17 +22,17 @@ get_header(); ?>
        $post_link = $post["post_url"];
        $title = $post["title"];
        ?>
-            <li>
-              <div class="slider-container" style="background-image: url(<?php echo $img; ?>);">
-                <!--<img src="<?php// echo $img?>" alt="<?php// $title?>">-->
-                <div class ="featured-info">
-                  <a class="slider-link" href="<?php echo $post_link ?>" rel="bookmark"> <h2 class="slider-title"><?php echo $title; ?> </h2></a>
-                  <p class="slider-excerpt"><?php echo $post["excerpt"]; ?> </p>
-                </div>
+       <li class="featured" >
+           <div class="slider-container">
+             <img src="<?php echo $img?>" alt="<?php $title?>">
+             <div class ="featured-info">
+               <a class="slider-link" href="<?php echo $post_link ?>" rel="bookmark"> <h2 class="slider-title"><?php echo $title; ?> </h2></a>
+               <p class="slider-excerpt"><?php echo $post["excerpt"]; ?> </p>
+             </div>
 
-                </div>
+             </div>
 
-            </li>
+         </li>
 
 
         <?php endforeach; ?>
