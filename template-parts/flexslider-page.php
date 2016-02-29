@@ -24,7 +24,7 @@ $slide_posts = wptuts_slider_template();
        ?>
        <li class="featured" >
            <div class="slider-container">
-             <img src="<?php echo $img?>" alt="<?php $title?>">
+             <img src="<?php echo $img?>" alt="<?php $id?>">
              <div class ="featured-info">
                <a class="slider-link" href="<?php echo $post_link ?>" rel="bookmark"> <h2 class="slider-title"><?php echo $title; ?> </h2></a>
                <p class="slider-excerpt"><?php echo $post["excerpt"]; ?> </p>
