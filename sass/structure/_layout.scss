@@ -108,8 +108,9 @@ div#wpadminbar {
 		padding: 0 6% 0 0;
 	}
 	#primary {
-		flex: 1 0 auto;
+		flex: 1 0 1;
 		padding: 1em 2em 1em 6%;
+		width: 100%;
 	}
 	#secondary {
 		flex: 0 0 20em;
