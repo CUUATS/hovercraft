@@ -658,6 +658,10 @@ div#wpadminbar {
   body.admin-bar {
     margin-top: -32px;
   }
+
+  .admin-bar.scroll-above-banner-break #masthead {
+    top: 32px;
+  }
 }
 #desktop-search,
 #masthead,
@@ -706,10 +710,6 @@ div#wpadminbar {
     position: fixed;
     top: 0;
     width: 100%;
-  }
-
-  .admin-bar #masthead {
-    top: 32px;
   }
 }
 @media screen and (min-width: 64rem) {
