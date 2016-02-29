@@ -109,6 +109,7 @@ h1.site-title a:hover {
 }
 
 /* Sidebar */
+#content,
 #secondary {
   background-color: <?php echo $sidebar_background_color; ?>;
 }

@@ -105,24 +105,28 @@ div#wpadminbar {
 	#content {
 		display: flex;
   	flex: 1 0 auto;
+		padding: 0 6% 0 0;
 	}
 	#primary {
-		flex: 1 0 0;
+		flex: 1 0 auto;
 		padding: 1em 2em 1em 6%;
 	}
 	#secondary {
-		flex: 0 0 calc(20em + 6%);
-		padding: 1em 6% 1em 2em;
+		flex: 0 0 20em;
+		padding: 1em 0 1em 2em;
 	}
 	/* Sidebar is active and/or left sidebar is selected. */
 	.left-sidebar {
+		#content {
+			padding: 0 0 0 6%;
+		}
 		#primary {
 			order: 2;
 			padding: 1em 6% 1em 2em;
 		}
 		#secondary {
 			order: 1;
-			padding: 1em 2em 1em 6%;
+			padding: 1em 2em 1em 0;
 		}
 	}
 }
