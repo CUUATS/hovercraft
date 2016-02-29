@@ -631,21 +631,22 @@ textarea {
 /*--------------------------------------------------------------
 ## Layout
 --------------------------------------------------------------*/
+html {
+  height: 100%;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100%;
 }
 
 #wpadminbar {
   height: 46px;
 }
 
-body.admin-bar {
-  margin-top: -46px;
-}
-
 div#wpadminbar {
+  flex: none;
   order: -1;
   position: static !important;
 }
@@ -653,10 +654,6 @@ div#wpadminbar {
 @media screen and (min-width: 783px) {
   #wpadminbar {
     height: 32px;
-  }
-
-  body.admin-bar {
-    margin-top: -32px;
   }
 
   .admin-bar.scroll-above-banner-break #masthead {
@@ -717,6 +714,7 @@ div#wpadminbar {
     display: flex;
     flex: 1 0 0;
     flex-direction: column;
+    height: 100%;
   }
 
   #banner-image {

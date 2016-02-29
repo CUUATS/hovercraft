@@ -33,6 +33,12 @@ function hovercraft_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	/* Remove the spacing for the admin bar. It is placed using flexbox. */
+	add_action('get_header', 'hovercraft_remove_admin_login_header');
+	function hovercraft_remove_admin_login_header() {
+		remove_action('wp_head', '_admin_bar_bump_cb');
+	}
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
