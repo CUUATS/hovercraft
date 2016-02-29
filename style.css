@@ -725,6 +725,7 @@ div#wpadminbar {
 
   #masthead,
   #colophon {
+    flex: none;
     padding: 1em 6%;
   }
 
@@ -734,7 +735,7 @@ div#wpadminbar {
 
   #content {
     display: flex;
-    flex: 1 0 0;
+    flex: 1 0 auto;
   }
 
   #primary {
