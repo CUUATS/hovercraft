@@ -1,23 +1,11 @@
-/* Hidden header. */
-#hidden-header {
-	display: none;
-	background: $color__background-hidden;
-}
-
 /* Header. */
-#masthead {
-	display: flex;
-	justify-content: space-between;
-}
 .site-branding {
-	margin-right: 1em;
+	position: absolute;
+	bottom: 16px;
+	left: 5%;
 }
 
 /* Site Branding. */
-.site-branding {
-	display: flex;
-	align-items: center;
-}
 h1.site-title {
 	margin: 0;
 	line-height: 1;
@@ -32,6 +20,19 @@ h1.site-title a img {
 p.site-description {
 	display: none;
 }
+@media screen and (min-width: $breakpoint-medium) {
+	#masthead {
+		display: flex;
+		justify-content: space-between;
+	}
+	.site-branding {
+		align-items: center;
+		display: flex;
+		margin-right: 1em;
+		position: static;
+	}
+}
+
 @media screen and (min-width: $breakpoint-large) {
 	h1.site-title a img {
 		height: 75px;

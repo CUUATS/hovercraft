@@ -42,6 +42,11 @@ div#wpadminbar {
 	width: 100%;
 }
 
+#masthead {
+	padding-bottom: 66px;
+	position: relative;
+}
+
 @media screen and (min-width: $breakpoint-medium) {
 	#primary-navigation {
 		display: flex;
@@ -58,6 +63,7 @@ div#wpadminbar {
 
 	#masthead {
 		height: 82px;
+		padding-bottom: 1em;
 	}
 
 	.scroll-above-banner-break {

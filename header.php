@@ -21,39 +21,24 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'hovercraft' ); ?></a>
-	<div id="hidden-header" class="hidden">
-		<nav id="mobile-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Mobile Navigation', 'hovercraft' ); ?>">
-			<div class="menu-title"><h1><?php _e( 'Menu', 'hovercraft' ); ?></h1></div>
-			<?php if ( has_nav_menu( 'primary' ) ) { get_template_part( 'template-parts/navigation-primary' ); } ?>
-			<div id="mobile-search" class="search-container">
-				<?php get_search_form(); ?>
-			</div><!-- #mobile-search -->
-		</nav><!-- #site-navigation -->
-
-		<div id="desktop-search" class="search-container">
-			<?php get_search_form(); ?>
-		</div><!-- #desktop-search -->
-	</div><!-- #hidden-header -->
-
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php if ( get_theme_mod( 'hovercraft_logo' ) ) : ?><img class='site-logo' src='<?php echo esc_url( get_theme_mod( 'hovercraft_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'><?php else : ?><span class="site-logo-text"><?php bloginfo( 'name' ); ?></span><?php endif; ?></a></h1>
 			<p class="site-description offscreen"><?php bloginfo( 'description' ); ?></p>
 		</div><!-- .site-branding -->
-
-		<?php if ( has_nav_menu( 'primary' ) ) : ?>
-			<nav id="primary-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Menu', 'hovercraft' ); ?>">
-				<?php if ( has_nav_menu( 'primary' ) ) { get_template_part( 'template-parts/navigation-primary' ); } ?>
-			</nav><!-- #primary-navigation -->
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'hovercraft' ); ?></span>
-				<span class="lines" aria-hidden="true"></span>
-			</button>
-		<?php endif; ?>
-		<button class="search-toggle">
-			<span class="screen-reader-text"><?php _e( 'Search', 'hovercraft' ); ?></span>
-			<span class="genericon genericon-search" aria-hidden="true"></span>
+		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'hovercraft' ); ?></span>
+			<span class="lines" aria-hidden="true"></span>
 		</button>
+		<div id="masthead-menu">
+			<?php if ( has_nav_menu( 'primary' ) ) : ?>
+				<nav id="primary-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Menu', 'hovercraft' ); ?>">
+					<div class="menu-title"><h1><?php _e( 'Menu', 'hovercraft' ); ?></h1></div>
+					<?php if ( has_nav_menu( 'primary' ) ) { get_template_part( 'template-parts/navigation-primary' ); } ?>
+				</nav><!-- #primary-navigation -->
+			<?php endif; ?>
+			<?php get_search_form(); ?>
+		</div>
 	</header><!-- #masthead -->
 	<?php if ( hovercraft_post_has_featured_image() && is_singular() ) : ?><div id="banner-image"></div><?php endif; ?>
 	<div id="content" class="site-content">

@@ -5,8 +5,7 @@
  * @package Hovercraft
  */?>
 /* Header */
-#masthead,
-#hidden-header {
+#masthead {
   background: <?php echo $header_background_color; ?>;
   color: <?php echo $header_text_color; ?>;
 }
@@ -17,14 +16,11 @@ h1.site-title a:hover {
 }
 
 #masthead a,
-#masthead a:visited,
-#hidden-header a,
-#hidden-header a:visited {
+#masthead a:visited {
   color: <?php echo $header_link_color; ?>;
 }
 
-#masthead a:hover,
-#hidden-header a:hover {
+#masthead a:hover {
   color: <?php echo $header_text_color; ?>;
 }
 
@@ -50,10 +46,14 @@ h1.site-title a:hover {
 
 /* Content area */
 #primary,
-#mobile-search .search-form label,
-#primary-navigation ul.sub-menu,
-#desktop-search .search-form label {
+.search-form label {
   background-color: <?php echo $content_background_color; ?>;
+}
+
+@media screen and (min-width: 800px) {
+  #primary-navigation ul.sub-menu {
+    background-color: <?php echo $content_background_color; ?>;
+  }
 }
 
 #primary a,
@@ -76,8 +76,7 @@ h1.site-title a:hover {
 #primary .widget,
 #primary .widget .widget-title,
 #primary a:hover,
-#desktop-search .search-form .search-field,
-#mobile-search .search-form .search-field {
+.search-form .search-field {
   color: <?php echo $content_text_color; ?>;
 }
 
