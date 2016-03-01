@@ -21,8 +21,6 @@
 
 		<?php elseif ( is_page_template( 'template-parts/page-portfolio.php' ) && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( wp_kses( __( 'Ready to publish your first project? <a href="%1$s">Get started here</a>.', 'hovercraft' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php?post_type=jetpack-portfolio' ) ) ); ?></p>
-
 		<?php elseif ( is_page_template( 'template-parts/page-slider.php' ) && current_user_can( 'publish_posts' ) ) : ?>
 
 			<p><?php printf( wp_kses( __( 'There are no featured posts yet. <a href="%1$s">Get started here</a>.', 'hovercraft' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'edit.php' ) ) ); ?></p>
