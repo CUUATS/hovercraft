@@ -20,7 +20,7 @@ h1.site-title a img {
 p.site-description {
 	display: none;
 }
-@media screen and (min-width: $breakpoint-medium) {
+@media screen and (min-width: $breakpoint-medium) { .flexbox {
 	#masthead {
 		display: flex;
 		justify-content: space-between;
@@ -31,10 +31,10 @@ p.site-description {
 		margin-right: 1em;
 		position: static;
 	}
-}
+} }
 
-@media screen and (min-width: $breakpoint-large) {
+@media screen and (min-width: $breakpoint-large) { .flexbox {
 	h1.site-title a img {
 		height: 75px;
 	}
-}
+} }

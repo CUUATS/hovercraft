@@ -124,7 +124,7 @@
 	}
 }
 
-@media screen and (min-width: $breakpoint-medium) {
+@media screen and (min-width: $breakpoint-medium) { .flexbox {
 	/* Reveal stuff on larger screens. */
 	#masthead-menu {
 		align-items: center;
@@ -207,4 +207,4 @@
 			margin-top: -0.2em;
 		}
 	}
-}
+} }

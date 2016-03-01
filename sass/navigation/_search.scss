@@ -46,9 +46,9 @@
 	}
 }
 
-@media screen and (min-width: $breakpoint-medium) {
+@media screen and (min-width: $breakpoint-medium) { .flexbox {
 	#masthead-menu .search-form {
 		margin-top: 0;
 		width: 200px;
 	}
-}
+} }

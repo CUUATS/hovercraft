@@ -199,7 +199,7 @@ ul.slides {
 	}
 }
 
-@media screen and (min-width: $breakpoint-medium) {
+@media screen and (min-width: $breakpoint-medium) { .flexbox {
 	.fullscreen-slider #colophon {
 		position: absolute;
 		bottom: 0;
@@ -210,4 +210,4 @@ ul.slides {
 	.slider-excerpt {
 		display: block;
 	}
-}
+} }

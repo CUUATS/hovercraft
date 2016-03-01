@@ -23,7 +23,7 @@ div#wpadminbar {
 		height: 32px;
 	}
 
-	.admin-bar.scroll-above-banner-break {
+	.flexbox .admin-bar.scroll-above-banner-break {
 		#masthead {
 			top: 32px;
 		}
@@ -50,7 +50,7 @@ div#wpadminbar {
 	position: relative;
 }
 
-@media screen and (min-width: $breakpoint-medium) {
+@media screen and (min-width: $breakpoint-medium) { .flexbox {
 	#primary-navigation {
 		display: flex;
 		flex: 1 1 auto;
@@ -80,9 +80,9 @@ div#wpadminbar {
 			width: 100%;
 		}
 	}
-}
+} }
 
-@media screen and (min-width: $breakpoint-large) {
+@media screen and (min-width: $breakpoint-large) { .flexbox {
 	#page {
 		display: flex;
 		flex: 1 0 0;
@@ -128,4 +128,4 @@ div#wpadminbar {
 			padding: 1em 2em 1em 0;
 		}
 	}
-}
+} }

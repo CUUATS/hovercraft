@@ -51,7 +51,7 @@ h1.site-title a:hover {
 }
 
 @media screen and (min-width: 800px) {
-  #primary-navigation ul.sub-menu {
+  .flexbox #primary-navigation ul.sub-menu {
     background-color: <?php echo $content_background_color; ?>;
   }
 }

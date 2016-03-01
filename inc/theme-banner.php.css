@@ -10,16 +10,16 @@
 }
 
 @media screen and (min-width: 800px) {
-  #banner-image {
+  .flexbox #banner-image {
      background-image: url('<?php echo $medium_url; ?>');
   }
-  #masthead {
+  .flexbox #masthead {
     background-color: <?php echo $header_rgba; ?>;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  #banner-image {
+  .flexbox #banner-image {
      background-image: url('<?php echo $large_url; ?>');
   }
 }

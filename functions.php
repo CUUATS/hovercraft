@@ -212,6 +212,8 @@ function hovercraft_scripts() {
 	// Load the theme main stylesheet.
 	wp_enqueue_style( 'hovercraft-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '3.3.1', false );
+
 	// Load the theme custom script file.
 	wp_enqueue_script( 'hovercraft-script', get_template_directory_uri() . '/js/hovercraft.js', array( 'jquery' ), '20150720', true );
 
