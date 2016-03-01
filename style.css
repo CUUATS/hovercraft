@@ -991,46 +991,21 @@ a:hover, a:active {
   right: 5%;
   width: 20px;
 }
-.menu-toggle .lines {
-  display: block;
-  position: relative;
-  width: 20px;
-  height: 2px;
-  background-color: white;
-}
-.menu-toggle .lines:before,
-.menu-toggle .lines:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background-color: white;
-}
 .menu-toggle .lines:before {
-  top: -7px;
+  content: '\f419';
+  font-family: 'Genericons';
+  font-size: 1.2em;
+  font-weight: normal;
+  position: relative;
+  speak: none;
 }
-.menu-toggle .lines:after {
-  top: 7px;
-}
-.menu-toggle:hover, .menu-toggle:focus {
-  background: transparent !important;
-}
-.menu-toggle:focus {
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.menu-toggled .lines {
-  background-color: transparent;
-}
-.menu-toggled .lines:before {
-  transform: rotate(-45deg);
-  top: 0;
-}
-.menu-toggled .lines:after {
-  transform: rotate(45deg);
-  top: 0;
+.menu-toggle .lines::before {
+  content: '\f419';
+  font-family: 'Genericons';
+  font-size: 1.2em;
+  font-weight: normal;
+  position: relative;
+  speak: none;
 }
 
 /* Mobile menu. */

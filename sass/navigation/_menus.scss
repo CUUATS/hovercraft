@@ -37,54 +37,22 @@
 	right: 5%;
 	width: 20px;
 
-	.lines {
-		display: block;
+	.lines:before {
+		content: '\f419';
+		font-family: 'Genericons';
+		font-size: 1.2em;
+		font-weight: normal;
 		position: relative;
-		width: 20px;
-		height: 2px;
-		background-color: white;
+		speak: none;
 	}
-	.lines:before,
-	.lines:after {
-		content: "";
-		display: block;
-		position: absolute;
-		width: 20px;
-		height: 2px;
-		background-color: white;
-	}
-	.lines:before {
-		top: -7px;
-	}
-	.lines:after {
-		top: 7px;
-	}
-	&:hover,
-	&:focus {
-		background: transparent!important;
-	}
-	&:hover {
-		.lines,
-		.lines:before,
-		.lines:after {
-		}
-	}
-	&:focus {
-		border-color: transparent;
-		box-shadow: none;
-	}
-}
-.menu-toggled {
-	.lines {
-		background-color: transparent;
-	}
-	.lines:before {
-		transform: rotate(-45deg);
-		top: 0;
-	}
-	.lines:after {
-		transform: rotate(45deg);
-		top: 0;
+
+	.lines::before {
+		content: '\f419';
+		font-family: 'Genericons';
+		font-size: 1.2em;
+		font-weight: normal;
+		position: relative;
+		speak: none;
 	}
 }
 

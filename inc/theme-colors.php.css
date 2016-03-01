@@ -24,14 +24,12 @@ h1.site-title a:hover {
   color: <?php echo $header_text_color; ?>;
 }
 
-.menu-toggle .lines,
-.menu-toggle .lines::before,
-.menu-toggle .lines::after {
-  background-color: <?php echo $header_text_color; ?>;
+.menu-toggle .lines:before {
+  color: <?php echo $header_text_color; ?>;
 }
 
-.menu-toggled .lines {
-  background-color: transparent;
+.menu-toggle .lines::before {
+  color: <?php echo $header_text_color; ?>;
 }
 
 #primary-navigation li.menu-item a:hover,
