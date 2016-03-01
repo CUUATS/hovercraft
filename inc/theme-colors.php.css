@@ -57,7 +57,9 @@ h1.site-title a:hover {
 }
 
 #primary a,
-#primary a:visited,
+#primary a:visited {
+  color: <?php echo $content_link_color; ?>;
+}
 #primary .widget li::before {
   color: <?php echo $content_link_color; ?>;
 }
@@ -115,7 +117,9 @@ h1.site-title a:hover {
 }
 
 #secondary a,
-#secondary a:visited,
+#secondary a:visited {
+  color: <?php echo $sidebar_link_color; ?>;
+}
 #secondary .widget li::before {
   color: <?php echo $sidebar_link_color; ?>;
 }
@@ -168,7 +172,9 @@ body,
 }
 
 #colophon a,
-#colophon a:visited,
+#colophon a:visited {
+  color: <?php echo $footer_link_color; ?>;
+}
 #colophon .widget li::before {
   color: <?php echo $footer_link_color; ?>;
 }
