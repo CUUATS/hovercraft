@@ -1064,6 +1064,7 @@ a:hover, a:active {
   }
   .flexbox #primary-navigation #primary-menu {
     display: flex;
+    align-items: center;
   }
   .flexbox #primary-navigation ul.menu li {
     display: inline;
@@ -1071,9 +1072,12 @@ a:hover, a:active {
     padding: 0.4em;
     letter-spacing: -1px;
   }
+  .flexbox #primary-navigation ul.menu > li {
+    text-align: center;
+  }
   .flexbox #primary-navigation li.menu-item a {
     display: inline;
-    line-height: 1.8;
+    line-height: 1;
     padding: 0;
     border-bottom: 2px solid transparent;
   }
@@ -1092,10 +1096,12 @@ a:hover, a:active {
     z-index: 9999;
     overflow: hidden;
     margin-left: -0.4em;
+    margin-top: 3px;
   }
   .flexbox #primary-navigation ul.sub-menu li.menu-item {
     display: block;
     padding: 0.2em 0.8em;
+    text-align: left;
   }
   .flexbox #primary-navigation ul.sub-menu li.menu-item:first-child {
     padding-top: 0.4em;

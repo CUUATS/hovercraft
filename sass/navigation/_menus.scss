@@ -114,6 +114,7 @@
 		padding: 0 1em 0 0;
 		#primary-menu {
 			display: flex;
+			align-items: center;
 		}
 		ul.menu li {
 			display: inline;
@@ -121,9 +122,12 @@
 			padding: 0.4em;
 			letter-spacing: -1px;
 		}
+		ul.menu > li {
+			text-align: center;
+		}
 		li.menu-item a {
 			display: inline;
-			line-height: 1.8;
+			line-height: 1;
 			padding: 0;
 			border-bottom: 2px solid transparent;
 			&:hover,
@@ -143,10 +147,12 @@
 			z-index: 9999;
 			overflow: hidden;
 			margin-left: -0.4em;
+			margin-top: 3px;
 		}
 		ul.sub-menu li.menu-item {
 			display: block;
 			padding: 0.2em 0.8em;
+			text-align: left;
 			&:first-child {
 				padding-top: 0.4em;
 			}
