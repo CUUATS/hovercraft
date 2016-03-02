@@ -108,6 +108,19 @@ h1.site-title a:hover {
   border-left-color: <?php echo $content_link_color; ?>;
 }
 
+#primary .tablepress .sorting:hover,
+#primary .tablepress .sorting_asc,
+#primary .tablepress .sorting_desc {
+  background-color: <?php echo $content_text_color; ?>;
+  color: <?php echo $content_background_color; ?>;
+}
+
+#primary .tablepress tfoot th,
+#primary .tablepress thead th {
+  background-color: <?php echo $content_link_color; ?>;
+  color: <?php echo $content_background_color; ?>;
+}
+
 /* Sidebar */
 #content,
 #secondary {
