@@ -46,6 +46,13 @@ function hovercraft_setup() {
 	}
 	add_filter( 'comment_form_default_fields','hovercraft_disable_comment_url' );
 
+	/* Address accessibility issues with TablePress DataTables */
+	function hovercraft_all_datatables_commands( $commands ) {
+		/* Remove unused ARIA roles that confuse the validator. */
+		return $commands . "\n" . '$("table[role=grid]").removeAttr("role").find("th.sorting").attr("role", "button").end().on("page.dt", function() {$(this).find("tr[role=row]").removeAttr("role")}).trigger("page.dt");' . "\n";
+	}
+	add_filter( 'tablepress_all_datatables_commands', 'hovercraft_all_datatables_commands', 1000 );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *

@@ -10,8 +10,8 @@
   color: <?php echo $header_text_color; ?>;
 }
 
-h1.site-title a,
-h1.site-title a:hover {
+.site-title a,
+.site-title a:hover {
   color: <?php echo $content_text_color; ?>;
 }
 
@@ -114,7 +114,8 @@ h1.site-title a:hover {
 
 #primary .tablepress .sorting:hover,
 #primary .tablepress .sorting_asc,
-#primary .tablepress .sorting_desc {
+#primary .tablepress .sorting_desc,
+#primary .tablepress thead th:focus {
   background-color: <?php echo $content_text_color; ?>;
   color: <?php echo $content_background_color; ?>;
 }
