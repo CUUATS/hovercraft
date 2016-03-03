@@ -36,13 +36,7 @@ if ( post_password_required() ) {
 		<?php endif; // Check for comment navigation. ?>
 
 		<h2 class="comments-title">
-			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'hovercraft' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
+			<?php echo __( 'Comments', 'hovercraft' );?>
 		</h2>
 
 		<ol class="comment-list">
@@ -73,9 +67,11 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'hovercraft' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Sorry, comments are closed.', 'hovercraft' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form(array(
+		'comment_notes_before' => '<p class="comment-notes">' . __( 'Please be respectful. All fields are required, and all comments are subject to moderation.' ) . '</p>'
+	)); ?>
 
 </div><!-- #comments -->

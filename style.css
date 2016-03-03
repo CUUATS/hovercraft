@@ -1741,6 +1741,11 @@ a.more-link {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+h2.comments-title {
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
 .comment-content a {
   word-wrap: break-word;
 }
@@ -1750,6 +1755,7 @@ a.more-link {
 }
 
 .comments-area {
+  border-top: 2px solid rgba(0, 0, 0, 0.07);
   padding-bottom: 1.5em;
 }
 
@@ -1765,7 +1771,7 @@ a.more-link {
 .comment-list {
   list-style: none;
   margin: 0 0 2.5em;
-  padding: 0 0 2.5em;
+  padding: 0;
   border-bottom: 2px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -1831,6 +1837,19 @@ h3.comment-reply-title small {
 #comment-nav-above {
   padding-top: 0;
   margin-bottom: 1.5em;
+}
+
+#commentform > p {
+  display: flex;
+  flex-direction: row;
+}
+#commentform label {
+  flex: 0 0 auto;
+  font-weight: 700;
+  width: 8em;
+}
+#commentform .required {
+  display: none;
 }
 
 /*--------------------------------------------------------------

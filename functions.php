@@ -39,6 +39,13 @@ function hovercraft_setup() {
 		remove_action('wp_head', '_admin_bar_bump_cb');
 	}
 
+	/* Remove the URL field from the comments form. */
+	function hovercraft_disable_comment_url($fields) {
+	  unset( $fields['url'] );
+	  return $fields;
+	}
+	add_filter( 'comment_form_default_fields','hovercraft_disable_comment_url' );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
