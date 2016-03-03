@@ -768,17 +768,17 @@ div#wpadminbar {
 }
 
 /* Site Branding. */
-h1.site-title {
+.site-title {
   margin: 0;
   line-height: 1;
   font-size: 1.5em;
 }
 
-h1.site-title a {
+.site-title a {
   text-decoration: none;
 }
 
-h1.site-title a img {
+.site-title a img {
   height: 50px;
 }
 
@@ -799,7 +799,7 @@ p.site-description {
   }
 }
 @media screen and (min-width: 64rem) {
-  .flexbox h1.site-title a img {
+  .flexbox .site-title a img {
     height: 75px;
   }
 }

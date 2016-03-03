@@ -23,7 +23,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'hovercraft' ); ?></a>
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php if ( get_theme_mod( 'hovercraft_logo' ) ) : ?><img class='site-logo' src='<?php echo esc_url( get_theme_mod( 'hovercraft_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'><?php else : ?><span class="site-logo-text"><?php bloginfo( 'name' ); ?></span><?php endif; ?></a></h1>
+			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php if ( get_theme_mod( 'hovercraft_logo' ) ) : ?><img class='site-logo' src='<?php echo esc_url( get_theme_mod( 'hovercraft_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'><?php else : ?><span class="site-logo-text"><?php bloginfo( 'name' ); ?></span><?php endif; ?></a></p>
 			<p class="site-description offscreen"><?php bloginfo( 'description' ); ?></p>
 		</div><!-- .site-branding -->
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
