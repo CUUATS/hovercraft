@@ -69,6 +69,11 @@
 
 		// Add a label to post navigation.
 		$('nav.post-navigation').attr('aria-label', 'Post Navigation');
+
+		// Enable keyboard navigation of dropdown menus.
+		$('.menu-item-has-children').on('focusin focusout', function() {
+			$(this).toggleClass('focus');
+		});
 	});
 
 })( jQuery );
