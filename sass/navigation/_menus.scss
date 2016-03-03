@@ -60,18 +60,15 @@
 #primary-navigation {
 	padding: 1em 1em 0 1em;
 	.menu-title {
-		padding-bottom: 1em;
-		h1 {
-			margin: 0;
-			padding: 16px;
-			padding: 1em;
-			font-size: 20px;
-			font-size: 1.25em;
-			text-align: center;
-			text-transform: uppercase;
-			border-top: 1px solid white;
-			border-bottom: 1px solid white;
-		}
+		margin: 0 0 1em;
+		padding: 16px;
+		padding: 0.5em;
+		font-size: 20px;
+		font-size: 1.25em;
+		text-align: center;
+		text-transform: uppercase;
+		border-top: 1px solid white;
+		border-bottom: 1px solid white;
 	}
 	ul.sub-menu {
 		margin:  0 0 0 5%;

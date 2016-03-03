@@ -32,6 +32,10 @@ h1.site-title a:hover {
   color: <?php echo $header_text_color; ?>;
 }
 
+#masthead-menu .menu-title {
+  border-color: <?php echo $header_text_color; ?>;
+}
+
 #primary-navigation li.menu-item a:hover,
 #primary-navigation li.menu-item a:focus {
   border-color: <?php echo $header_link_color; ?>;

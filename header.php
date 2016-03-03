@@ -33,7 +33,7 @@
 		<div id="masthead-menu">
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<nav id="primary-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Menu', 'hovercraft' ); ?>">
-					<div class="menu-title"><h1><?php _e( 'Menu', 'hovercraft' ); ?></h1></div>
+					<h2 class="menu-title"><?php _e( 'Menu', 'hovercraft' ); ?></h2>
 					<?php if ( has_nav_menu( 'primary' ) ) { get_template_part( 'template-parts/navigation-primary' ); } ?>
 				</nav><!-- #primary-navigation -->
 			<?php endif; ?>
