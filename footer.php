@@ -19,7 +19,7 @@
 			<div class="site-info">
 
 				<?php if ( has_nav_menu( 'social' ) ) : ?>
-					<nav id="bottom-social" class="social-links">
+					<nav id="bottom-social" class="social-links" aria-label="<?php _e( 'Social Media', 'hovercraft' ); ?>">
 						<?php get_template_part( 'template-parts/navigation-social' ); ?>
 					</nav><!-- #social-links -->
 				<?php endif; ?>

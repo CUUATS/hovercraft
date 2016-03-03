@@ -61,20 +61,14 @@
 			}
 		}).resize();
 
-	});
+		// Fix ARIA issues.
+		// Add labels to sidebar widgets.
+		$('#secondary aside').each(function() {
+			$(this).attr('aria-label', $(this).find('h2').first().text());
+		});
 
-	/*--------------------------------------------------------------
-	Accessibility fixes.
-	--------------------------------------------------------------*/
-
-	// Add a focus class to sub menu items with children.
-	$( '.menu-item-has-children' ).on( 'focusin focusout', function() {
-		$( this ).toggleClass( 'focus' );
-	});
-
-	// Move focus to first menu item after expanding the menu.
-	$( '.menu-toggle' ).on( 'blur', function() {
-		$( '#mobile-navigation' ).find( 'a:eq(0)' ).focus();
+		// Add a label to post navigation.
+		$('nav.post-navigation').attr('aria-label', 'Post Navigation');
 	});
 
 })( jQuery );
