@@ -1051,6 +1051,9 @@ a:hover, a:active {
     flex: 1 1 auto;
     margin-bottom: 0;
   }
+  .flexbox .menu-container {
+    width: 100%;
+  }
   .flexbox .menu-toggle,
   .flexbox .menu-title {
     display: none;
@@ -1062,6 +1065,8 @@ a:hover, a:active {
   .flexbox #primary-navigation #primary-menu {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    max-width: 700px;
   }
   .flexbox #primary-navigation ul.menu li {
     display: inline;
@@ -1070,6 +1075,7 @@ a:hover, a:active {
     letter-spacing: -1px;
   }
   .flexbox #primary-navigation ul.menu > li {
+    font-size: 0.9em;
     text-align: center;
   }
   .flexbox #primary-navigation li.menu-item a {
@@ -1125,6 +1131,11 @@ a:hover, a:active {
   }
   .flexbox #primary-navigation ul.sub-menu li.menu-item:not(:first-child):hover > ul.sub-menu {
     margin-top: -0.2em;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .flexbox #primary-navigation ul.menu > li {
+    font-size: 1em;
   }
 }
 /*--------------------------------------------------------------
