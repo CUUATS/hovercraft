@@ -80,20 +80,14 @@ function hovercraft_posted_on() {
 		esc_html( get_the_date() ),
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
-	);
+	); ?>
 
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'hovercraft' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'hovercraft' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
+	<span class="posted-on"><span class="screen-reader-text"><?php _ex( 'Posted on ', 'post date', 'hovercraft' ); ?></span><a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark"><?php echo $time_string; ?></a></span>
+	<span class="author vcard"><span class="screen-reader-text"><?php _ex( 'by ', 'post author', 'hovercraft' ); ?> </span><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>"><?php echo esc_html( get_the_author() ); ?></a></span>
+	<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ): ?>
+		<span class="comments-link"><?php echo comments_popup_link( esc_html__( 'No Comments', 'hovercraft' ), esc_html__( '1 Comment', 'hovercraft' ), esc_html__( '% Comments', 'hovercraft' ) ); ?></span>
+	<?php endif;
+		edit_post_link( esc_html__( 'Edit', 'hovercraft' ), '<span class="edit-link"> ', '</span>' );
 }
 endif;
 
@@ -103,27 +97,19 @@ if ( ! function_exists( 'hovercraft_entry_footer' ) ) :
  */
 function hovercraft_entry_footer() {
 	// Hide category and tag text for pages.
-	if ( 'post' == get_post_type() && is_single() ) {
+	if ( 'post' == get_post_type() && is_single() ) :
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'hovercraft' ) );
-		if ( $categories_list && hovercraft_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'hovercraft' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
+		if ( $categories_list && hovercraft_categorized_blog() ) : ?>
+			<span class="cat-links"><span class="screen-reader-text"><?php _e( 'Posted in ', 'hovercraft' ) ?></span><?php echo $categories_list; ?></span>
+		<?php endif;
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'hovercraft' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'hovercraft' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'No Comments', 'hovercraft' ), esc_html__( '1 Comment', 'hovercraft' ), esc_html__( '% Comments', 'hovercraft' ) );
-		echo '</span>';
-	}
-
-	edit_post_link( esc_html__( 'Edit', 'hovercraft' ), '<span class="edit-link"> ', '</span>' );
+		if ( $tags_list ) : ?>
+			<span class="tags-links"><span class="screen-reader-text"><?php _e( 'Tagged ', 'hovercraft' ) ?></span><?php echo $tags_list; ?></span>
+		<?php endif;
+	endif;
 }
 endif;
 

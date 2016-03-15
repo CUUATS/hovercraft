@@ -1,9 +1,52 @@
 .sticky {
 	display: block;
 }
-.hentry {
+.entry-meta {
+	span {
+		padding-right: 1.5em;
+	}
+	span a::before {
+		display: inline-block;
+		font-family: 'Genericons';
+		font-weight: normal;
+		font-size: 16px;
+		padding-right: 0.25em;
+		vertical-align: middle;
+		speak: none;
+	}
+	.posted-on a::before {
+		content: '\f307';
+	}
+	.author a::before {
+		content: '\f304';
+	}
+	.comments-link a::before {
+		content: '\f300';
+	}
+	.edit-link a::before {
+		content: '\f411';
+	}
 }
-
+.entry-footer {
+	span {
+		padding-right: 1.5em;
+	}
+	span a::before {
+		display: inline-block;
+		font-family: 'Genericons';
+		font-weight: normal;
+		font-size: 16px;
+		padding-right: 0.25em;
+		vertical-align: middle;
+		speak: none;
+	}
+	.cat-links a::before {
+		content: '\f301';
+	}
+	.tags-links a::before {
+		content: '\f302';
+	}
+}
 .entry-meta,
 .entry-footer {
 	@include font-size(0.875);
@@ -35,8 +78,6 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
-.cat-links,
-.tags-links,
 a.more-link {
 	display: block;
 }
