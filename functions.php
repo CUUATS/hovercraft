@@ -48,8 +48,8 @@ function hovercraft_setup() {
 
 	/* Address accessibility issues with TablePress DataTables */
 	function hovercraft_all_datatables_commands( $commands ) {
-		/* Remove unused ARIA roles that confuse the validator. */
-		return $commands . "\n" . '$("table[role=grid]").removeAttr("role").find("th.sorting").attr("role", "button").end().on("page.dt", function() {$(this).find("tr[role=row]").removeAttr("role")}).trigger("page.dt");' . "\n";
+		return $commands . "\n" . file_get_contents(get_template_directory() . '/js/datatables-hovercraft.js') . "\n";
+
 	}
 	add_filter( 'tablepress_all_datatables_commands', 'hovercraft_all_datatables_commands', 1000 );
 
