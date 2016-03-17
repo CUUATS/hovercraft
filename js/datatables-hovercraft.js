@@ -6,16 +6,18 @@ $('table[role=grid]').removeAttr('role').find('th.sorting')
 
 $('table.dataTable').each(function() {
   /* Make the column visibility button keyboard accessible. */
-  var dt = $(this).DataTable(),
-    colvizButtons = dt.buttons('.buttons-colvis'),
-    colvizAction = colvizButtons.action()[0];
-  colvizButtons.action(function ( e, dt, button, conf ) {
-    colvizAction( e, dt, button, conf );
-    $('.buttons-columnVisibility').keyup(function (e) {
-      if (e.keyCode == 27) {
-        $('.dt-button-background').click();
-        colvizButtons.nodes().first().focus();
-      }
-    }).first().focus();
-  });
+  var dt = $(this).DataTable();
+  if ($.isFunction(dt.buttons)) {
+    var colvizButtons = dt.buttons('.buttons-colvis'),
+      colvizAction = colvizButtons.action()[0];
+    colvizButtons.action(function ( e, dt, button, conf ) {
+      colvizAction( e, dt, button, conf );
+      $('.buttons-columnVisibility').keyup(function (e) {
+        if (e.keyCode == 27) {
+          $('.dt-button-background').click();
+          colvizButtons.nodes().first().focus();
+        }
+      }).first().focus();
+    });
+  }
 });
