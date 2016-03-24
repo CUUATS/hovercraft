@@ -1,0 +1,93 @@
+.mc-main {
+  .maybe-hide {
+    display: none;
+  }
+
+  .mc-format,
+  .mc-time,
+  .my-calendar-date-switcher {
+    clear: left;
+    float: left;
+  }
+
+  .mc-format *,
+  .mc-time * {
+    margin-right: 0.5em;
+  }
+
+  .mc-format a::before,
+  .mc-time span::before,
+  .mc-time a::before {
+    font-family: Genericons;
+    font-size: 1.1em;
+    margin-right: 0.25em;
+    vertical-align: middle;
+  }
+
+  .mc-format a.list::before {
+    content: '\f505'
+  }
+
+  .mc-format a.grid::before {
+    content: '\f436'
+  }
+
+  .mc-time *:first-child::before {
+    content: '\f307';
+  }
+  .mc-time *:nth-child(2)::before {
+    content: '\f306';
+  }
+  .mc-time *:nth-child(3)::before {
+    content: '\f305';
+  }
+
+  div.my-calendar-date-switcher {
+    margin: 0;
+    padding: 0;
+  }
+
+  .my-calendar-nav {
+    float: right;
+
+    ul li a {
+      padding: 0 0 0 10px;
+    }
+
+    a::before {
+      font-family: Genericons;
+    }
+    .my-calendar-prev a::before {
+      content: '\f503';
+    }
+    .my-calendar-next a::before {
+      content: '\f501';
+    }
+  }
+
+  table.my-calendar-table {
+    border: 1px solid rgba(127, 127, 127, 0.5);
+    clear: both;
+
+    td {
+      border: 1px solid rgba(127, 127, 127, 0.5);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  .mc-main {
+    .mc-format,
+    .mc-time,
+    .my-calendar-date-switcher {
+      clear: none;
+    }
+
+    .mc-format,
+    .mc-time {
+      border-right: 1px solid rgba(127, 127, 127, 0.5);
+      margin-right: 1em;
+      padding-right: 0.5em;
+    }
+  }
+}

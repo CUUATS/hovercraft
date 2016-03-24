@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: Hovercraft
 Theme URI: http://cuuats.org/
@@ -509,63 +510,6 @@ tbody tr td,
 tfoot tr th,
 tfoot tr td {
   padding: 0.125rem 0.25rem;
-}
-
-/* Rows with alternating colors. */
-tbody tr:nth-child(1),
-tbody tr:nth-child(3),
-tbody tr:nth-child(5),
-tbody tr:nth-child(7),
-tbody tr:nth-child(9),
-tbody tr:nth-child(11),
-tbody tr:nth-child(13),
-tbody tr:nth-child(15),
-tbody tr:nth-child(17),
-tbody tr:nth-child(19),
-tbody tr:nth-child(21),
-tbody tr:nth-child(23),
-tbody tr:nth-child(25),
-tbody tr:nth-child(27),
-tbody tr:nth-child(29),
-tbody tr:nth-child(31),
-tbody tr:nth-child(33),
-tbody tr:nth-child(35),
-tbody tr:nth-child(37),
-tbody tr:nth-child(39),
-tbody tr:nth-child(41),
-tbody tr:nth-child(43),
-tbody tr:nth-child(45),
-tbody tr:nth-child(47),
-tbody tr:nth-child(49) {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-tbody tr:nth-child(2),
-tbody tr:nth-child(4),
-tbody tr:nth-child(6),
-tbody tr:nth-child(8),
-tbody tr:nth-child(10),
-tbody tr:nth-child(12),
-tbody tr:nth-child(14),
-tbody tr:nth-child(16),
-tbody tr:nth-child(18),
-tbody tr:nth-child(20),
-tbody tr:nth-child(22),
-tbody tr:nth-child(24),
-tbody tr:nth-child(26),
-tbody tr:nth-child(28),
-tbody tr:nth-child(30),
-tbody tr:nth-child(32),
-tbody tr:nth-child(34),
-tbody tr:nth-child(36),
-tbody tr:nth-child(38),
-tbody tr:nth-child(40),
-tbody tr:nth-child(42),
-tbody tr:nth-child(44),
-tbody tr:nth-child(46),
-tbody tr:nth-child(48),
-tbody tr:nth-child(50) {
-  background: rgba(255, 139, 39, 0.08);
 }
 
 /*--------------------------------------------------------------
@@ -2240,4 +2184,81 @@ body.admin-bar #page {
   display: block;
   bottom: 1.0%;
   visibility: visible;
+}
+
+.mc-main .maybe-hide {
+  display: none;
+}
+.mc-main .mc-format,
+.mc-main .mc-time,
+.mc-main .my-calendar-date-switcher {
+  clear: left;
+  float: left;
+}
+.mc-main .mc-format *,
+.mc-main .mc-time * {
+  margin-right: 0.5em;
+}
+.mc-main .mc-format a::before,
+.mc-main .mc-time span::before,
+.mc-main .mc-time a::before {
+  font-family: Genericons;
+  font-size: 1.1em;
+  margin-right: 0.25em;
+  vertical-align: middle;
+}
+.mc-main .mc-format a.list::before {
+  content: "";
+}
+.mc-main .mc-format a.grid::before {
+  content: "";
+}
+.mc-main .mc-time *:first-child::before {
+  content: '\f307';
+}
+.mc-main .mc-time *:nth-child(2)::before {
+  content: '\f306';
+}
+.mc-main .mc-time *:nth-child(3)::before {
+  content: '\f305';
+}
+.mc-main div.my-calendar-date-switcher {
+  margin: 0;
+  padding: 0;
+}
+.mc-main .my-calendar-nav {
+  float: right;
+}
+.mc-main .my-calendar-nav ul li a {
+  padding: 0 0 0 10px;
+}
+.mc-main .my-calendar-nav a::before {
+  font-family: Genericons;
+}
+.mc-main .my-calendar-nav .my-calendar-prev a::before {
+  content: '\f503';
+}
+.mc-main .my-calendar-nav .my-calendar-next a::before {
+  content: '\f501';
+}
+.mc-main table.my-calendar-table {
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  clear: both;
+}
+.mc-main table.my-calendar-table td {
+  border: 1px solid rgba(127, 127, 127, 0.5);
+}
+
+@media screen and (min-width: 50rem) {
+  .mc-main .mc-format,
+  .mc-main .mc-time,
+  .mc-main .my-calendar-date-switcher {
+    clear: none;
+  }
+  .mc-main .mc-format,
+  .mc-main .mc-time {
+    border-right: 1px solid rgba(127, 127, 127, 0.5);
+    margin-right: 1em;
+    padding-right: 0.5em;
+  }
 }
