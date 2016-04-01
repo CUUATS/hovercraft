@@ -213,6 +213,30 @@ function hovercraft_fonts_url() {
 }
 endif;
 
+function hovercraft_get_featured_posts( $menu_name='slider' ) {
+  $locations = get_nav_menu_locations();
+  $results = array();
+
+  if ( isset( $locations[ $menu_name ] ) ) {
+  	$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+    $menu_items = wp_get_nav_menu_items( $menu );
+    foreach( $menu_items as $slide ) {
+      array_push($results, get_post($slide->object_id));
+    }
+  }
+
+  return $results;
+}
+
+function hovercraft_has_featured_posts( $minimum = 1, $menu_name='slider' ) {
+  $locations = get_nav_menu_locations();
+  if ( isset( $locations[ $menu_name ] ) ) {
+    $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+    return count( wp_get_nav_menu_items( $menu ) ) >= $minimum;
+  }
+  return false;
+}
+
 /**
  * Enqueue scripts and styles.
  */
@@ -262,6 +286,3 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-// Create Slider
-require( get_template_directory() . '/inc/slider.php' );

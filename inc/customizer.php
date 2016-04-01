@@ -100,17 +100,17 @@ function hovercraft_customize_register( $wp_customize ) {
 
 	/* Slider animation. */
 	$wp_customize->add_setting( 'hovercraft_slider_animation', array(
-		'default'           => 'slide',
+		'default'           => 'fade',
 		'sanitize_callback' => 'hovercraft_sanitize_slider_animation',
 	) );
 	$wp_customize->add_control( 'hovercraft_slider_animation', array(
-		'label'             => __( 'Animation: ', 'hovercraft' ),
+		'label'             => __( 'Animation Type', 'hovercraft' ),
 		'section'           => 'hovercraft_slider_options',
 		'priority'          => 1,
 		'type'              => 'radio',
 		'choices'           => array(
-			'slide'			=> __( 'Slide', 'hovercraft' ),
 			'fade'			=> __( 'Fade', 'hovercraft' ),
+			'slide'			=> __( 'Slide', 'hovercraft' ),
 		),
 	) );
 
@@ -120,7 +120,8 @@ function hovercraft_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'hovercraft_sanitize_slider_direction',
 	) );
 	$wp_customize->add_control( 'hovercraft_slider_direction', array(
-		'label'             => __( '(Slide) Direction: ', 'hovercraft' ),
+		'label'             => __( 'Animation Direction', 'hovercraft' ),
+		'description'				=> __( 'Direction setting is for slide animation only.', 'hovercraft' ),
 		'section'           => 'hovercraft_slider_options',
 		'priority'          => 2,
 		'type'              => 'radio',
@@ -132,11 +133,11 @@ function hovercraft_customize_register( $wp_customize ) {
 
 	/* Slider slideshow. */
 	$wp_customize->add_setting( 'hovercraft_slider_slideshow', array(
-		'default'           => 'horizontal',
+		'default'           => 'true',
 		'sanitize_callback' => 'hovercraft_sanitize_slider_slideshow',
 	) );
 	$wp_customize->add_control( 'hovercraft_slider_slideshow', array(
-		'label'             => __( 'Slideshow: ', 'hovercraft' ),
+		'label'             => __( 'Advance Automatically', 'hovercraft' ),
 		'section'           => 'hovercraft_slider_options',
 		'priority'          => 3,
 		'type'              => 'radio',
@@ -148,11 +149,11 @@ function hovercraft_customize_register( $wp_customize ) {
 
 	/* Slider slideshow speed. */
 	$wp_customize->add_setting( 'hovercraft_slider_speed', array(
-		'default'           => 'horizontal',
+		'default'           => '10000',
 		'sanitize_callback' => 'hovercraft_sanitize_slider_speed',
 	) );
 	$wp_customize->add_control( 'hovercraft_slider_speed', array(
-		'label'             => __( 'Speed: ', 'hovercraft' ),
+		'label'             => __( 'Speed', 'hovercraft' ),
 		'section'           => 'hovercraft_slider_options',
 		'priority'          => 4,
 		'type'              => 'radio',

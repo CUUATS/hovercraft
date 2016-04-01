@@ -10,7 +10,7 @@ $animation = get_theme_mod( 'hovercraft_slider_animation', 'slide' );
 
 get_header(); ?>
 
-	<?php if ( hovercraft_has_featured_posts( 2 ) ) : ?>
+	<?php if ( count( $featured ) >= 2 ) : ?>
 
 		<div id="featured-content" class="flexslider multiple-featured-posts">
 			<ul class="featured-posts slides">
@@ -43,15 +43,15 @@ get_header(); ?>
 		<script type="text/javascript">
 			(function($) {
 				$('.flexslider').flexslider({
-					animation: <?php echo get_theme_mod( 'hovercraft_slider_animation' ); ?>,
-					direction: <?php echo get_theme_mod( 'hovercraft_slider_direction' ); ?>,
-					slideshow: (<?php echo get_theme_mod( 'hovercraft_slider_slideshow' ); ?> === "true"),
-					slideshowSpeed: parseInt(<?php echo get_theme_mod( 'hovercraft_slider_speed' ); ?>),
-					controlNav: false,
+					animation: '<?php echo get_theme_mod( 'hovercraft_slider_animation', 'fade' ); ?>',
+					direction: '<?php echo get_theme_mod( 'hovercraft_slider_direction', 'horizontal' ); ?>',
+					slideshow: <?php echo get_theme_mod( 'hovercraft_slider_slideshow', 'true' ); ?>,
+					slideshowSpeed: <?php echo (int)get_theme_mod( 'hovercraft_slider_speed', '10000' ); ?>,
+					controlNav: false
 				});
-			)(jQuery);
+			})(jQuery);
 		</script>
-	<?php elseif ( hovercraft_has_featured_posts( 1 ) ) : ?>
+	<?php elseif ( count( $featured ) == 1 ) : ?>
 
 		<div id="featured-content" class="flexslider single-featured-post">
 			<ul class="featured-posts slides">
