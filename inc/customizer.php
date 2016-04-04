@@ -184,6 +184,9 @@ function hovercraft_customize_register( $wp_customize ) {
 		),
 	) );
 
+	/* Remove the tagline control. */
+	$wp_customize->remove_control( 'blogdescription' );
+
 }
 add_action( 'customize_register', 'hovercraft_customize_register' );
 
