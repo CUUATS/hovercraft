@@ -237,6 +237,17 @@ function hovercraft_has_featured_posts( $minimum = 1, $menu_name='slider' ) {
   return false;
 }
 
+/* Download link for PDF attachments. */
+function hovercraft_attachment_download_link ($html, $id) {
+	if ( strpos( $html, 'vanilla-pdf-embed' ) !== false ) {
+		$post = get_post();
+		$download_link = '<a class="attachment-download-link" href="' . esc_attr( $post->guid ) . '"><span class="screen-reader-text">Download </span>' . esc_html( $post->post_title ) . ' <span class="attachment-meta">(PDF, ' . size_format(filesize(get_attached_file($post->ID))) . ')</span></a>';
+		return $download_link . $html;
+	}
+    return $html;
+}
+add_filter( 'wp_get_attachment_link', 'hovercraft_attachment_download_link', 5, 2 );
+
 /**
  * Enqueue scripts and styles.
  */

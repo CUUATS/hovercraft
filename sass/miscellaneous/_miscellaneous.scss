@@ -21,6 +21,20 @@ body.admin-bar #page {
 	height: calc( 100vh - 32px );
 }
 
+/* Attachment pages */
+.attachment-download-link {
+	display: inline-block;
+	margin-bottom: 1em;
+}
+
+.attachment-download-link:before {
+	content: '\f50b';
+	font-family: "Genericons";
+	font-size: 1.2em;
+	margin-right: 0.25em;
+	vertical-align: text-top;
+}
+
 
 /*--------------------------------------------------------------
 ## Back to top.
