@@ -54,6 +54,10 @@
   color: <?php echo $header_text_color; ?>;
 }
 
+.flexbox .fullscreen-slider #masthead {
+  background: <?php echo rgba($header_background_color, 0.9); ?>;
+}
+
 #masthead a,
 #masthead a:visited {
   color: <?php echo $header_link_color; ?>;
