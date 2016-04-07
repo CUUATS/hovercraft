@@ -129,4 +129,14 @@ div#wpadminbar {
 			padding: 1em 2em 1em 0;
 		}
 	}
+	/* Full width page */
+	.page-template-page-full-width {
+		#content {
+			padding: 0;
+		}
+		#primary {
+			padding-left: 6%;
+			padding-right: 6%;
+		}
+	}
 } }

@@ -659,6 +659,7 @@ div#wpadminbar {
 @media screen and (min-width: 64rem) {
   .flexbox {
     /* Sidebar is active and/or left sidebar is selected. */
+    /* Full width page */
   }
   .flexbox #page {
     display: flex;
@@ -702,6 +703,13 @@ div#wpadminbar {
   .flexbox .left-sidebar #secondary {
     order: 1;
     padding: 1em 2em 1em 0;
+  }
+  .flexbox .page-template-page-full-width #content {
+    padding: 0;
+  }
+  .flexbox .page-template-page-full-width #primary {
+    padding-left: 6%;
+    padding-right: 6%;
   }
 }
 /*--------------------------------------------------------------
@@ -756,14 +764,6 @@ p.site-description {
 #main,
 #secondary .widget {
   padding: 1em 0;
-}
-
-/* Full width page template & portfolio template. */
-#primary.full-width-page,
-#primary.portfolio-page {
-  margin: 0;
-  width: 100%;
-  max-width: 1140px;
 }
 
 /*--------------------------------------------------------------
