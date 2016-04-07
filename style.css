@@ -973,6 +973,7 @@ a:hover, a:active {
   margin: 0 0 0 5%;
 }
 #primary-navigation li.menu-item a {
+  border-bottom: 2px solid transparent;
   display: block;
   width: 100%;
   padding: 12px;
@@ -1028,7 +1029,6 @@ a:hover, a:active {
     display: inline;
     line-height: 1;
     padding: 0;
-    border-bottom: 2px solid transparent;
   }
   .flexbox #primary-navigation li.menu-item a:hover, .flexbox #primary-navigation li.menu-item a:focus {
     opacity: 1;
