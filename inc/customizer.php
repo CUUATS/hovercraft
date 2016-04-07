@@ -261,26 +261,23 @@ function hovercraft_sanitize_sidebar( $input ) {
  * @see wp_add_inline_style()
  */
 function hovercraft_custom_colors() {
-	$header_background_color = get_theme_mod('hovercraft_header_background_color', '#eeeeee');
-	$header_text_color = get_theme_mod('hovercraft_header_text_color', '#000000');
-	$header_link_color = get_theme_mod('hovercraft_header_link_color', '#00554e');
-	$content_background_color = get_theme_mod('hovercraft_content_background_color', '#ffffff');
-	$content_text_color = get_theme_mod('hovercraft_content_text_color', '#000000');
-	$content_link_color = get_theme_mod('hovercraft_content_link_color', '#00554e');
-	$sidebar_background_color = get_theme_mod('hovercraft_sidebar_background_color', '#ffffff');
-	$sidebar_text_color = get_theme_mod('hovercraft_sidebar_text_color', '#000000');
-	$sidebar_text_20_color = hovercraft_hex2rgba($sidebar_text_color, 0.2);
-	$sidebar_link_color = get_theme_mod('hovercraft_sidebar_link_color', '#00554e');
-	$sidebar_link_10_color = hovercraft_hex2rgba($sidebar_link_color, 0.1);
-	$footer_background_color = get_theme_mod('hovercraft_footer_background_color', '#444444');
-	$footer_text_color = get_theme_mod('hovercraft_footer_text_color', '#ffffff');
-	$footer_link_color = get_theme_mod('hovercraft_footer_link_color', '#a1fff6');
-
-	ob_start();
-	require get_template_directory() . '/inc/theme-colors.php.css';
-	$css = ob_get_clean();
-
-	wp_add_inline_style('hovercraft-style', preg_replace('/\s+/', ' ', $css));
+	$qs_data = array(
+		'hb' => get_theme_mod('hovercraft_header_background_color', '#eeeeee'),
+		'ht' => get_theme_mod('hovercraft_header_text_color', '#000000'),
+		'hl' => get_theme_mod('hovercraft_header_link_color', '#00554e'),
+		'cb' => get_theme_mod('hovercraft_content_background_color', '#ffffff'),
+		'ct' => get_theme_mod('hovercraft_content_text_color', '#000000'),
+		'cl' => get_theme_mod('hovercraft_content_link_color', '#00554e'),
+		'sb' => get_theme_mod('hovercraft_sidebar_background_color', '#ffffff'),
+		'st' => get_theme_mod('hovercraft_sidebar_text_color', '#000000'),
+		'sl' => get_theme_mod('hovercraft_sidebar_link_color', '#00554e'),
+		'fb' => get_theme_mod('hovercraft_footer_background_color', '#444444'),
+		'ft' => get_theme_mod('hovercraft_footer_text_color', '#ffffff'),
+		'fl' => get_theme_mod('hovercraft_footer_link_color', '#a1fff6'),
+		'cachekey' => '1',
+	);
+	$css_url = get_template_directory_uri() . '/inc/theme-colors.php?' . http_build_query($qs_data);
+	wp_enqueue_style( 'hovercraft_theme_colors', $css_url, array(), null, 'all' );
 }
 add_action('wp_enqueue_scripts', 'hovercraft_custom_colors');
 

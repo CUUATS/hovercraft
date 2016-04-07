@@ -4,6 +4,50 @@
  *
  * @package Hovercraft
  */?>
+<?php
+  header('Content-type: text/css');
+
+  function get_color($name, $default) {
+    if ( isset($_GET[$name]) ) {
+      $color = $_GET[$name];
+      if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
+        return $color;
+      }
+    }
+    return $default;
+  }
+
+  function rgba( $color, $alpha ) {
+    $hex = str_replace("#", "", $color);
+    if (strlen( $hex ) == 3) {
+      $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+      $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+      $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+    } else {
+      $r = hexdec(substr($hex,0,2));
+      $g = hexdec(substr($hex,2,2));
+      $b = hexdec(substr($hex,4,2));
+    }
+    return "rgba({$r}, {$g}, {$b}, {$alpha})";
+  }
+
+  $header_background_color = get_color('hb', '#eeeeee');
+  $header_text_color = get_color('ht', '#000000');
+  $header_link_color = get_color('hl', '#00554e');
+
+  $content_background_color = get_color('cb', '#ffffff');
+  $content_text_color = get_color('ct', '#000000');
+  $content_link_color = get_color('cl', '#00554e');
+
+  $sidebar_background_color = get_color('sb', '#ffffff');
+  $sidebar_text_color = get_color('st', '#000000');
+  $sidebar_link_color = get_color('sl', '#00554e');
+
+  $footer_background_color = get_color('fb', '#444444');
+  $footer_text_color = get_color('ft', '#ffffff');
+  $footer_link_color = get_color('fl', '#a1fff6');
+
+?>
 /* Header */
 #masthead {
   background: <?php echo $header_background_color; ?>;
@@ -188,12 +232,12 @@
 }
 
 #secondary .widget_nav_menu .current-menu-item {
-  background-color: <?php echo $sidebar_link_10_color; ?>;
+  background-color: <?php echo rgba($sidebar_link_color, 0.1); ?>;
 }
 
 #secondary .widget_nav_menu ul,
 #secondary .widget_nav_menu li {
-  border-color: <?php echo $sidebar_text_20_color; ?>;
+  border-color: <?php echo rgba($sidebar_text_color, 0.2); ?>;
 }
 
 /* Footer */
