@@ -183,6 +183,19 @@
   border-color: <?php echo $sidebar_link_color; ?>;
 }
 
+#secondary .widget_nav_menu ul {
+  background-color: <?php echo $sidebar_background_color; ?>;
+}
+
+#secondary .widget_nav_menu .current-menu-item {
+  background-color: <?php echo $sidebar_link_10_color; ?>;
+}
+
+#secondary .widget_nav_menu ul,
+#secondary .widget_nav_menu li {
+  border-color: <?php echo $sidebar_text_20_color; ?>;
+}
+
 /* Footer */
 body,
 #colophon {

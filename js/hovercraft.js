@@ -61,6 +61,31 @@
 			}
 		}).resize();
 
+		// CUSTOM MENU WIDGET
+		$('.widget_nav_menu .menu-item-has-children').each(function() {
+			var expanded = false,
+				li = $(this),
+				toggle = $('<a href="#" class="toggle"></a>').prependTo(li).click(function(e) {
+					e.preventDefault();
+				}),
+				sr = $('<span class="screen-reader-text"> section </span>').append(
+					li.children('a').last().text()).appendTo(toggle),
+				action = $('<span class="action">Open</span>').prependTo(sr);
+			li.click(function(e) {
+				expanded = !expanded;
+				toggle.toggleClass('toggle-expanded', expanded);
+				action.text(expanded ? 'Close' : 'Open');
+				$(li).find('ul.sub-menu').toggle(expanded);
+			});
+			li.find('a:not(.toggle)').click(function(e) {
+				e.stopPropagation();
+			});
+			if (li.is('.current-menu-item') || li.is('.current-menu-ancestor')) {
+				toggle.click();
+			}
+		});
+
+
 		// Fix ARIA issues.
 		// Add labels to sidebar widgets.
 		$('#secondary aside').each(function() {

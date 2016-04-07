@@ -117,3 +117,58 @@
 #tertiary .widget-title {
 	margin-bottom: 0.5em;
 }
+
+/* Custom menu widget */
+.widget_nav_menu {
+	ul.menu {
+		margin-top: 0.75em;
+	}
+
+	li {
+		border-top: 1px solid rgba(0, 0, 0, 0.5);
+		margin: 0;
+		padding: 0.75em 0 0.75em 0;
+	}
+
+	ul.menu > li:last-child {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+	}
+
+	li::before {
+		content: none;
+	}
+
+	ul.sub-menu {
+		border-top: 1px solid rgba(0, 0, 0, 0.5);
+		display: none;
+		margin: 0.75em 0 -0.75em;
+		padding: 0 0 0 1em;
+	}
+
+	ul.sub-menu li:first-child {
+		border-top: 0 none transparent;
+	}
+
+	a {
+		left: 0.75em;
+		position: relative;
+	}
+
+	.toggle {
+		background-color: rgba(255, 255, 255, 0.5);
+		border-radius: 3px;
+		float: right;
+		margin: 0 0.5em 0 1em;
+		position: static;
+		text-align: center;
+		width: 1.25rem;
+	}
+
+	.toggle::before {
+		content: "+";
+	}
+
+	.toggle-expanded::before {
+		content: "-";
+	}
+}

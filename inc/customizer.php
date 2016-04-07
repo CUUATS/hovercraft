@@ -269,7 +269,9 @@ function hovercraft_custom_colors() {
 	$content_link_color = get_theme_mod('hovercraft_content_link_color', '#00554e');
 	$sidebar_background_color = get_theme_mod('hovercraft_sidebar_background_color', '#ffffff');
 	$sidebar_text_color = get_theme_mod('hovercraft_sidebar_text_color', '#000000');
+	$sidebar_text_20_color = hovercraft_hex2rgba($sidebar_text_color, 0.2);
 	$sidebar_link_color = get_theme_mod('hovercraft_sidebar_link_color', '#00554e');
+	$sidebar_link_10_color = hovercraft_hex2rgba($sidebar_link_color, 0.1);
 	$footer_background_color = get_theme_mod('hovercraft_footer_background_color', '#444444');
 	$footer_text_color = get_theme_mod('hovercraft_footer_text_color', '#ffffff');
 	$footer_link_color = get_theme_mod('hovercraft_footer_link_color', '#a1fff6');
