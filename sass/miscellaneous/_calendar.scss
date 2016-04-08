@@ -93,6 +93,14 @@
     }
   }
 
+  h2.my-calendar-month,
+  h2.my-calendar-week,
+  .list h3.mc-single {
+    clear: both;
+    font-size: 1.75em;
+    margin: 0.80em 0;
+  }
+
   h3,
   h3 a {
     font-family: $opensans;
@@ -120,6 +128,32 @@
 
       .mc-event-date::after {
         content: ": ";
+      }
+    }
+
+    .event-time {
+      display: inline;
+      font-size: inherit;
+      font-weight: inherit;
+      margin: 0;
+    }
+  }
+
+  .list-event .details {
+    padding: 0;
+
+    & > div,
+    & > h3 {
+      padding: 0 1em;
+    }
+
+    .time-block {
+      margin-bottom: 0.5em;
+      padding-bottom: 0.5em;
+      padding-top: 0.5em;
+
+      p {
+        margin: 0;
       }
     }
 

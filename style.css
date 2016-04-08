@@ -2332,6 +2332,13 @@ body.admin-bar #page {
   margin-left: 0;
   padding-left: 0;
 }
+.mc-main h2.my-calendar-month,
+.mc-main h2.my-calendar-week,
+.mc-main .list h3.mc-single {
+  clear: both;
+  font-size: 1.75em;
+  margin: 0.80em 0;
+}
 .mc-main h3,
 .mc-main h3 a {
   font-family: "Open Sans", sans-serif;
@@ -2357,6 +2364,26 @@ body.admin-bar #page {
   content: ": ";
 }
 .mc-main .calendar-event .details .event-time {
+  display: inline;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+.mc-main .list-event .details {
+  padding: 0;
+}
+.mc-main .list-event .details > div, .mc-main .list-event .details > h3 {
+  padding: 0 1em;
+}
+.mc-main .list-event .details .time-block {
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+.mc-main .list-event .details .time-block p {
+  margin: 0;
+}
+.mc-main .list-event .details .event-time {
   display: inline;
   font-size: inherit;
   font-weight: inherit;
