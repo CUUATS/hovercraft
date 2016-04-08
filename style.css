@@ -1263,7 +1263,6 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 /* Prepare for the slider. */
 .fullscreen-slider #masthead {
-  position: absolute;
   top: 0;
   width: 100%;
   z-index: 999;
@@ -1345,11 +1344,12 @@ html[xmlns] .flexslider .slides {
   width: 40px;
   height: 40px;
   position: absolute;
-  top: 50%;
+  top: 130px;
   z-index: 10;
   overflow: hidden;
   opacity: 0;
   cursor: pointer;
+  line-height: 40px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -1406,9 +1406,9 @@ ul.slides {
 
 /* Slide post content. */
 .featured-hentry-wrap {
+  bottom: 2rem;
+  padding: 0.5rem 1rem 0.5rem 5%;
   position: absolute;
-  bottom: 5rem;
-  margin: 0 0 0 5%;
 }
 
 .slider-header,
@@ -1416,7 +1416,16 @@ ul.slides {
 .slider-link {
   max-width: 620px;
   max-width: 35.625rem;
-  margin: 1rem 0;
+  margin: 0;
+}
+
+.slider-header {
+  font-size: 0.8em;
+}
+
+.slider-header h2 {
+  font-size: 1.4em;
+  margin: 0;
 }
 
 .slider-header h2 a {
@@ -1468,6 +1477,9 @@ ul.slides {
 }
 
 @media screen and (min-width: 50rem) {
+  .flexbox .fullscreen-slider #masthead {
+    position: absolute;
+  }
   .flexbox .fullscreen-slider #page {
     display: flex;
     flex: 1 0 0;
@@ -1480,8 +1492,15 @@ ul.slides {
     height: auto;
     padding: 0 0;
   }
+  .flexbox .fullscreen-slider .flex-direction-nav a {
+    top: 50%;
+  }
   .flexbox .fullscreen-slider .featured-hentry-wrap {
-    margin: 0 0 0 6%;
+    bottom: 5rem;
+    padding: 1.5rem 2rem 1.5rem 6%;
+  }
+  .flexbox .fullscreen-slider .slider-header {
+    font-size: 1em;
   }
   .flexbox .fullscreen-slider .slider-excerpt {
     display: block;

@@ -12,7 +12,7 @@ get_header(); ?>
 
 	<?php if ( count( $featured ) >= 2 ) : ?>
 
-		<div id="featured-content" class="flexslider multiple-featured-posts">
+		<div id="featured-content" class="flexslider multiple-featured-posts" role="main">
 			<ul class="featured-posts slides">
 
 				<?php
@@ -29,7 +29,7 @@ get_header(); ?>
 									<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 										<?php the_title( '<div class="slider-header"><h2 class="slider-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2></div>' ); ?>
 										<div class="slider-excerpt"><?php the_excerpt(); ?></div>
-										<div class="slider-link"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'hovercraft' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read more...</a></div>
+										<div class="slider-link"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'hovercraft' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read more &#8594;</a></div>
 									</div><!-- #post-## -->
 								</div><!-- .featured-hentry-wrap -->
 							</li>
@@ -53,7 +53,7 @@ get_header(); ?>
 		</script>
 	<?php elseif ( count( $featured ) == 1 ) : ?>
 
-		<div id="featured-content" class="flexslider single-featured-post">
+		<div id="featured-content" class="flexslider single-featured-post" role="main">
 			<ul class="featured-posts slides">
 
 				<?php
@@ -70,7 +70,7 @@ get_header(); ?>
 									<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 										<?php the_title( '<div class="slider-header"><h2 class="slider-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2></div>' ); ?>
 										<div class="slider-excerpt"><?php the_excerpt(); ?></div>
-										<div class="slider-link"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'hovercraft' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read more...</a></div>
+										<div class="slider-link"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'hovercraft' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read more &#8594;</a></div>
 									</div><!-- #post-## -->
 								</div><!-- .featured-hentry-wrap -->
 							</li>
@@ -84,7 +84,7 @@ get_header(); ?>
 
 	<?php else : ?>
 
-	<div id="no-featured-content" class="no-featured-post">
+	<div id="no-featured-content" class="no-featured-post" role="main">
 		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 	</div><!-- #no-featured-content -->
 
