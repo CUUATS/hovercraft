@@ -16,11 +16,6 @@ body.admin-bar #page {
 	position: relative;
 }
 
-/* Adjust hide of the slider if admin bar is present. */
-.admin-bar.fullscreen-slider #content {
-	height: calc( 100vh - 32px );
-}
-
 /* Attachment pages */
 .attachment-download-link {
 	display: inline-block;
