@@ -35,9 +35,6 @@
 			margin-right: 0.5rem;
 		}
 	}
-	li:not(:first-child) {
-		//border-top: 2px solid $color__border-widgets;
-	}
 	/* Style the individual widgets. */
 	&.widget_recent_comments {
 		li::before {

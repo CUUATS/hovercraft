@@ -2332,6 +2332,70 @@ body.admin-bar #page {
   margin-left: 0;
   padding-left: 0;
 }
+.mc-main h3,
+.mc-main h3 a {
+  font-family: "Open Sans", sans-serif;
+}
+.mc-main .calendar-event .details {
+  padding: 0;
+}
+.mc-main .calendar-event .details > div {
+  padding: 0 1em;
+}
+.mc-main .calendar-event .details .time-block {
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+.mc-main .calendar-event .details .time-block p {
+  margin: 0;
+}
+.mc-main .calendar-event .details .time-block .mc-event-date {
+  font-weight: 600;
+}
+.mc-main .calendar-event .details .time-block .mc-event-date::after {
+  content: ": ";
+}
+.mc-main .calendar-event .details .event-time {
+  display: inline;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+.mc-main .single-event .details {
+  border: 0 none transparent;
+}
+.mc-main .single-event .details > div {
+  padding: 0;
+}
+.mc-main .single-event .details .mc-event-date {
+  font-weight: 600;
+}
+.mc-main .single-event .details .mc-event-date::after {
+  content: ": ";
+}
+.mc-main .single-event h2.event-title {
+  background-color: transparent;
+  font-size: 1.75em;
+  margin: 0.80em 0;
+}
+.mc-main .single-event h2.event-title img {
+  display: none;
+}
+.mc-main .details .close {
+  margin: 0.5rem 1rem !important;
+  width: auto !important;
+}
+.mc-main .details .close img {
+  display: none;
+}
+.mc-main .details .close::before {
+  content: "\f405";
+  font: 24px/1 'Genericons';
+}
+.mc-main .details .close:last-child {
+  display: none;
+}
 
 @media screen and (min-width: 50rem) {
   .mc-main .mc-format,
@@ -2353,4 +2417,8 @@ body.admin-bar #page {
   .mc-main .mc-export {
     margin-top: 1em;
   }
+}
+#wp-admin-bar-mc-add-event,
+#wp-admin-bar-mc-my-calendar {
+  display: none;
 }

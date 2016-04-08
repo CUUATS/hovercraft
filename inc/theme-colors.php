@@ -176,6 +176,23 @@
   color: <?php echo $content_background_color; ?>;
 }
 
+#primary .mc-main .details {
+  background-color: <?php echo $content_background_color; ?>;
+  border-color: <?php echo $content_text_color; ?>;
+  color: <?php echo $content_text_color; ?>;
+}
+
+#primary .mc-main .details .time-block,
+#primary .mc-main .details .close {
+  background-color: <?php echo $content_link_color; ?>;
+  color: <?php echo $content_background_color; ?>;
+}
+
+#primary .mc-main .single-event .details .time-block {
+  background-color: transparent;
+  color: <?php echo $content_text_color; ?>;
+}
+
 .fullscreen-slider .featured-hentry-wrap {
   color: $sidebar_text_color;
   background-color: <?php echo rgba($sidebar_background_color, 0.8); ?>;
