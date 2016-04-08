@@ -114,23 +114,6 @@ function hovercraft_customize_register( $wp_customize ) {
 		),
 	) );
 
-	/* Slider direction. */
-	$wp_customize->add_setting( 'hovercraft_slider_direction', array(
-		'default'           => 'horizontal',
-		'sanitize_callback' => 'hovercraft_sanitize_slider_direction',
-	) );
-	$wp_customize->add_control( 'hovercraft_slider_direction', array(
-		'label'             => __( 'Animation Direction', 'hovercraft' ),
-		'description'				=> __( 'Direction setting is for slide animation only.', 'hovercraft' ),
-		'section'           => 'hovercraft_slider_options',
-		'priority'          => 2,
-		'type'              => 'radio',
-		'choices'           => array(
-			'horizontal'	=> __( 'Horizontal', 'hovercraft' ),
-			'vertical'		=> __( 'Vertical', 'hovercraft' ),
-		),
-	) );
-
 	/* Slider slideshow. */
 	$wp_customize->add_setting( 'hovercraft_slider_slideshow', array(
 		'default'           => 'true',
@@ -139,7 +122,7 @@ function hovercraft_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'hovercraft_slider_slideshow', array(
 		'label'             => __( 'Advance Automatically', 'hovercraft' ),
 		'section'           => 'hovercraft_slider_options',
-		'priority'          => 3,
+		'priority'          => 2,
 		'type'              => 'radio',
 		'choices'           => array(
 			'true'			=> __( 'True', 'hovercraft' ),
@@ -148,24 +131,16 @@ function hovercraft_customize_register( $wp_customize ) {
 	) );
 
 	/* Slider slideshow speed. */
-	$wp_customize->add_setting( 'hovercraft_slider_speed', array(
-		'default'           => '10000',
-		'sanitize_callback' => 'hovercraft_sanitize_slider_speed',
+	$wp_customize->add_setting( 'hovercraft_slider_delay', array(
+		'default'           => 10,
+		'sanitize_callback' => 'hovercraft_sanitize_slider_delay',
 	) );
-	$wp_customize->add_control( 'hovercraft_slider_speed', array(
-		'label'             => __( 'Speed', 'hovercraft' ),
+	$wp_customize->add_control( 'hovercraft_slider_delay', array(
+		'label'             => __( 'Delay', 'hovercraft' ),
+		'description'             => __( 'Enter the number of seconds per slide.', 'hovercraft' ),
 		'section'           => 'hovercraft_slider_options',
-		'priority'          => 4,
-		'type'              => 'radio',
-		'choices'           => array(
-			'20000'			=> __( 'Slowest', 'hovercraft' ),
-			'14000'			=> __( 'Slower', 'hovercraft' ),
-			'10000'			=> __( 'Slow', 'hovercraft' ),
-			'7000'			=> __( 'Default', 'hovercraft' ),
-			'5000'			=> __( 'Fast', 'hovercraft' ),
-			'3500'			=> __( 'Faster', 'hovercraft' ),
-			'2500'			=> __( 'Fastest', 'hovercraft' ),
-		),
+		'priority'          => 3,
+		'type'              => 'number',
 	) );
 
 	/* Left sidebar or right sidebar */
@@ -204,19 +179,6 @@ function hovercraft_sanitize_slider_animation( $input ) {
 }
 
 /**
- * Sanitize slider direction.
- *
- * @param string $input.
- * @return string (horizontal|vertical).
- */
-function hovercraft_sanitize_slider_direction( $input ) {
-	if ( ! in_array( $input, array( 'horizontal', 'vertical' ) ) ) {
-		$input = 'horizontal';
-	}
-	return $input;
-}
-
-/**
  * Sanitize slider slideshow.
  *
  * @param string $input.
@@ -235,11 +197,12 @@ function hovercraft_sanitize_slider_slideshow( $input ) {
  * @param string $input.
  * @return string (2500|3500|5000|7000|10000|14000|20000).
  */
-function hovercraft_sanitize_slider_speed( $input ) {
-	if ( ! in_array( $input, array( '2500', '3500', '5000', '7000', '10000', '14000', '20000' ) ) ) {
-		$input = '7000';
+function hovercraft_sanitize_slider_delay( $input ) {
+	$input = (int) $input;
+	if ( $input > 0 ) {
+		return $input;
 	}
-	return $input;
+	return 10;
 }
 
 /**

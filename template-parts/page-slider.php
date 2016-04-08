@@ -44,9 +44,8 @@ get_header(); ?>
 			(function($) {
 				$('.flexslider').flexslider({
 					animation: '<?php echo get_theme_mod( 'hovercraft_slider_animation', 'fade' ); ?>',
-					direction: '<?php echo get_theme_mod( 'hovercraft_slider_direction', 'horizontal' ); ?>',
 					slideshow: <?php echo get_theme_mod( 'hovercraft_slider_slideshow', 'true' ); ?>,
-					slideshowSpeed: <?php echo (int)get_theme_mod( 'hovercraft_slider_speed', '10000' ); ?>,
+					slideshowSpeed: <?php echo (int)get_theme_mod( 'hovercraft_slider_delay', 10 ) * 1000; ?>,
 					controlNav: false
 				});
 			})(jQuery);
