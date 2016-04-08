@@ -130,14 +130,14 @@ ul.slides {
 /* Slide post content. */
 .featured-hentry-wrap {
 	bottom: 2rem;
+	min-width: 250px;
 	padding: 0.5rem 1rem 0.5rem 5%;
 	position: absolute;
+	width: 60%;
 }
 .slider-header,
 .slider-excerpt,
 .slider-link {
-	max-width: 620px;
-	max-width: 35.625rem;
 	margin: 0;
 }
 .slider-header {
@@ -148,11 +148,11 @@ ul.slides {
 	margin: 0;
 }
 .slider-header h2 a {
-	padding: 0.125em 0.25em;
+	padding: 0.125em 0;
 }
 .slider-excerpt p,
 .slider-link a {
-	padding: 0.25em 0.5em;
+	padding: 0.25em 0;
 }
 .slider-excerpt,
 .slider-link {
@@ -207,6 +207,7 @@ ul.slides {
 			display: flex;
 			flex: 1 0 auto;
 			height: auto;
+			min-height: 600px;
 			padding: 0 0;
 		}
 
@@ -216,7 +217,9 @@ ul.slides {
 
 		.featured-hentry-wrap {
 			bottom: 5rem;
+			min-width: 550px;
 			padding: 1.5rem 2rem 1.5rem 6%;
+			width: 45%;
 		}
 
 		.slider-header {
