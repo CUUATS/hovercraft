@@ -1372,16 +1372,19 @@ html[xmlns] .flexslider .slides {
 }
 
 .flex-direction-nav .flex-prev {
+  left: -5em;
   left: -5rem;
 }
 
 .flex-direction-nav .flex-next {
+  right: -5em;
   right: -5rem;
   text-align: right;
 }
 
 .flexslider:hover .flex-direction-nav .flex-prev {
   opacity: 0.8;
+  left: 1em;
   left: 1rem;
 }
 
@@ -1391,6 +1394,7 @@ html[xmlns] .flexslider .slides {
 
 .flexslider:hover .flex-direction-nav .flex-next {
   opacity: 0.8;
+  right: 1em;
   right: 1rem;
 }
 
@@ -1409,6 +1413,7 @@ ul.slides {
 
 /* Slide post content. */
 .featured-hentry-wrap {
+  bottom: 2em;
   bottom: 2rem;
   min-width: 250px;
   padding: 0.5rem 1rem 0.5rem 5%;

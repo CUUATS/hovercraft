@@ -195,6 +195,7 @@
 
 .fullscreen-slider .featured-hentry-wrap {
   color: $sidebar_text_color;
+  background-color: <?php echo $sidebar_background_color; ?>;
   background-color: <?php echo rgba($sidebar_background_color, 0.8); ?>;
 }
 
