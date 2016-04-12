@@ -57,6 +57,17 @@ function hovercraft_remove_body_class($classes) {
 }
 add_filter('body_class', 'hovercraft_remove_body_class', 20, 2);
 
+/**
+ * Remove the tagline from the home page title.
+ */
+function hovercraft_remove_tagline( $title ) {
+  if ( isset($title['tagline']) ) {
+		unset( $title['tagline'] );
+	}
+  return $title;
+}
+add_filter( 'document_title_parts', 'hovercraft_remove_tagline' );
+
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
 	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -74,12 +85,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		// Add the blog name.
 		$title .= get_bloginfo( 'name', 'display' );
-
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
 
 		// Add a page number if necessary.
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
