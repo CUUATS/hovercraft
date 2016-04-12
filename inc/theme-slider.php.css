@@ -1,0 +1,22 @@
+<?php
+/**
+ * Custom CSS for slider images.
+ *
+ * @package Hovercraft
+ */?>
+
+#slide-<?php echo $post_id; ?> {
+   background-image: url('<?php echo $small_url; ?>');
+}
+
+@media screen and (min-width: 800px), screen and (min-height: 800px) {
+  #slide-<?php echo $post_id; ?> {
+     background-image: url('<?php echo $medium_url; ?>');
+  }
+}
+
+@media screen and (min-width: 1024px), screen and (min-height: 1024px) {
+  #slide-<?php echo $post_id; ?> {
+     background-image: url('<?php echo $large_url; ?>');
+  }
+}

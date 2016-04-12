@@ -70,20 +70,46 @@ function hovercraft_setup() {
 	 * @see wp_add_inline_style()
 	 */
 	function hovercraft_banner_image() {
-		$css = '';
 		if ( hovercraft_post_has_featured_image() && is_singular() ) {
 			$attachment_id = get_post_thumbnail_id( get_the_ID() );
 			$large_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-large' );
 			$medium_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-medium' );
 			$small_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-small' );
 			$header_rgba = hovercraft_hex2rgba( get_theme_mod( 'hovercraft_header_background_color', '#eeeeee' ), 0.9 );
+
 			ob_start();
 			require get_template_directory() . '/inc/theme-banner.php.css';
 			$css = ob_get_clean();
+			wp_add_inline_style('hovercraft-style', preg_replace('/\s+/', ' ', $css));
 		}
-		wp_add_inline_style('hovercraft-style', preg_replace('/\s+/', ' ', $css));
 	}
 	add_action('wp_enqueue_scripts', 'hovercraft_banner_image');
+
+/* Add css for slider images */
+	function hovercraft_slider_images() {
+		if ( is_page_template( 'template-parts/page-slider.php' ) ) {
+			$featured = hovercraft_get_featured_posts();
+			$css = '';
+
+			foreach ( $featured as $post ) {
+				if ( has_post_thumbnail( $post->ID ) ) {
+					$post_id = $post->ID;
+					$attachment_id = get_post_thumbnail_id( $post_id );
+					$large_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-large' );
+					$medium_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-medium' );
+					$small_url = wp_get_attachment_image_url( $attachment_id, 'hovercraft-banner-small' );
+
+					ob_start();
+					require get_template_directory() . '/inc/theme-slider.php.css';
+					$css .= ob_get_clean();
+				}
+			}
+
+			wp_add_inline_style('hovercraft-style', preg_replace('/\s+/', ' ', $css));
+		}
+
+	}
+	add_action('wp_enqueue_scripts', 'hovercraft_slider_images');
 
 	/**
 	 * Convert hex color to RGBA.
