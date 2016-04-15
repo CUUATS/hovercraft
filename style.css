@@ -2454,3 +2454,46 @@ body.admin-bar #page {
 #wp-admin-bar-mc-my-calendar {
   display: none;
 }
+
+@media print {
+  @page {
+    margin: 0.5in 0.75in;
+  }
+  body {
+    font-size: 9pt;
+    background-color: white !important;
+  }
+
+  body,
+  #page {
+    display: block !important;
+    height: auto !important;
+  }
+
+  #masthead-menu,
+  #secondary,
+  #colophon,
+  .menu-toggle .lines {
+    display: none !important;
+  }
+
+  #masthead,
+  #primary {
+    padding: 1em 0 !important;
+  }
+
+  .site-branding {
+    left: 0 !important;
+    position: static !important;
+  }
+
+  #masthead *,
+  #primary * {
+    background-color: transparent !important;
+    color: black !important;
+  }
+
+  #masthead {
+    border-bottom: 0.25pt solid black;
+  }
+}
