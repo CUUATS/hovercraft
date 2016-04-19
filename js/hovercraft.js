@@ -87,7 +87,7 @@
 
 		// ACCORDION
 		$('.accordion').each(function() {
-			$(this).find(':not(h2)').hide();
+			$(this).children().not('h2').hide();
 			$(this).find('h2').each(function() {
 				var expanded = false,
 					heading = $(this),
