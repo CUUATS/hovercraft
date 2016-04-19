@@ -193,6 +193,21 @@
   color: <?php echo $content_text_color; ?>;
 }
 
+#primary .accordion {
+  border-color: <?php echo $content_link_color; ?>;
+}
+
+
+#primary .accordion h2 {
+  background-color: <?php echo rgba($content_link_color, 0.1); ?>;
+  border-color: <?php echo $content_link_color; ?>;
+}
+
+#primary .accordion h2.accordion-expanded {
+  background-color: <?php echo $content_link_color; ?>;
+  color: <?php echo $content_background_color; ?>;
+}
+
 .fullscreen-slider .featured-hentry-wrap {
   color: $sidebar_text_color;
   background-color: <?php echo $sidebar_background_color; ?>;
@@ -213,7 +228,6 @@
   background-color: <?php echo $sidebar_background_color; ?>;
   color: <?php echo $sidebar_link_color; ?>;
 }
-
 
 /* Sidebar */
 #content,

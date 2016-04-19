@@ -85,6 +85,27 @@
 			}
 		});
 
+		// ACCORDION
+		$('.accordion').each(function() {
+			$(this).find(':not(h2)').hide();
+			$(this).find('h2').each(function() {
+				var expanded = false,
+					heading = $(this),
+					toggle = $('<a href="#" class="toggle"></a>').prependTo(heading).click(function(e) {
+						e.preventDefault();
+					}),
+					sr = $('<span class="screen-reader-text"> section </span>').append(
+						heading.text()).appendTo(toggle),
+					action = $('<span class="action">Open</span>').prependTo(sr);
+				heading.click(function(e) {
+					expanded = !expanded;
+					heading.toggleClass('accordion-expanded', expanded);
+					action.text(expanded ? 'Close' : 'Open');
+					heading.nextUntil('h2').toggle(expanded);
+				});
+			});
+		});
+
 
 		// Fix ARIA issues.
 		// Add labels to sidebar widgets.
