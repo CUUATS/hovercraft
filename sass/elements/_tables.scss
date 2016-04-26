@@ -1,13 +1,7 @@
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
-}
-
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
 	max-width: 100%;
-	border: 1px solid $color__border-table;
 	@include font-size(0.875);
 }
 thead tr {
@@ -28,6 +22,4 @@ tbody tr td,
 tfoot tr th,
 tfoot tr td {
 	padding: 0.125rem 0.25rem;
-}
-tfoot tr {
 }
