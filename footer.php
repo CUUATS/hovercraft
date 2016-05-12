@@ -29,6 +29,8 @@
           <span class="site-info-section"><a href="http://www1.co.champaign.il.us/ada/Home.php">ADA contacts</a></span>
 					<span class="sep"> | </span>
           <span class="site-info-section"><a href="http://www1.co.champaign.il.us/ada/Feedback.php">Request information and provide feedback</a></span>
+					<span class="sep"> | </span>
+					<span class="site-info-section"><a href="http://www.ccrpc.org/about-us/accessibility-information/">Title VI</a></span>
 				</div>
 
 				<div class="credits">
