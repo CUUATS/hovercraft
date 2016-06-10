@@ -237,7 +237,7 @@ function hovercraft_custom_colors() {
 		'fb' => get_theme_mod('hovercraft_footer_background_color', '#444444'),
 		'ft' => get_theme_mod('hovercraft_footer_text_color', '#ffffff'),
 		'fl' => get_theme_mod('hovercraft_footer_link_color', '#a1fff6'),
-		'cachekey' => '1',
+		'cachekey' => '2',
 	);
 	$css_url = get_template_directory_uri() . '/inc/theme-colors.php?' . http_build_query($qs_data);
 	wp_enqueue_style( 'hovercraft_theme_colors', $css_url, array(), null, 'all' );
