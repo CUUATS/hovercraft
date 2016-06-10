@@ -2525,8 +2525,13 @@ aside.ct-position-center {
 }
 
 h2.ct-title {
-  margin: 0;
   font-size: 1.1em;
+  margin: 0;
+  text-align: center;
+}
+
+.ct-chart .ct-bar {
+  fill: none;
 }
 
 @media print {

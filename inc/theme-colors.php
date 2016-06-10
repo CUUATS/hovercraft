@@ -130,6 +130,7 @@
 #primary .widget,
 #primary .widget .widget-title,
 #primary a:hover,
+#primary .ct-chart .ct-label,
 .search-form .search-field {
   color: <?php echo $content_text_color; ?>;
 }
@@ -206,6 +207,9 @@
 #primary .accordion h2.accordion-expanded {
   background-color: <?php echo $content_link_color; ?>;
   color: <?php echo $content_background_color; ?>;
+}
+
+  border: 1px solid <?php echo rgba($content_text_color, 0.25); ?>;
 }
 
 .fullscreen-slider .featured-hentry-wrap {
