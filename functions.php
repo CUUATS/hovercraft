@@ -285,7 +285,7 @@ function hovercraft_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
 
 	// Load the theme main stylesheet.
-	wp_enqueue_style( 'hovercraft-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'hovercraft-style', get_stylesheet_uri(), array(), '2' );
 
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '3.3.1', false );
 	wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv-printshiv.js', array(), '3.7.3', false );
