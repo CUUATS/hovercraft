@@ -1731,6 +1731,9 @@ ul.slides {
   content: '\f411';
 }
 
+.entry-footer {
+  clear: both;
+}
 .entry-footer span {
   padding-right: 1.5em;
 }
@@ -2474,6 +2477,42 @@ body.admin-bar #page {
 #wp-admin-bar-mc-add-event,
 #wp-admin-bar-mc-my-calendar {
   display: none;
+}
+
+aside.ct-position-left,
+aside.ct-position-right,
+aside.ct-position-center {
+  float: none;
+  margin: 1.5em auto;
+  max-width: 600px;
+}
+
+@media screen and (min-width: 50rem) {
+  .flexbox aside.ct-position-left,
+  .flexbox aside.ct-position-right,
+  .flexbox aside.ct-position-center {
+    width: 75%;
+  }
+}
+.primary-large aside.ct-position-left,
+.primary-large aside.ct-position-right {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  max-width: 600px;
+  padding: 1em;
+  width: 50%;
+}
+.primary-large aside.ct-position-left {
+  float: left;
+  margin: 0 1.5em 1.5em 0;
+}
+.primary-large aside.ct-position-right {
+  float: right;
+  margin: 0 0 1.5em 1.5em;
+}
+
+h2.ct-title {
+  margin: 0;
+  font-size: 1.1em;
 }
 
 @media print {

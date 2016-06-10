@@ -30,7 +30,7 @@
 			$('#masthead-menu').slideToggle('fast');
 		});
 
-		// Close hidden header on window resize.
+		// Close hidden header and set the primary element class on window resize.
 		$(window).on('resize', function() {
 			if (isMobile()) {
 				$('#masthead-menu').css('display', 'block').hide();
@@ -38,6 +38,10 @@
 				$('#masthead-menu').show().css('display', 'flex');
 			}
 			$('#page').removeClass('menu-toggled');
+
+			var primaryWidth = $('#primary').width();
+			$('#primary').toggleClass('primary-large', primaryWidth >= 800)
+				.toggleClass('primary-small', primaryWidth < 800);
 		}).resize();
 
 		// BANNER IMAGES
