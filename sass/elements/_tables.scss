@@ -23,3 +23,16 @@ tfoot tr th,
 tfoot tr td {
 	padding: 0.125rem 0.25rem;
 }
+caption.tablepress-table-caption {
+  font-size: 1.1rem;
+	font-weight: 600;
+  margin: 0 0 0.5em;
+	a {
+		font-size: 0.9rem;
+		float: right;
+		margin-left: 1em;
+	}
+	br {
+		display: none;
+	}
+}
