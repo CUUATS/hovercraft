@@ -209,6 +209,8 @@
   color: <?php echo $content_background_color; ?>;
 }
 
+#primary.primary-large aside.ct-position-left,
+#primary.primary-large aside.ct-position-right {
   border: 1px solid <?php echo rgba($content_text_color, 0.25); ?>;
 }
 
