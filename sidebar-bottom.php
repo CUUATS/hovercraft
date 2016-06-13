@@ -5,7 +5,7 @@
  * @package Hovercraft
  */
 
-if ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'template-parts/page-slider.php' ) ) {
+if ( ! is_active_sidebar( 'sidebar-2' ) ) {
 	return;
 }
 ?>
