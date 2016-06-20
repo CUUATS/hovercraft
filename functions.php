@@ -46,6 +46,16 @@ function hovercraft_setup() {
 	}
 	add_filter( 'comment_form_default_fields','hovercraft_disable_comment_url' );
 
+	/* Block comments that contain URLs. */
+	function hovercraft_filter_url_comments($commentdata) {
+		if ( $commentdata['comment_author_url'] || strpos( $commentdata['comment_content'], 'http' ) !== false ) {
+			wp_die( '<p>URLs are not allowed in comments.</p>', 'Invalid Comment', array(
+				'back_link' => true
+			) );
+		}
+	}
+	add_filter( 'preprocess_comment', 'hovercraft_filter_url_comments' );
+
 	/* Address accessibility issues with TablePress DataTables */
 	function hovercraft_all_datatables_commands( $commands ) {
 		return $commands . "\n" . file_get_contents(get_template_directory() . '/js/datatables-hovercraft.js') . "\n";
