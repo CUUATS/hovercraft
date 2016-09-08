@@ -53,6 +53,7 @@ function hovercraft_setup() {
 				'back_link' => true
 			) );
 		}
+		return $commentdata;
 	}
 	add_filter( 'preprocess_comment', 'hovercraft_filter_url_comments' );
 
