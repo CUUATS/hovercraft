@@ -277,8 +277,8 @@ function hovercraft_has_featured_posts( $minimum = 1, $menu_name='slider' ) {
 /* Download link for PDF attachments. */
 function hovercraft_attachment_download_link ($html, $id) {
 	if ( strpos( $html, 'vanilla-pdf-embed' ) !== false ) {
-		$post = get_post();
-		$download_link = '<a class="attachment-download-link" href="' . esc_attr( $post->guid ) . '"><span class="screen-reader-text">Download </span>' . esc_html( $post->post_title ) . ' <span class="attachment-meta">(PDF, ' . size_format(filesize(get_attached_file($post->ID))) . ')</span></a>';
+		$post_id = get_the_ID();
+		$download_link = '<a class="attachment-download-link" href="' . esc_attr( wp_get_attachment_url( $post_id ) ) . '"><span class="screen-reader-text">Download </span>' . esc_html( get_the_title( $post_id ) ) . ' <span class="attachment-meta">(PDF, ' . size_format( filesize( get_attached_file( $post_id ) ) ) . ')</span></a>';
 		return $download_link . $html;
 	}
     return $html;
