@@ -320,6 +320,23 @@ function hovercraft_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'hovercraft_scripts' );
 
+add_action( 'init', function () {
+	global $allowedtags;
+	$allowedtags['reportcard-performance-measure-table'] = array(
+		'url' => array()
+	);
+	$allowedtags['reportcard-summary-table'] = array(
+		'url' => array()
+	);
+});
+
+add_filter( 'tiny_mce_before_init', function( $a ) {
+	$opts = '*[*]';
+	$a['valid_elements'] = $opts;
+	$a['extended_valid_elements'] = $opts;
+	return $a;
+});
+
 /**
  * Custom template tags for this theme.
  */
