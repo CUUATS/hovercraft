@@ -28,7 +28,7 @@
 					<span class="site-info-section"><strong>Accessibility:</strong></span>
           <span class="site-info-section"><a href="http://www.co.champaign.il.us/ADA/ADA.php">Americans with Disabilities Act (ADA)</a></span>
 					<span class="sep"> | </span>
-					<span class="site-info-section"><a href="https://ccrpc.org/legal/">Title VI</a></span>
+					<span class="site-info-section"><a href="https://www.ccrpc.org/transportation/title_vi_report_title_6.php">Title VI</a></span>
 				</div>
 
 				<div class="credits">
